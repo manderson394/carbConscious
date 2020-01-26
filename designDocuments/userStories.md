@@ -1,0 +1,33 @@
+# User Stories
+
+### Sign Up
+
+As a new user, I'll create an account to add new carbohydrate information for a restaurant's menu item and save my favorite items from menus.
+
+### Sign In
+
+As a registered user, I want to log on so I can add new carbohydrate information for a restaurant's menu item or add/edit my favorite menu items.
+
+### Find Carbohydrates for Menu Items
+
+Any user should be able to search for a menu item to see what, if any, carbohydrate data exists for that item.
+
+### View Carbohydrates for Menu Items
+
+Any user should be able to view a report of carbohydrate data for a particular menu item.
+
+### View Menu Items
+
+Any user should be able to view menu items for a particular restaurant.
+
+### About
+
+Any user should be able to review an page for more information on how to use the site or to contact the admin.
+
+### Add Carbohydrate Information for Menu Items
+
+As a registered user, I should be able to add carbohydrate information about an item on a menu.
+
+### Edit Menu Items to My Favorites
+
+As a registered user, I should be able to edit new or existing menu items for my list of favorites (add, modify, or delete).

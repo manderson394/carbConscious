@@ -18,6 +18,7 @@ The goal is to provide improved carbohydrate information for better insulin inje
 
 ### Design
 
+* [User Stories](designDocuments/userStories.md)
 
 ### Project Plan
 
