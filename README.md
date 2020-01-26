@@ -15,11 +15,28 @@ The goal is to provide improved carbohydrate information for better insulin inje
 
 ### Project Technologies/Techniques
 
+* Security and Authentication
+* Database
+* ORM Framework
+* Dependency Management
+* Web Services Consumed Using Java
+* CSS
+* Data Validation
+* Logging
+* Hosting
+* Independent Research Topics
+* Project Lombok (?)
+* Unit Testing
+* IDE
+    * IntelliJ IDEA
 
 ### Design
 
 * [User Stories](designDocuments/userStories.md)
+* [Screen Design]()
+* [Application Flow]()
+* [Database Design]()
 
-### Project Plan
+### [Project Plan]()
 
-### Weekly Reflection
+### [Weekly Reflection]()

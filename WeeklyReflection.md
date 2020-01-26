@@ -25,6 +25,7 @@ Tasks Completed:
     * Problem Statement Written
     * Time Log file created
     * Weekly Reflection file created
+    * User Stories created
     * High Level Directories Created (*on VM only*)
 
 I'm still stuck on a Java version exception when trying to configure the week 1 exercise to work on my Windows laptop; I'd like to have that resolved soon so I don't need to use my VM at home.
