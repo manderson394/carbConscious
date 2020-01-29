@@ -7,4 +7,5 @@
 |1/22/2020|Download software for environment setup on Windows Laptop|.5||
 |1/23/2020|Install and troubleshoot software setup, begin watching week 2 videos|2||
 |1/26/2020|Troubleshoot laptop environment configuration, finish watching week 2 videos, begin exercise 2, read week 2 materials, update project directories, create README.md, WeeklyReflection.md and timeLog.md project files, work on project design document, work on exercise 2|6||
-|||||
+|1/27/2020|Exercise 2 - Focus on Java and resolving Date class issue|2.5||
+|1/28/2020|Exercise 2 - Focus on front end CSS and JS|2|Most of the time was spent trying to resolve jQuery and Bootstrap issues|
