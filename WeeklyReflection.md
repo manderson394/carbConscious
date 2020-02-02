@@ -18,7 +18,7 @@ When looking for services that could fit my need, I did find at least one:
 
 ### Week 2
 
-1/28/2020 - ### hours
+1/28/2020 - 13 hours
 
 Tasks Completed:
 * Individual Project:
@@ -27,7 +27,7 @@ Tasks Completed:
     * Weekly Reflection file created
     * User Stories created
     * High Level Directories Created (*on VM only*)
-    * Exercise 2 Completed
+* Exercise 2 Completed
 
 I'm still stuck on a Java version exception when trying to configure the week 1 exercise to work on my Windows laptop; I'd like to have that resolved soon so I don't need to use my VM at home.
 That being said, my VM is working fine at the moment, and I've been making solid progress in terms of supporting documents to the project (weekly reflection, time logging, problem statement).
@@ -35,3 +35,12 @@ My biggest struggle this week was navigating the code I needed for the front end
 I'm actually looking forward to getting more familiar with front end development through this project, though. 
 
 Aside from week 3 work, I really want to focus on rounding out my project design in the upcoming week. 
+
+### Week 3
+
+2/4/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Create Log4J.properties file
+* Exercise 3 (planned)
