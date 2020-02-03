@@ -43,4 +43,5 @@ Aside from week 3 work, I really want to focus on rounding out my project design
 Tasks Completed:
 * Individual Project:
     * Create Log4J.properties file
-* Exercise 3 (planned)
+    * Create Project Plan 
+* Exercise 3

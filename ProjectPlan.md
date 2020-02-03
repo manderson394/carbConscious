@@ -6,7 +6,7 @@
 - [ ] Create Database design
 - [ ] List out technologies and how they will be used
 - [ ] Ensure project is ready for Checkpoint #1 (Problem Statement, project plan, screen design and time log pushed to GitHub)
-- [ ] 
+- [ ] Update log4j2.properties file for rolling file creation
 
 ### Week 4
 - [ ] Weekly journal entry
