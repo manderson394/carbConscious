@@ -45,3 +45,6 @@ Tasks Completed:
     * Create Log4J.properties file
     * Create Project Plan 
 * Exercise 3
+
+While crating my wireframes, I realized that the original API for menus that I was expecting to use was no longer available (panic!).
+I was able to find this other API that still has the functionality I'm looking for: https://menuapi.xyz/docs

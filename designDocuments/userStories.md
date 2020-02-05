@@ -32,7 +32,7 @@ Any user should be able to review an page for more information on how to use the
 
 As a registered user, I should be able to add carbohydrate information about an item on a menu.
 
-### Edit Menu Items to My Favorites
+### Edit Menu Items for My Favorites
 
 As a registered user, I should be able to edit new or existing menu items for my list of favorites (add, modify, or delete).
 

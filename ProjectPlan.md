@@ -1,7 +1,7 @@
 ### Week 3
 - [ ] Weekly journal entry
 - [ ] Write project plan
-- [ ] Create screen mock-ups
+- [ ] Create screen mock-ups (all except for 'My Favorites' page)
 - [ ] Create application flow diagrams
 - [ ] Create Database design
 - [ ] List out technologies and how they will be used
@@ -17,6 +17,7 @@
 - [ ] Create user DAO unit tests
 - [ ] Set up logging
 - [ ] Prepare for week 5 peer design/code review
+- [ ] Finish mockup of 'My Favorites' view for wireframes after moqups.com approves my student account
 
 ### Week 5
 - [ ] Weekly journal entry
