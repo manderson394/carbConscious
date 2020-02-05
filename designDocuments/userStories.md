@@ -16,6 +16,10 @@ Any user should be able to search for a menu item to see what, if any, carbohydr
 
 Any user should be able to view a report of carbohydrate data for a particular menu item.
 
+### Search for Menus
+
+Any user should be able to search for restaurant menus.
+
 ### View Menu Items
 
 Any user should be able to view menu items for a particular restaurant.
@@ -31,3 +35,11 @@ As a registered user, I should be able to add carbohydrate information about an 
 ### Edit Menu Items to My Favorites
 
 As a registered user, I should be able to edit new or existing menu items for my list of favorites (add, modify, or delete).
+
+### Edit Profile
+
+As a registered user, I should be able to edit my profile settings.
+
+### Search for Restaurants Near the User (Stretch Goal)
+
+As a user, I should be able to search for restaurant menus near me using my location data.

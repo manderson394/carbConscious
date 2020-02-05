@@ -11,3 +11,4 @@
 |1/28/2020|Exercise 2 - Focus on front end CSS and JS|2|Most of the time was spent trying to resolve jQuery and Bootstrap issues|
 |1/29/2020|Readings for Week 3|1||
 |2/2/2020|Week 3 videos and demo work, Project Plan, Exercise 3|5.5||
+|2/3/2020|Wireframes|1.5||
