@@ -13,3 +13,4 @@
 |2/2/2020|Week 3 videos and demo work, Project Plan, Exercise 3|5.5||
 |2/3/2020|Wireframes|1.5||
 |2/4/2020|Wireframes, Database Design Diagram|2.75||
+|2/6/2020|Week 4 readings and professional development project research|2||
