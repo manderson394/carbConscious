@@ -1,9 +1,9 @@
 ### Week 3
 - [ ] Weekly journal entry
 - [ ] Write project plan
-- [ ] Create screen mock-ups (all except for 'My Favorites' page)
-- [ ] Create application flow diagrams
-- [ ] Create Database design
+- [x] Create screen mock-ups
+- [x] Create application flow MarkDown
+- [x] Create Database design
 - [ ] List out technologies and how they will be used
 - [ ] Ensure project is ready for Checkpoint #1 (Problem Statement, project plan, screen design and time log pushed to GitHub)
 - [ ] Update log4j2.properties file for rolling file creation
@@ -17,7 +17,6 @@
 - [ ] Create user DAO unit tests
 - [ ] Set up logging
 - [ ] Prepare for week 5 peer design/code review
-- [ ] Finish mockup of 'My Favorites' view for wireframes after moqups.com approves my student account
 
 ### Week 5
 - [ ] Weekly journal entry
