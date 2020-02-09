@@ -1,4 +1,4 @@
-# Matt Anderson Individual Project - CarbConscious
+# Matt Anderson's Individual Project - CarbConscious
 
 This repository contains information and code for the CarbConscious web application.
 
@@ -33,10 +33,10 @@ The goal is to provide improved carbohydrate information for better insulin inje
 ### Design
 
 * [User Stories](designDocuments/userStories.md)
-* [Screen Design]()
-* [Application Flow]()
-* [Database Design]()
+* [Screen Design](designDocuments/screenDesigns.md)
+* [Application Flow](designDocuments/applicationFlow.md)
+* [Database Design](designDocuments/databaseDiagram.png)
 
-### [Project Plan]()
+### [Project Plan](ProjectPlan.md)
 
-### [Weekly Reflection]()
+### [Weekly Reflection](WeeklyReflection.md)
