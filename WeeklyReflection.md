@@ -48,3 +48,11 @@ Tasks Completed:
 
 While crating my wireframes, I realized that the original API for menus that I was expecting to use was no longer available (panic!).
 I was able to find this other API that still has the functionality I'm looking for: https://menuapi.xyz/docs
+
+It took me awhile to figure out my project plan. Though I now feel like I have a good idea of what the final product will look
+like, I can't be certain that I've outlined all of the steps that I'll need to complete. 
+
+I'm thinking a lot about my database and class setup in relationship to the API I'll be using for restaurants. I was intending
+not to save too much of that data into the database, but introducing favorites for users necessitates it to prevent data loss. The
+other aspect that has me wondering is creating a sort of average of the carbohydrate estimates from users. It doesn't make sense
+to calculate the average every time a user tries to view this data. It would be more efficient to calculate it once per day and cache it somehow.

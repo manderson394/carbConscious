@@ -16,17 +16,37 @@ The goal is to provide improved carbohydrate information for better insulin inje
 ### Project Technologies/Techniques
 
 * Security and Authentication
+    * Tomcat JDBC Realm Authentication
+    * Roles: Registered User, All
+    * Access:
+        * Registered User: add carbohydrate information, store favorites, and search for menus, menu items, and carbohydrate information
+        * All: search for menus, menu items, and carbohydrate information
 * Database
+    * MySQL
+    * Stores users, profiles, carbohydrate, and menu item information
 * ORM Framework
+    * Hibernate 5
 * Dependency Management
+    * Maven
 * Web Services Consumed Using Java
+    * XYZ Menu (?)
 * CSS
+    * Bootstrap
 * Data Validation
+    * JQuery Validation (?)
+    * Hibernate Validation (?)
 * Logging
+    * Log4J
 * Hosting
+    Amazon Web Services
 * Independent Research Topics
-* Project Lombok (?)
+    * Hibernate Validation (?)
+    * Project Lombok (?)
+    * AWS Code Pipeline (?)
+    * Enumerations
 * Unit Testing
+    * JUnit
+    * Achieve 80%+ code coverage
 * IDE
     * IntelliJ IDEA
 
