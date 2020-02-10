@@ -38,12 +38,15 @@ Aside from week 3 work, I really want to focus on rounding out my project design
 
 ### Week 3
 
-2/4/2020 - ### hours
+2/4/2020 - 10.75 hours
 
 Tasks Completed:
 * Individual Project:
     * Create Log4J.properties file
-    * Create Project Plan 
+    * Create Project Plan
+    * Page designs
+    * Database diagrams
+    * Application Flow document 
 * Exercise 3
 
 While crating my wireframes, I realized that the original API for menus that I was expecting to use was no longer available (panic!).
@@ -51,6 +54,16 @@ I was able to find this other API that still has the functionality I'm looking f
 
 It took me awhile to figure out my project plan. Though I now feel like I have a good idea of what the final product will look
 like, I can't be certain that I've outlined all of the steps that I'll need to complete. 
+
+
+### Week 4
+
+2/11/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * 
+* Exercise 4
 
 I'm thinking a lot about my database and class setup in relationship to the API I'll be using for restaurants. I was intending
 not to save too much of that data into the database, but introducing favorites for users necessitates it to prevent data loss. The
