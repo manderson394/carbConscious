@@ -47,6 +47,8 @@ The goal is to provide improved carbohydrate information for better insulin inje
 * Unit Testing
     * JUnit
     * Achieve 80%+ code coverage
+* Version Control
+    * Git and GitHub
 * IDE
     * IntelliJ IDEA
 
