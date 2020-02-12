@@ -58,14 +58,19 @@ like, I can't be certain that I've outlined all of the steps that I'll need to c
 
 ### Week 4
 
-2/11/2020 - ### hours
+2/11/2020 - 11.25 hours
 
 Tasks Completed:
 * Individual Project:
-    * 
-* Exercise 4
+    * Add hibernate dependencies
+    * Complete design documents and problem statements for Checkpoint #1
 
 I'm thinking a lot about my database and class setup in relationship to the API I'll be using for restaurants. I was intending
 not to save too much of that data into the database, but introducing favorites for users necessitates it to prevent data loss. The
 other aspect that has me wondering is creating a sort of average of the carbohydrate estimates from users. It doesn't make sense
 to calculate the average every time a user tries to view this data. It would be more efficient to calculate it once per day and cache it somehow.
+After chatting about this with Paula, I'm got explore calculating the average carbs for a given menu item on the fly at first, only loading 
+the items that appear on the user's screen (if multiple pages to a table). 
+
+Now that I'm beginning work on the code for my project, I definitely am finding that I'm running into more questions than I would have expected.
+Mostly, they're design questions that I'm used to talking with folks in R&D about at work; it's a little bit of a change in mindset without that resource.

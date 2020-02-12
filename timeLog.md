@@ -16,4 +16,4 @@
 |2/6/2020|Week 4 readings and professional development project research|2||
 |2/8/2020|Week 4 videos and coding along with demo (plus troubleshooting)|3||
 |2/9/2020|Finish week 4 videos and demo work, add page and database designs to project, create applicationFlow.md, create screenDesigns.md, refine ProjectPlan.md, update WeeklyReflection.md, list out technology usage, update log4j2.properties file|4.75||
-|||||
+|2/11/2020|Begin work on Exercise 4, update project for hibernate usage, update WeeklyReflection.md|1.5||
