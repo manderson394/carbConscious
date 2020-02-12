@@ -14,7 +14,7 @@ As a registered user, if I forget my password, I should be able to use the Login
 
 ### Find Carbohydrates for Menu Items
 
-Any user should be able to search for a menu item to see what, if any, carbohydrate data exists for that item.
+Any user should be able to search the API for a menu item to see what, if any, carbohydrate data exists for that item.
 
 ### View Carbohydrates for Menu Items
 
@@ -22,11 +22,11 @@ Any user should be able to view a report of carbohydrate data for a particular m
 
 ### Search for Menus
 
-Any user should be able to search for restaurant menus.
+Any user should be able to search for restaurant menus from the API.
 
 ### View Menu Items
 
-Any user should be able to view menu items for a particular restaurant.
+Any user should be able to view menu items for a particular restaurant from data from the API.
 
 ### About
 
@@ -38,7 +38,8 @@ As a registered user, I should be able to add carbohydrate information about an 
 
 ### Edit Menu Items for My Favorites
 
-As a registered user, I should be able to edit new or existing menu items for my list of favorites (add, modify, or delete).
+As a registered user, I should be able to edit my favorites list by adding new items from the API or editing existing menu items for my list of favorites (add, modify, or delete). 
+I cannot "free text" my own menu items (future enhancement not a part of this project).
 
 ### Edit Profile
 
