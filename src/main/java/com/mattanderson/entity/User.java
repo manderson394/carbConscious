@@ -1,4 +1,4 @@
-package com.mattanderson;
+package com.mattanderson.entity;
 
 public class User {
 
