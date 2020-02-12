@@ -1,4 +1,4 @@
-package com.mattanderson.entity;
+package com.mattanderson.carbConscious.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
