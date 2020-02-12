@@ -8,6 +8,10 @@ As a new user, I'll create an account to add new carbohydrate information for a 
 
 As a registered user, I want to log on so I can add new carbohydrate information for a restaurant's menu item or add/edit my favorite menu items.
 
+### Retrieve Lost Login Information
+
+As a registered user, if I forget my password, I should be able to use the Login screen to request my login information (username and password) securely.
+
 ### Find Carbohydrates for Menu Items
 
 Any user should be able to search for a menu item to see what, if any, carbohydrate data exists for that item.

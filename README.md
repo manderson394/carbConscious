@@ -29,7 +29,9 @@ The goal is to provide improved carbohydrate information for better insulin inje
 * Dependency Management
     * Maven
 * Web Services Consumed Using Java
-    * XYZ Menu (?)
+    * XYZ Menu
+    * JavaMail (?)
+    * IP Geo Location (? - Stretch Goal)
 * CSS
     * Bootstrap
 * Data Validation
