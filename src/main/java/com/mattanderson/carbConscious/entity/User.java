@@ -44,31 +44,43 @@ public class User {
     /**
      * Instantiates a new User.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param userName  the user name
+     * @param firstName        the first name
+     * @param lastName         the last name
+     * @param userName         the user name
+     * @param password         the password
+     * @param creationDateTime the creation date time
+     * @param updateDateTime   the update date time
      */
-    public User(String firstName, String lastName, String userName) {
+    public User(String firstName, String lastName, String userName, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
+        this.password = password;
+        this.creationDateTime = creationDateTime;
+        this.updateDateTime = updateDateTime;
     }
 
     /**
      * Instantiates a new User.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param userName  the user name
-     * @param id        the id
+     * @param id               the id
+     * @param firstName        the first name
+     * @param lastName         the last name
+     * @param userName         the user name
+     * @param password         the password
+     * @param creationDateTime the creation date time
+     * @param updateDateTime   the update date time
      */
-    public User(String firstName, String lastName, String userName, int id) {
+    public User(int id, String firstName, String lastName, String userName, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.id = id;
+        this.password = password;
+        this.creationDateTime = creationDateTime;
+        this.updateDateTime = updateDateTime;
     }
 
     /**
