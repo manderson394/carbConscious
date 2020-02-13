@@ -22,6 +22,8 @@ public class User {
     private String lastName;
     @Column(name = "user_name")
     private String userName;
+    @Column(name = "password")
+    private String password;
     //@Column(name = "user_role_id")
     //private List<UserRole> userRoles; //Touched base with Paula -- likely need this to be a list of objects -- comment out for Exercise 4
 
@@ -132,6 +134,24 @@ public class User {
      */
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    /**
+     * Gets password.
+     *
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Sets password.
+     *
+     * @param password the password
+     */
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
