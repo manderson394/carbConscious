@@ -2,9 +2,11 @@ package com.mattanderson.carbConscious.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * Defines a User object to represent a registered user.
+ *
  * @author Matt Anderson
  * @version 11
  */
@@ -26,6 +28,11 @@ public class User {
     private String password;
     //@Column(name = "user_role_id")
     //private List<UserRole> userRoles; //Touched base with Paula -- likely need this to be a list of objects -- comment out for Exercise 4
+    @Column(name = "creation_datetime")
+    private LocalDateTime creationDateTime;
+    @Column(name = "update_datetime")
+    private LocalDateTime updateDateTime;
+
 
     /**
      * Instantiates a new User.
@@ -152,6 +159,42 @@ public class User {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * Gets creation date time.
+     *
+     * @return the creation date time
+     */
+    public LocalDateTime getCreationDateTime() {
+        return creationDateTime;
+    }
+
+    /**
+     * Sets creation date time.
+     *
+     * @param creationDateTime the creation date time
+     */
+    public void setCreationDateTime(LocalDateTime creationDateTime) {
+        this.creationDateTime = creationDateTime;
+    }
+
+    /**
+     * Gets update date time.
+     *
+     * @return the update date time
+     */
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    /**
+     * Sets update date time.
+     *
+     * @param updateDateTime the update date time
+     */
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
     }
 
     @Override
