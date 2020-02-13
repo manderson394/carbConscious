@@ -17,8 +17,8 @@ public class User {
     private String lastName;
     @Column(name = "user_name")
     private String userName;
-    @Column(name = "user_role_id")
-    private int userRoleId; //Should I create user role if there isn't any distinction at this point? Should it be an object?
+    //@Column(name = "user_role_id")
+    //private List<UserRole> userRoles; //Touched base with Paula -- likely need this to be a list of objects -- comment out for Exercise 4
 
 
 
