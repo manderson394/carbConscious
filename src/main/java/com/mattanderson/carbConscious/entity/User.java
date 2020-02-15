@@ -25,6 +25,8 @@ public class User {
     private String lastName;
     @Column(name = "user_name")
     private String userName;
+    @Column(name = "email")
+    private String email;
     @Column(name = "password")
     private String password;
     //@Column(name = "user_role_id")
@@ -48,15 +50,17 @@ public class User {
      * @param firstName        the first name
      * @param lastName         the last name
      * @param userName         the user name
+     * @param email            the user email
      * @param password         the password
      * @param creationDateTime the creation date time
      * @param updateDateTime   the update date time
      */
-    public User(String firstName, String lastName, String userName, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
+    public User(String firstName, String lastName, String userName, String email,String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
+        this.email = email;
         this.password = password;
         this.creationDateTime = creationDateTime;
         this.updateDateTime = updateDateTime;
@@ -69,16 +73,18 @@ public class User {
      * @param firstName        the first name
      * @param lastName         the last name
      * @param userName         the user name
+     * @param email            the user email
      * @param password         the password
      * @param creationDateTime the creation date time
      * @param updateDateTime   the update date time
      */
-    public User(int id, String firstName, String lastName, String userName, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
+    public User(int id, String firstName, String lastName, String userName, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
+        this.email = email;
         this.password = password;
         this.creationDateTime = creationDateTime;
         this.updateDateTime = updateDateTime;
@@ -157,6 +163,24 @@ public class User {
     }
 
     /**
+     * Gets user email.
+     *
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Sets user email.
+     *
+     * @param email the email
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
      * Gets password.
      *
      * @return the password
@@ -217,6 +241,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", creationDateTime=" + creationDateTime +
                 ", updateDateTime=" + updateDateTime +
@@ -232,6 +257,7 @@ public class User {
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
                 Objects.equals(userName, user.userName) &&
+                Objects.equals(email, user.email) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(creationDateTime, user.creationDateTime) &&
                 Objects.equals(updateDateTime, user.updateDateTime);
@@ -239,6 +265,6 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, userName, password, creationDateTime, updateDateTime);
+        return Objects.hash(id, firstName, lastName, userName, email, password, creationDateTime, updateDateTime);
     }
 }

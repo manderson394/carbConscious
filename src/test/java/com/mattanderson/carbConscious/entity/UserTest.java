@@ -21,8 +21,8 @@ class UserTest {
      */
     @BeforeEach
     void generateUser() {
-        user = new User(1, "Matt", "Anderson", "mattanderson", "test1",
-                LocalDateTime.of(2020, 1, 1, 1, 1),
+        user = new User(1, "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+                "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
     }
 
@@ -156,6 +156,7 @@ class UserTest {
                 ", firstName='" + user.getFirstName() + '\'' +
                 ", lastName='" + user.getLastName() + '\'' +
                 ", userName='" + user.getUserName() + '\'' +
+                ", email='" + user.getEmail() + '\'' +
                 ", password='" + user.getPassword() + '\'' +
                 ", creationDateTime=" + user.getCreationDateTime() +
                 ", updateDateTime=" + user.getUpdateDateTime() +
