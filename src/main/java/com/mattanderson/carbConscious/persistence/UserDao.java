@@ -15,6 +15,8 @@ import java.util.List;
 /**
  * Facilitates transactions between the web application and the database for the <code>User</code>
  * class (data access object).
+ * @author Matt Anderson
+ * @version 11
  */
 public class UserDao {
 
