@@ -38,7 +38,7 @@ public class UserDao {
 
     /**
      * Gets a User from the database depending on the user property and criteria passed in.
-     * THis should be used to search for a user by email or username.
+     * This should be used to search for a user by email or username.
      *
      * @param propertyName  the property name
      * @param propertyValue the property value
@@ -67,7 +67,9 @@ public class UserDao {
      */
     public void saveOrUpdate(User user) {
         Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(user);
+        transaction.commit();
         session.close();
     }
 
