@@ -15,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserTest {
 
     private User user;
+    private User newUser;
 
     /**
      * Generate user for each unit test.
@@ -22,6 +23,9 @@ class UserTest {
     @BeforeEach
     void generateUser() {
         user = new User(1, "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+                "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
+                LocalDateTime.of(2020, 2, 2, 2, 2));
+        newUser = new User(2, "Matt", "Anderson", "mattanderson", "matt@gmail.com",
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
     }
@@ -32,6 +36,7 @@ class UserTest {
      */
     @Test
     void getIdSuccess() {
+        assertNotNull(user.getId());
         assertEquals(1, user.getId());
     }
 
@@ -41,6 +46,7 @@ class UserTest {
     @Test
     void setIdSuccess() {
         user.setId(2);
+        assertNotNull(user.getId());
         assertEquals(2, user.getId());
     }
 
@@ -49,6 +55,7 @@ class UserTest {
      */
     @Test
     void getFirstNameSuccess() {
+        assertNotNull(user.getFirstName());
         assertEquals("Matt", user.getFirstName());
     }
 
@@ -58,6 +65,7 @@ class UserTest {
     @Test
     void setFirstNameSuccess() {
         user.setFirstName("Drew");
+        assertNotNull(user.getFirstName());
         assertEquals("Drew", user.getFirstName());
     }
 
@@ -66,6 +74,7 @@ class UserTest {
      */
     @Test
     void getLastNameSuccess() {
+        assertNotNull(user.getLastName());
         assertEquals("Anderson", user.getLastName());
     }
 
@@ -75,6 +84,7 @@ class UserTest {
     @Test
     void setLastNameSuccess() {
         user.setLastName("Peterson");
+        assertNotNull(user.getLastName());
         assertEquals("Peterson", user.getLastName());
     }
 
@@ -83,6 +93,7 @@ class UserTest {
      */
     @Test
     void getUserNameSuccess() {
+        assertNotNull(user.getUserName());
         assertEquals("mattanderson", user.getUserName());
     }
 
@@ -92,6 +103,7 @@ class UserTest {
     @Test
     void setUserNameSuccess() {
         user.setUserName("drewPeterson");
+        assertNotNull(user.getUserName());
         assertEquals("drewPeterson", user.getUserName());
     }
 
@@ -100,6 +112,7 @@ class UserTest {
      */
     @Test
     void getPasswordSuccess() {
+        assertNotNull(user.getPassword());
         assertEquals("test1", user.getPassword());
     }
 
@@ -109,6 +122,7 @@ class UserTest {
     @Test
     void setPasswordSuccess() {
         user.setPassword("test2");
+        assertNotNull(user.getPassword());
         assertEquals("test2", user.getPassword());
     }
 
@@ -117,6 +131,7 @@ class UserTest {
      */
     @Test
     void getCreationDateTimeSuccess() {
+        assertNotNull(user.getCreationDateTime());
         assertEquals(LocalDateTime.of(2020, 1, 1, 1, 1), user.getCreationDateTime());
     }
 
@@ -126,6 +141,7 @@ class UserTest {
     @Test
     void setCreationDateTimeSuccess() {
         user.setCreationDateTime(LocalDateTime.of(2020, 1, 1, 1, 23));
+        assertNotNull(user.getCreationDateTime());
         assertEquals(LocalDateTime.of(2020, 1, 1, 1, 23), user.getCreationDateTime());
     }
 
@@ -134,6 +150,7 @@ class UserTest {
      */
     @Test
     void getUpdateDateTimeSuccess() {
+        assertNotNull(user.getUpdateDateTime());
         assertEquals(LocalDateTime.of(2020, 2, 2, 2, 2), user.getUpdateDateTime());
     }
 
@@ -143,6 +160,7 @@ class UserTest {
     @Test
     void setUpdateDateTimeSuccess() {
         user.setUpdateDateTime(LocalDateTime.of(2020, 2, 2, 2, 34));
+        assertNotNull(user.getUpdateDateTime());
         assertEquals(LocalDateTime.of(2020, 2, 2, 2, 34), user.getUpdateDateTime());
     }
 
@@ -162,5 +180,23 @@ class UserTest {
                 ", updateDateTime=" + user.getUpdateDateTime() +
                 '}';
         assertEquals(expectedToString, user.toString());
+    }
+
+    /**
+     * Validates the user <code>equals</code> method works as expected.
+     */
+    @Test
+    void testEqualsSuccess() {
+        assertEquals(user, user);
+        assertNotEquals(user, newUser);
+    }
+
+    /**
+     * Validates the user <code>hashCode</code> method behaves as expected.
+     */
+    @Test
+    void testHashCodeSuccess() {
+        assertEquals(user.hashCode(), user.hashCode());
+        assertNotEquals(user.hashCode(), newUser.hashCode());
     }
 }
