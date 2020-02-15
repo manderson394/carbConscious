@@ -216,6 +216,9 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", creationDateTime=" + creationDateTime +
+                ", updateDateTime=" + updateDateTime +
                 '}';
     }
 }

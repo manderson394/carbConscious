@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -36,7 +35,6 @@ public class Database implements PropertiesLoader {
 
     }
 
-    // TODO use properties loader (interface from adv java)
     private void loadProperties() {
         properties = loadProperties("/database.properties");
 
