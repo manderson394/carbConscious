@@ -3,6 +3,7 @@ package com.mattanderson.carbConscious.entity;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * Defines a User object to represent a registered user.
@@ -220,5 +221,24 @@ public class User {
                 ", creationDateTime=" + creationDateTime +
                 ", updateDateTime=" + updateDateTime +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(userName, user.userName) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(creationDateTime, user.creationDateTime) &&
+                Objects.equals(updateDateTime, user.updateDateTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, userName, password, creationDateTime, updateDateTime);
     }
 }
