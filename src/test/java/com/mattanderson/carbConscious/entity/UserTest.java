@@ -7,10 +7,18 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests the <code>User</code> java class.
+ * @author Matt Anderson
+ * @version 11
+ */
 class UserTest {
 
     private User user;
 
+    /**
+     * Generate user for each unit test.
+     */
     @BeforeEach
     void generateUser() {
         user = new User(1, "Matt", "Anderson", "mattanderson", "test1",
@@ -19,85 +27,130 @@ class UserTest {
     }
 
 
+    /**
+     * Validates successful ability to retrieve the user Id.
+     */
     @Test
-    void getId() {
+    void getIdSuccess() {
         assertEquals(1, user.getId());
     }
 
+    /**
+     * Validates successful ability to set the user Id.
+     */
     @Test
-    void setId() {
+    void setIdSuccess() {
         user.setId(2);
         assertEquals(2, user.getId());
     }
 
+    /**
+     * Validates successful ability to get the user first name.
+     */
     @Test
-    void getFirstName() {
+    void getFirstNameSuccess() {
         assertEquals("Matt", user.getFirstName());
     }
 
+    /**
+     * Validates successful ability to set the user first name.
+     */
     @Test
-    void setFirstName() {
+    void setFirstNameSuccess() {
         user.setFirstName("Drew");
         assertEquals("Drew", user.getFirstName());
     }
 
+    /**
+     * Validates successful ability to get the user last name.
+     */
     @Test
-    void getLastName() {
+    void getLastNameSuccess() {
         assertEquals("Anderson", user.getLastName());
     }
 
+    /**
+     * Validates successful ability to set the user last name.
+     */
     @Test
-    void setLastName() {
+    void setLastNameSuccess() {
         user.setLastName("Peterson");
         assertEquals("Peterson", user.getLastName());
     }
 
+    /**
+     * Validates successful ability too get the user name.
+     */
     @Test
-    void getUserName() {
+    void getUserNameSuccess() {
         assertEquals("mattanderson", user.getUserName());
     }
 
+    /**
+     * Validates successful ability to set the user name.
+     */
     @Test
-    void setUserName() {
+    void setUserNameSuccess() {
         user.setUserName("drewPeterson");
         assertEquals("drewPeterson", user.getUserName());
     }
 
+    /**
+     * Validates successful ability to get the user password.
+     */
     @Test
-    void getPassword() {
+    void getPasswordSuccess() {
         assertEquals("test1", user.getPassword());
     }
 
+    /**
+     * Validates the successful ability to set the user password.
+     */
     @Test
-    void setPassword() {
+    void setPasswordSuccess() {
         user.setPassword("test2");
         assertEquals("test2", user.getPassword());
     }
 
+    /**
+     * Validates the successful ability to get the user creation date time.
+     */
     @Test
-    void getCreationDateTime() {
+    void getCreationDateTimeSuccess() {
         assertEquals(LocalDateTime.of(2020, 1, 1, 1, 1), user.getCreationDateTime());
     }
 
+    /**
+     * Validates the successful ability to set the user creation date time.
+     */
     @Test
-    void setCreationDateTime() {
+    void setCreationDateTimeSuccess() {
         user.setCreationDateTime(LocalDateTime.of(2020, 1, 1, 1, 23));
         assertEquals(LocalDateTime.of(2020, 1, 1, 1, 23), user.getCreationDateTime());
     }
 
+    /**
+     * Validates the successful ability to get the user update date time.
+     */
     @Test
-    void getUpdateDateTime() {
+    void getUpdateDateTimeSuccess() {
         assertEquals(LocalDateTime.of(2020, 2, 2, 2, 2), user.getUpdateDateTime());
     }
 
+    /**
+     * Validates the successful ability to set the user update date time.
+     */
     @Test
-    void setUpdateDateTime() {
+    void setUpdateDateTimeSuccess() {
         user.setUpdateDateTime(LocalDateTime.of(2020, 2, 2, 2, 34));
         assertEquals(LocalDateTime.of(2020, 2, 2, 2, 34), user.getUpdateDateTime());
     }
 
+    /**
+     * Validates the user <code>toString</code> method.
+     */
     @Test
-    void testToString() {
+    void testToStringSuccess() {
         String expectedToString = "User{" +
                 "id=" + user.getId() +
                 ", firstName='" + user.getFirstName() + '\'' +
