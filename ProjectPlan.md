@@ -9,12 +9,12 @@
 - [x] Update log4j2.properties file for rolling file creation
 
 ### Week 4
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
 - [ ] Create database tables
-- [ ] Create the user class and annotate for hibernate
-- [ ] Create the user DAO
-- [ ] Create the test database
-- [ ] Create user DAO unit tests
+- [x] Create the user class and annotate for hibernate
+- [x] Create the user DAO
+- [x] Create the test database
+- [x] Create user DAO unit tests
 - [ ] Set up logging
 - [ ] Prepare for week 5 peer design/code review
 
