@@ -2,6 +2,7 @@ package com.mattanderson.carbConscious.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -24,10 +25,12 @@ public class User {
     @Column (name = "last_name")
     private String lastName;
     @Column(name = "user_name")
+    @NotNull
     private String userName;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
+    @NotNull
     private String password;
     //@Column(name = "user_role_id")
     //private List<UserRole> userRoles; //Touched base with Paula -- likely need this to be a list of objects -- comment out for Exercise 4
