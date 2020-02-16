@@ -1,4 +1,4 @@
-DELETE FROM USERS;
+# Insert data into the USERS Table
 INSERT INTO USERS VALUES (1, 'Matt', 'Anderson', 'mattanderson', 'matt@gmail.com', 'testing', '2020-1-1', '2020-1-2');
 INSERT INTO USERS VALUES (2, 'Drew', 'Peterson', 'drewPeterson', 'drew@madisoncollege.edu', 'testing1', '2020-1-4', '2020-1-5');
 INSERT INTO USERS VALUES (3, 'Nicole', 'Sannes', 'nicoleSannes', 'nicole@aol.com', 'testing2', '2020-1-7', '2020-1-8');

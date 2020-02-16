@@ -5,7 +5,6 @@ import com.mattanderson.carbConscious.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,11 +15,13 @@ class UserDaoTest {
     private UserDao dao;
     private User expectedUser;
 
+    //TODO address failing unit tests. Error with .sql files
     @BeforeEach
     void setUp() {
         dao = new UserDao();
         Database database = Database.getInstance();
-        database.runSQL("cleanUserDB.sql");
+        database.runSQL("cleanDB.sql");
+        database.runSQL("insertData.sql");
 
         expectedUser = new User(1, "Matt", "Anderson", "mattanderson",
                 "matt@gmail.com", "testing",
