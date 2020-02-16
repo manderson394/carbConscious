@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,6 +32,16 @@ class UserTest {
     }
 
 
+    /**
+     * Validates successful user object creation without specifying an id.
+     */
+    @Test
+    void userCreationWithoutId() {
+        User userNoId = new User( "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+                "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
+                LocalDateTime.of(2020, 2, 2, 2, 2));
+        assertNotNull(userNoId);
+    }
     /**
      * Validates successful ability to retrieve the user Id.
      */
@@ -105,6 +116,25 @@ class UserTest {
         user.setUserName("drewPeterson");
         assertNotNull(user.getUserName());
         assertEquals("drewPeterson", user.getUserName());
+    }
+
+    /**
+     * Validates successful ability to get user email.
+     */
+    @Test
+    void getEmailSuccess() {
+        assertNotNull(user.getEmail());
+        assertEquals("matt@gmail.com", user.getEmail());
+    }
+
+    /**
+     * Validates successful ability to set user email.
+     */
+    @Test
+    void setEmailSuccess() {
+        user.setEmail("test@aol.com");
+        assertNotNull(user.getEmail());
+        assertEquals("test@aol.com", user.getEmail());
     }
 
     /**
