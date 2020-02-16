@@ -15,7 +15,6 @@ class UserDaoTest {
     private UserDao dao;
     private User expectedUser;
 
-    //TODO address failing unit tests. Error with .sql files
     @BeforeEach
     void setUp() {
         dao = new UserDao();
