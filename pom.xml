@@ -26,6 +26,7 @@
     <maven-surefire-plugin-version>2.19</maven-surefire-plugin-version>
     <hibernate-version>5.4.4.Final</hibernate-version>
     <hibernate-validator-version>6.1.2.Final</hibernate-validator-version>
+    <hibernate-validator-annotation-processor-version>6.1.2.Final</hibernate-validator-annotation-processor-version>
   </properties>
   <dependencies>
     <dependency>
@@ -92,11 +93,16 @@
       <artifactId>hibernate-c3p0</artifactId>
       <version>${hibernate-version}</version>
     </dependency>
-    <!-- Next dependency for Hibernate Validator-->
+    <!-- Next 2 dependencies for Hibernate Validator-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
       <version>${hibernate-validator-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator-annotation-processor</artifactId>
+      <version>${hibernate-validator-annotation-processor-version}</version>
     </dependency>
   </dependencies>
   <build>
