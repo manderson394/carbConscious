@@ -10,11 +10,19 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests the <code>UserDao</code> class code.
+ * @author Matt Anderson
+ * @version 11
+ */
 class UserDaoTest {
 
     private UserDao dao;
     private User expectedUser;
 
+    /**
+     * Sets up the instance variables and cleans the database before each test.
+     */
     @BeforeEach
     void setUp() {
         dao = new UserDao();
@@ -28,6 +36,9 @@ class UserDaoTest {
                 LocalDateTime.of(2020, 1, 2, 0, 0));
     }
 
+    /**
+     * Validates the get by id is successful.
+     */
     @Test
     void getByIdSuccess() {
         User actualUser = dao.getById(1);
@@ -36,6 +47,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Validates the get by property value is successful.
+     */
     @Test
     void getByPropertyEqualSuccess() {
         List<User> users = dao.getByPropertyEqual("userName", "mattanderson");
@@ -45,6 +59,9 @@ class UserDaoTest {
         }
     }
 
+    /**
+     * Validates save or update is successful.
+     */
     @Test
     void saveOrUpdateSuccess() {
         User updatedUser = new User(1, "Matt", "Peterson", "mattanderson",
@@ -57,6 +74,9 @@ class UserDaoTest {
         assertEquals(updatedUser, actualUser);
     }
 
+    /**
+     * Validates insert is successful.
+     */
     @Test
     void insertSuccess() {
         User insertUser = new User( "Mike", "Anderson", "mikeAnd23", "mike@yahoo.com", "234(3L!",
@@ -70,6 +90,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Validates delete is successful.
+     */
     @Test
     void deleteSuccess() {
         dao.delete(dao.getById(1));
