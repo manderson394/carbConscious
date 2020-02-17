@@ -74,3 +74,17 @@ the items that appear on the user's screen (if multiple pages to a table).
 
 Now that I'm beginning work on the code for my project, I definitely am finding that I'm running into more questions than I would have expected.
 Mostly, they're design questions that I'm used to talking with folks in R&D about at work; it's a little bit of a change in mindset without that resource.
+
+### Week 5
+
+2/18/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Create USERS Table
+    * Create User, UserDao, UserDaoTest, and PropertiesLoader 
+    * Set up test directory for JUnit tests with MySQL database
+* Exercise 4
+
+
+

@@ -20,8 +20,9 @@
 
 ### Week 5
 - [ ] Weekly journal entry
+- [ ] Create Generic DAO class
 - [ ] Create template for all JSPs using bootstrap (or materialize)
-- [ ] Create the profile class (table, entity, DAO (might be repetitive -- refactor), unit tests)
+- [ ] Create the profile and role classes (table, entity, DAO (might be repetitive -- refactor), unit tests)
 - [ ] Add JSP to sign up a user
 - [ ] Add JSP to create a user profile
 - [ ] Build a home page JSP
