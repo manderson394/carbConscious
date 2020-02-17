@@ -19,4 +19,4 @@
 |2/11/2020|Begin work on Exercise 4, update project for hibernate usage, update WeeklyReflection.md|1.5||
 |2/12/2020|Continue work on Exercise 4, research database creation, update the databaseDiagram.png many times|2||
 |2/15/2020|Complete Exercise 4 (creates User, UserDao, and unit tests for those classes in the project|5||
-|2/16/2020|Review Hibernate Validator documentation and start presentation, Week 5 videos|3.5||
+|2/16/2020|Review Hibernate Validator documentation and start presentation, Week 5 videos, troubleshoot Hibernate Validator Dependency|5.5||
