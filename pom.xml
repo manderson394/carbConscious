@@ -94,11 +94,11 @@
       <version>${hibernate-version}</version>
     </dependency>
     <!-- Next 2 dependencies for Hibernate Validator-->
-    <dependency>
+   <!--<dependency> TODO Resolve issue with Hibernate Validator Dependency
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
       <version>${hibernate-validator-version}</version>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator-annotation-processor</artifactId>
