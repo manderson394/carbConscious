@@ -85,6 +85,7 @@ Tasks Completed:
     * Create User, UserDao, UserDaoTest, and PropertiesLoader 
     * Set up test directory for JUnit tests with MySQL database
 * Exercise 4
+* Professional Development Activity
 
 
 
