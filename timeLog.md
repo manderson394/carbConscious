@@ -21,3 +21,4 @@
 |2/15/2020|Complete Exercise 4 (creates User, UserDao, and unit tests for those classes in the project|5||
 |2/16/2020|Review Hibernate Validator documentation and start presentation, Week 5 videos, troubleshoot Hibernate Validator Dependency|5.5||
 |2/17/2020|Finish Professional Development PPT, upload presentation materials and prepare README.md for presentation day|3||
+|2/18/2020|Begin UserRole to my project for Exercise 5, Weekly Reflection, project strategy with Paula|1||
