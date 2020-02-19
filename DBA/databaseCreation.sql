@@ -26,7 +26,7 @@ create table USER_ROLES
     id int auto_increment,
     role_name varchar(255) null,
     user_name varchar(255) not null,
-    created_at datetime not null,
+    creation_datetime datetime not null,
     constraint USER_ROLES_pk
         primary key (id),
     constraint USER_ROLES_USERS_user_name_fk

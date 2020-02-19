@@ -4,7 +4,9 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Defines a User object to represent a registered user.
@@ -32,12 +34,12 @@ public class User {
     @Column(name = "password")
     @NotNull
     private String password;
-    //@Column(name = "user_role_id")
-    //private List<UserRole> userRoles; //Touched base with Paula -- likely need this to be a list of objects -- comment out for Exercise 4
     @Column(name = "creation_datetime")
     private LocalDateTime creationDateTime;
     @Column(name = "update_datetime")
     private LocalDateTime updateDateTime;
+
+    private Set<UserRole> roles = new HashSet<>();
 
 
     /**
