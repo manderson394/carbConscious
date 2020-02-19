@@ -77,7 +77,7 @@ Mostly, they're design questions that I'm used to talking with folks in R&D abou
 
 ### Week 5
 
-2/18/2020 - ### hours
+2/18/2020 - 17 hours
 
 Tasks Completed:
 * Individual Project:
@@ -86,6 +86,16 @@ Tasks Completed:
     * Set up test directory for JUnit tests with MySQL database
 * Exercise 4
 * Professional Development Activity
+
+This week seemed like it flew on by! I spent the majority of my time working on my Professional Development Project and 
+getting Hibernate Validator setup in my project. The version not pulling in dependencies correctly caused quite a problem with
+my User DAO unit tests!
+
+Given all of th time spent on my project and troubleshooting, I'm a bit concerned about staying on track with my project plan; 
+there's A LOT to do this week. I think it will be in my best interest to do Exercise 5 as a part of my project.
+__
+After chatting with Paula, I think I'm going to remove the PHI that I would be storing from my assignment--it really isn't
+adding value at this point, though it could be a cool idea for a second iteration. 
 
 
 
