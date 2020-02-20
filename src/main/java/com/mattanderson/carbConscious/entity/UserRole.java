@@ -8,6 +8,8 @@ import java.util.Objects;
 
 /**
  * Defines roles for members of the <code>User</code> class to help define access.
+ * @author Matt Anderson
+ * @version 11
  */
 public class UserRole {
 
