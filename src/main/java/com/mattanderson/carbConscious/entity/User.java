@@ -22,25 +22,29 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
+
     @Column(name = "first_name")
     private String firstName;
+
     @Column (name = "last_name")
     private String lastName;
-    @Column(name = "user_name")
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @NotNull
     private String userName;
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "password")
     @NotNull
     private String password;
+
     @Column(name = "creation_datetime")
     private LocalDateTime creationDateTime;
+
     @Column(name = "update_datetime")
     private LocalDateTime updateDateTime;
-
-    private Set<UserRole> roles = new HashSet<>();
-
 
     /**
      * Instantiates a new User.
