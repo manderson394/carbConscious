@@ -23,3 +23,4 @@
 |2/17/2020|Finish Professional Development PPT, upload presentation materials and prepare README.md for presentation day|3||
 |2/18/2020|Begin UserRole to my project for Exercise 5, Weekly Reflection, project strategy with Paula|1||
 |2/19/2020|Updates to User, UserDao, and UserRole, create GenericDao class, update hibernate config for USER_ROLE table|2||
+|2/21/2020|Exercise 5 troubleshooting|2.5||
