@@ -11,6 +11,8 @@ import java.util.Objects;
  * @author Matt Anderson
  * @version 11
  */
+@Entity(name = "UserRole")
+@Table(name = "USER_ROLES")
 public class UserRole {
 
     @Id
@@ -21,11 +23,14 @@ public class UserRole {
     @Column(name = "role_name")
     private String name;
 
-    @ManyToOne
+    @Column(name = "user_name")
     private String userName;
 
     @Column(name = "creation_datetime")
     private LocalDateTime creationDateTime;
+
+    @ManyToOne
+    private User user;
 
 
     /**
@@ -41,12 +46,14 @@ public class UserRole {
      * @param name             the name
      * @param userName         the user name
      * @param creationDateTime the creation date time
+     * @param user             the user
      */
-    public UserRole(String name, String userName, LocalDateTime creationDateTime) {
+    public UserRole(String name, String userName, LocalDateTime creationDateTime, User user) {
         this();
         this.name = name;
         this.userName = userName;
         this.creationDateTime = creationDateTime;
+        this.user = user;
     }
 
     /**
@@ -56,13 +63,15 @@ public class UserRole {
      * @param name             the name
      * @param userName         the user name
      * @param creationDateTime the creation date time
+     * @param user             the user
      */
-    public UserRole(int id, String name, String userName, LocalDateTime creationDateTime) {
+    public UserRole(int id, String name, String userName, LocalDateTime creationDateTime, User user) {
         this();
         this.id = id;
         this.name = name;
         this.userName = userName;
         this.creationDateTime = creationDateTime;
+        this.user = user;
     }
 
     /**
@@ -137,6 +146,24 @@ public class UserRole {
         this.creationDateTime = creationDateTime;
     }
 
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "UserRole{" +
@@ -144,6 +171,7 @@ public class UserRole {
                 ", name='" + name + '\'' +
                 ", userName='" + userName + '\'' +
                 ", creationDateTime=" + creationDateTime +
+                ", user=" + user +
                 '}';
     }
 
@@ -155,11 +183,12 @@ public class UserRole {
         return id == userRole.id &&
                 Objects.equals(name, userRole.name) &&
                 Objects.equals(userName, userRole.userName) &&
-                Objects.equals(creationDateTime, userRole.creationDateTime);
+                Objects.equals(creationDateTime, userRole.creationDateTime) &&
+                Objects.equals(user, userRole.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, userName, creationDateTime);
+        return Objects.hash(id, name, userName, creationDateTime, user);
     }
 }

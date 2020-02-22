@@ -29,9 +29,9 @@ public class User {
     @Column (name = "last_name")
     private String lastName;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @Column(name = "user_name")
     @NotNull
-    private Set<String> userNames;
+    private String userName;
 
     @Column(name = "email")
     private String email;
@@ -46,11 +46,14 @@ public class User {
     @Column(name = "update_datetime")
     private LocalDateTime updateDateTime;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<UserRole> roles;
+
     /**
      * Instantiates a new User.
      */
     public User() {
-        userNames = new HashSet<>();
+        roles = new HashSet<>();
     }
 
     /**
@@ -58,17 +61,17 @@ public class User {
      *
      * @param firstName        the first name
      * @param lastName         the last name
-     * @param userNames        the user names
+     * @param userName        the user name
      * @param email            the user email
      * @param password         the password
      * @param creationDateTime the creation date time
      * @param updateDateTime   the update date time
      */
-    public User(String firstName, String lastName, Set<String> userNames, String email,String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
+    public User(String firstName, String lastName, String userName, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userNames = userNames;
+        this.userName = userName;
         this.email = email;
         this.password = password;
         this.creationDateTime = creationDateTime;
@@ -81,22 +84,72 @@ public class User {
      * @param id               the id
      * @param firstName        the first name
      * @param lastName         the last name
-     * @param userNames        the user names
+     * @param userName        the user name
      * @param email            the user email
      * @param password         the password
      * @param creationDateTime the creation date time
      * @param updateDateTime   the update date time
      */
-    public User(int id, String firstName, String lastName, Set<String> userNames, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
+    public User(int id, String firstName, String lastName, String userName, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userNames = userNames;
+        this.userName = userName;
         this.email = email;
         this.password = password;
         this.creationDateTime = creationDateTime;
         this.updateDateTime = updateDateTime;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName        the first name
+     * @param lastName         the last name
+     * @param userName        the user name
+     * @param email            the user email
+     * @param password         the password
+     * @param creationDateTime the creation date time
+     * @param updateDateTime   the update date time
+     * @param roles            the roles
+     */
+    public User(String firstName, String lastName, String userName, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime, Set<UserRole> roles) {
+        this();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.creationDateTime = creationDateTime;
+        this.updateDateTime = updateDateTime;
+        this.roles = roles;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param id               the id
+     * @param firstName        the first name
+     * @param lastName         the last name
+     * @param userName        the user name
+     * @param email            the user email
+     * @param password         the password
+     * @param creationDateTime the creation date time
+     * @param updateDateTime   the update date time
+     * @param roles            the roles
+     */
+    public User(int id, String firstName, String lastName, String userName, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime, Set<UserRole> roles) {
+        this();
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.creationDateTime = creationDateTime;
+        this.updateDateTime = updateDateTime;
+        this.roles = roles;
     }
 
     /**
@@ -158,17 +211,17 @@ public class User {
      *
      * @return the user names
      */
-    public Set<String> getUserNames() {
-        return userNames;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * Sets user name.
      *
-     * @param userNames the user names
+     * @param userName the user names
      */
-    public void setUserNames(Set<String> userNames) {
-        this.userNames = userNames;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
@@ -243,13 +296,50 @@ public class User {
         this.updateDateTime = updateDateTime;
     }
 
+    /**
+     * Gets roles.
+     *
+     * @return the roles
+     */
+    public Set<UserRole> getRoles() {
+        return roles;
+    }
+
+    /**
+     * Sets roles.
+     *
+     * @param roles the roles
+     */
+    public void setRoles(Set<UserRole> roles) {
+        this.roles = roles;
+    }
+
+    /**
+     * Add role.
+     *
+     * @param role the role
+     */
+    public void addRole(UserRole role) {
+        roles.add(role);
+    }
+
+    /**
+     * Remove role.
+     *
+     * @param role the role
+     */
+    public void removeRole(UserRole role) {
+        roles.remove(role);
+        role.setUser(null);
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", userName='" + userNames + '\'' +
+                ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", creationDateTime=" + creationDateTime +
@@ -265,7 +355,7 @@ public class User {
         return id == user.id &&
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
-                Objects.equals(userNames, user.userNames) &&
+                Objects.equals(userName, user.userName) &&
                 Objects.equals(email, user.email) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(creationDateTime, user.creationDateTime) &&
@@ -274,6 +364,6 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, userNames, email, password, creationDateTime, updateDateTime);
+        return Objects.hash(id, firstName, lastName, userName, email, password, creationDateTime, updateDateTime);
     }
 }

@@ -13,10 +13,17 @@ class UserRoleTest {
 
     @BeforeEach
     void generateUserRole() {
+        User user = new User(1, "Matt", "Anderson", "mattanderson", "matt@gmail.com", "testing", LocalDateTime.of(2020,1,1,0,0),
+                LocalDateTime.of(2020, 1, 2, 0, 0));
         userRole = new UserRole(1,"User", "mattAnderson",
-                LocalDateTime.of(2020, 1, 1, 10, 23));
+                LocalDateTime.of(2020, 1, 1, 10, 23), user);
+        user.addRole(userRole);
+
+        User newUser = new User(3, "Nicole", "Sannes", "nicoleSannes", "nicole@aol.com", "testing2", LocalDateTime.of(2020, 1, 7, 0, 0),
+                LocalDateTime.of(2020, 1, 8, 0, 0));
         newRole = new UserRole("Admin", "nicoleSannes",
-                LocalDateTime.of(2020, 2, 10, 14, 54));
+                LocalDateTime.of(2020, 2, 10, 14, 54), newUser);
+        newUser.addRole(newRole);
     }
 
     @Test
@@ -79,6 +86,7 @@ class UserRoleTest {
                 ", name='" + userRole.getName() + '\'' +
                 ", userName='" + userRole.getUserName() + '\'' +
                 ", creationDateTime=" + userRole.getCreationDateTime() +
+                ", user=" + userRole.getUser() +
                 '}';
         assertNotNull(userRole.toString());
         assertEquals(expectedToString, userRole.toString());
