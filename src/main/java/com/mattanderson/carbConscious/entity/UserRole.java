@@ -27,6 +27,14 @@ public class UserRole {
     @Column(name = "creation_datetime")
     private LocalDateTime creationDateTime;
 
+
+    /**
+     * Instantiates a new User role.
+     */
+    public UserRole() {
+
+    }
+
     /**
      * Instantiates a new User role.
      *
@@ -35,6 +43,23 @@ public class UserRole {
      * @param creationDateTime the creation date time
      */
     public UserRole(String name, String userName, LocalDateTime creationDateTime) {
+        this();
+        this.name = name;
+        this.userName = userName;
+        this.creationDateTime = creationDateTime;
+    }
+
+    /**
+     * Instantiates a new User role.
+     *
+     * @param id               the id
+     * @param name             the name
+     * @param userName         the user name
+     * @param creationDateTime the creation date time
+     */
+    public UserRole(int id, String name, String userName, LocalDateTime creationDateTime) {
+        this();
+        this.id = id;
         this.name = name;
         this.userName = userName;
         this.creationDateTime = creationDateTime;
