@@ -31,7 +31,7 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @NotNull
-    private String userName;
+    private Set<String> userNames;
 
     @Column(name = "email")
     private String email;
@@ -50,7 +50,7 @@ public class User {
      * Instantiates a new User.
      */
     public User() {
-
+        userNames = new HashSet<>();
     }
 
     /**
@@ -58,17 +58,17 @@ public class User {
      *
      * @param firstName        the first name
      * @param lastName         the last name
-     * @param userName         the user name
+     * @param userNames        the user names
      * @param email            the user email
      * @param password         the password
      * @param creationDateTime the creation date time
      * @param updateDateTime   the update date time
      */
-    public User(String firstName, String lastName, String userName, String email,String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
+    public User(String firstName, String lastName, Set<String> userNames, String email,String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
+        this.userNames = userNames;
         this.email = email;
         this.password = password;
         this.creationDateTime = creationDateTime;
@@ -81,18 +81,18 @@ public class User {
      * @param id               the id
      * @param firstName        the first name
      * @param lastName         the last name
-     * @param userName         the user name
+     * @param userNames        the user names
      * @param email            the user email
      * @param password         the password
      * @param creationDateTime the creation date time
      * @param updateDateTime   the update date time
      */
-    public User(int id, String firstName, String lastName, String userName, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
+    public User(int id, String firstName, String lastName, Set<String> userNames, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
+        this.userNames = userNames;
         this.email = email;
         this.password = password;
         this.creationDateTime = creationDateTime;
@@ -156,19 +156,19 @@ public class User {
     /**
      * Gets user name.
      *
-     * @return the user name
+     * @return the user names
      */
-    public String getUserName() {
-        return userName;
+    public Set<String> getUserNames() {
+        return userNames;
     }
 
     /**
      * Sets user name.
      *
-     * @param userName the user name
+     * @param userNames the user names
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserNames(Set<String> userNames) {
+        this.userNames = userNames;
     }
 
     /**
@@ -249,7 +249,7 @@ public class User {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
+                ", userName='" + userNames + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", creationDateTime=" + creationDateTime +
@@ -265,7 +265,7 @@ public class User {
         return id == user.id &&
                 Objects.equals(firstName, user.firstName) &&
                 Objects.equals(lastName, user.lastName) &&
-                Objects.equals(userName, user.userName) &&
+                Objects.equals(userNames, user.userNames) &&
                 Objects.equals(email, user.email) &&
                 Objects.equals(password, user.password) &&
                 Objects.equals(creationDateTime, user.creationDateTime) &&
@@ -274,6 +274,6 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, userName, email, password, creationDateTime, updateDateTime);
+        return Objects.hash(id, firstName, lastName, userNames, email, password, creationDateTime, updateDateTime);
     }
 }

@@ -4,7 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,10 +25,15 @@ class UserTest {
      */
     @BeforeEach
     void generateUser() {
-        user = new User(1, "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+        Set<String> userUserNames = new HashSet<>();
+        userUserNames.add("mattanderson");
+        user = new User(1, "Matt", "Anderson", userUserNames, "matt@gmail.com",
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
-        newUser = new User(2, "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+
+        Set<String> newUserUserNames = new HashSet<>();
+        newUserUserNames.add("mattanderson");
+        newUser = new User(2, "Matt", "Anderson", newUserUserNames, "matt@gmail.com",
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
     }
@@ -36,8 +43,10 @@ class UserTest {
      * Validates successful user object creation without specifying an id.
      */
     @Test
-    void userCreationWithoutId() {
-        User userNoId = new User( "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+    void userCreationWithoutIdSuccess() {
+        Set<String> noIdUserUserNames = new HashSet<>();
+        noIdUserUserNames.add("mattanderson");
+        User userNoId = new User( "Matt", "Anderson", noIdUserUserNames, "matt@gmail.com",
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
         assertNotNull(userNoId);
@@ -104,8 +113,10 @@ class UserTest {
      */
     @Test
     void getUserNameSuccess() {
-        assertNotNull(user.getUserName());
-        assertEquals("mattanderson", user.getUserName());
+        Set<String> getUserNames = new HashSet<>();
+        getUserNames.add("mattanderson");
+        assertNotNull(user.getUserNames());
+        assertEquals(getUserNames, user.getUserNames());
     }
 
     /**
@@ -113,9 +124,11 @@ class UserTest {
      */
     @Test
     void setUserNameSuccess() {
-        user.setUserName("drewPeterson");
-        assertNotNull(user.getUserName());
-        assertEquals("drewPeterson", user.getUserName());
+        Set<String> setUserNames = new HashSet<>();
+        setUserNames.add("drewPeterson");
+        user.setUserNames(setUserNames);
+        assertNotNull(user.getUserNames());
+        assertEquals(setUserNames, user.getUserNames());
     }
 
     /**
@@ -203,7 +216,7 @@ class UserTest {
                 "id=" + user.getId() +
                 ", firstName='" + user.getFirstName() + '\'' +
                 ", lastName='" + user.getLastName() + '\'' +
-                ", userName='" + user.getUserName() + '\'' +
+                ", userName='" + user.getUserNames() + '\'' +
                 ", email='" + user.getEmail() + '\'' +
                 ", password='" + user.getPassword() + '\'' +
                 ", creationDateTime=" + user.getCreationDateTime() +

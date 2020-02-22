@@ -6,7 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,6 +21,7 @@ class UserDaoTest {
 
     private UserDao dao;
     private User expectedUser;
+    private GenericDao genericDao;
 
     /**
      * Sets up the instance variables and cleans the database before each test.
@@ -26,11 +29,15 @@ class UserDaoTest {
     @BeforeEach
     void setUp() {
         dao = new UserDao();
+        genericDao = new GenericDao(User.class);
         Database database = Database.getInstance();
         database.runSQL("cleanDB.sql");
         database.runSQL("insertData.sql");
 
-        expectedUser = new User(1, "Matt", "Anderson", "mattanderson",
+        Set<String> expectedUserNames = new HashSet<>();
+        expectedUserNames.add("mattanderson");
+
+        expectedUser = new User(1, "Matt", "Anderson", expectedUserNames,
                 "matt@gmail.com", "testing",
                 LocalDateTime.of(2020,1,1,0,0),
                 LocalDateTime.of(2020, 1, 2, 0, 0));
@@ -41,7 +48,7 @@ class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User actualUser = dao.getById(1);
+        User actualUser = (User)genericDao.getById(1);
         assertNotNull(actualUser);
         assertEquals(expectedUser, actualUser);
 
@@ -64,7 +71,9 @@ class UserDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        User updatedUser = new User(1, "Matt", "Peterson", "mattanderson",
+        Set<String> saveOrUpdateUserNames = new HashSet<>();
+        saveOrUpdateUserNames.add("mattanderson");
+        User updatedUser = new User(1, "Matt", "Peterson", saveOrUpdateUserNames,
                 "matt@gmail.com", "testing",
                 LocalDateTime.of(2020,1,1,0,0),
                 LocalDateTime.of(2020, 1, 2, 0, 0));
@@ -79,7 +88,9 @@ class UserDaoTest {
      */
     @Test
     void insertSuccess() {
-        User insertUser = new User( "Mike", "Anderson", "mikeAnd23", "mike@yahoo.com", "234(3L!",
+        Set<String> insertUserNames = new HashSet<>();
+        insertUserNames.add("mikeAnd23");
+        User insertUser = new User( "Mike", "Anderson", insertUserNames, "mike@yahoo.com", "234(3L!",
                 LocalDateTime.of(2020, 3, 23, 10, 53),
                 LocalDateTime.of(2020, 4, 3, 11, 34));
         int insertId = dao.insert(insertUser);
