@@ -20,6 +20,7 @@ class UserRoleDaoTest {
 
     private User expectedUser;
     private GenericDao dao;
+    private UserRole expectedRole;
 
     /**
      * Sets up the instance variables and cleans the database before each test.
@@ -35,7 +36,7 @@ class UserRoleDaoTest {
                 "matt@gmail.com", "testing",
                 LocalDateTime.of(2020,1,1,0,0),
                 LocalDateTime.of(2020, 1, 2, 0, 0));
-        UserRole expectedRole = new UserRole("User",
+        expectedRole = new UserRole(1,"User",
                 LocalDateTime.of(2020,1,1,0,0), expectedUser);
         expectedUser.addRole(expectedRole);
     }
@@ -45,9 +46,9 @@ class UserRoleDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User actualUser = (User) dao.getById(1);
-        assertNotNull(actualUser);
-        assertEquals(expectedUser, actualUser);
+        UserRole actualUserRole = (UserRole) dao.getById(1);
+        assertNotNull(actualUserRole);
+        assertEquals(expectedRole, actualUserRole);
 
     }
 
@@ -56,10 +57,10 @@ class UserRoleDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = (List<User>) dao.getByPropertyEqual("userName", "mattanderson");
-        assertNotNull(users);
-        for (User user : users) {
-            assertEquals(expectedUser, user);
+        List<UserRole> roles = (List<UserRole>) dao.getByPropertyEqual("id", "1");
+        assertNotNull(roles);
+        for (UserRole role : roles) {
+            assertEquals(expectedRole, role);
         }
     }
 
@@ -68,12 +69,12 @@ class UserRoleDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        User updatedUser = (User) dao.getById(1);
-        updatedUser.setLastName("Peterson");
-        dao.saveOrUpdate(updatedUser);
-        User actualUser = (User) dao.getById(1);
-        assertNotNull(actualUser);
-        assertEquals(updatedUser, actualUser);
+        UserRole updatedUserRole = (UserRole) dao.getById(1);
+        updatedUserRole.setName("New Role Not Yet Created");
+        dao.saveOrUpdate(updatedUserRole);
+        UserRole actualUserRole = (UserRole) dao.getById(1);
+        assertNotNull(actualUserRole);
+        assertEquals(updatedUserRole, actualUserRole);
     }
 
     /**
@@ -84,13 +85,14 @@ class UserRoleDaoTest {
         User insertUser = new User( "Mike", "Anderson", "mikeAnd23", "mike@yahoo.com", "234(3L!",
                 LocalDateTime.of(2020, 3, 23, 10, 53),
                 LocalDateTime.of(2020, 4, 3, 11, 34));
-        insertUser.addRole(new UserRole("User",
-                LocalDateTime.of(2020,1,1,0,0), insertUser));
-        int insertId = (int) dao.insert(insertUser);
+        UserRole insertUserRole = new UserRole("User",
+                LocalDateTime.of(2020,1,1,0,0), insertUser);
+        insertUser.addRole(insertUserRole);
+        int insertId = dao.insert(insertUser);
         insertUser.setId(insertId);
-        User actualInsertUser = (User) dao.getById(insertId);
-        assertNotNull(actualInsertUser);
-        assertEquals(insertUser, actualInsertUser);
+        UserRole actualInsertUserRole = (UserRole) dao.getById(insertUserRole.getId());
+        assertNotNull(actualInsertUserRole);
+        assertEquals(insertUserRole, actualInsertUserRole);
 
     }
 
@@ -99,7 +101,28 @@ class UserRoleDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete((User) dao.getById(1));
+        dao.delete(dao.getById(1));
         assertNull(dao.getById(1));
+    }
+
+    /**
+     * Validates the get by property like is successful.
+     */
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<UserRole> roles = dao.getByPropertyLike("name", "user");
+        assertTrue(!roles.isEmpty());
+        UserRole expectedUserRole = (UserRole) dao.getById(1);
+        assertEquals(expectedUserRole, roles.get(0));
+    }
+
+    /**
+     * Validates the get all is successful.
+     */
+    @Test
+    void getAllSuccess() {
+        List<UserRole> allRoles = dao.getAll();
+        assertTrue(!allRoles.isEmpty());
+        assertEquals(5, allRoles.size());
     }
 }

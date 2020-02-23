@@ -7,7 +7,7 @@ INSERT INTO USERS VALUES (5, 'Rich', 'Anderson', 'richAnderson2', 'rich@gmail.co
 
 # Insert data into the USER_ROLES Table
 INSERT INTO USER_ROLES VALUES (1, 'User', 'mattanderson', '2020-1-1');
-# INSERT INTO USER_ROLES VALUES (2, );
-# INSERT INTO USER_ROLES VALUES (3, );
-# INSERT INTO USER_ROLES VALUES (4, );
-# INSERT INTO USER_ROLES VALUES (5, );
+INSERT INTO USER_ROLES VALUES (2, 'User', 'drewPeterson', '2020-1-4');
+INSERT INTO USER_ROLES VALUES (3, 'Administrator', 'nicoleSannes', '2020-1-7');
+INSERT INTO USER_ROLES VALUES (4, 'User', 'shelleyAnderson1', '2020-1-7');
+INSERT INTO USER_ROLES VALUES (5, 'Administrator', 'richAnderson2', '2020-1-10');

@@ -102,4 +102,25 @@ class UserDaoTest {
         dao.delete((User) dao.getById(1));
         assertNull(dao.getById(1));
     }
+
+    /**
+     * Validates the get by property like is successful.
+     */
+    @Test
+    void getByPropertyLikeSuccess() {
+        List<User> users = dao.getByPropertyLike("userName", "mattanderson");
+        assertTrue(!users.isEmpty());
+        User expectedUser = (User) dao.getById(1);
+        assertEquals(expectedUser, users.get(0));
+    }
+
+    /**
+     * Validates the get all is successful.
+     */
+    @Test
+    void getAllSuccess() {
+        List<User> allUsers = dao.getAll();
+        assertTrue(!allUsers.isEmpty());
+        assertEquals(5, allUsers.size());
+    }
 }
