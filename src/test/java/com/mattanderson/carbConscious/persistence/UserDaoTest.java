@@ -12,7 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests database access for the <code>UserDao</code> class.
+ * Unit tests database access for the <code>User</code> class.
  * @author Matt Anderson
  * @version 11
  */
