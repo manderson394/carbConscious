@@ -19,14 +19,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserDaoTest {
 
     private User expectedUser;
-    private GenericDao dao;
+    private GenericDao<User> dao;
 
     /**
      * Sets up the instance variables and cleans the database before each test.
      */
     @BeforeEach
     void setUp() {
-        dao = new GenericDao(User.class);
+        dao = new GenericDao<>(User.class);
         Database database = Database.getInstance();
         database.runSQL("cleanDB.sql");
         database.runSQL("insertData.sql");
@@ -45,7 +45,7 @@ class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User actualUser = (User) dao.getById(1);
+        User actualUser = dao.getById(1);
         assertNotNull(actualUser);
         assertEquals(expectedUser, actualUser);
 
@@ -56,7 +56,7 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = (List<User>) dao.getByPropertyEqual("userName", "mattanderson");
+        List<User> users = dao.getByPropertyEqual("userName", "mattanderson");
         assertNotNull(users);
         for (User user : users) {
             assertEquals(expectedUser, user);
@@ -68,10 +68,10 @@ class UserDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        User updatedUser = (User) dao.getById(1);
+        User updatedUser = dao.getById(1);
         updatedUser.setLastName("Peterson");
         dao.saveOrUpdate(updatedUser);
-        User actualUser = (User) dao.getById(1);
+        User actualUser = dao.getById(1);
         assertNotNull(actualUser);
         assertEquals(updatedUser, actualUser);
     }
@@ -86,9 +86,9 @@ class UserDaoTest {
                 LocalDateTime.of(2020, 4, 3, 11, 34));
         insertUser.addRole(new UserRole("User",
                 LocalDateTime.of(2020,1,1,0,0), insertUser));
-        int insertId = (int) dao.insert(insertUser);
+        int insertId = dao.insert(insertUser);
         insertUser.setId(insertId);
-        User actualInsertUser = (User) dao.getById(insertId);
+        User actualInsertUser = dao.getById(insertId);
         assertNotNull(actualInsertUser);
         assertEquals(insertUser, actualInsertUser);
 
@@ -99,7 +99,7 @@ class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete((User) dao.getById(1));
+        dao.delete(dao.getById(1));
         assertNull(dao.getById(1));
     }
 
@@ -109,8 +109,8 @@ class UserDaoTest {
     @Test
     void getByPropertyLikeSuccess() {
         List<User> users = dao.getByPropertyLike("userName", "mattanderson");
-        assertTrue(!users.isEmpty());
-        User expectedUser = (User) dao.getById(1);
+        assertFalse(users.isEmpty());
+        User expectedUser = dao.getById(1);
         assertEquals(expectedUser, users.get(0));
     }
 
@@ -120,7 +120,7 @@ class UserDaoTest {
     @Test
     void getAllSuccess() {
         List<User> allUsers = dao.getAll();
-        assertTrue(!allUsers.isEmpty());
+        assertFalse(allUsers.isEmpty());
         assertEquals(5, allUsers.size());
     }
 }

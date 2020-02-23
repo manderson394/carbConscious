@@ -18,21 +18,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class UserRoleDaoTest {
 
-    private User expectedUser;
-    private GenericDao dao;
+    private GenericDao<UserRole> roleDao;
     private UserRole expectedRole;
+    private GenericDao<User> userDao;
 
     /**
      * Sets up the instance variables and cleans the database before each test.
      */
     @BeforeEach
     void setUp() {
-        dao = new GenericDao(UserRole.class);
+        roleDao = new GenericDao<>(UserRole.class);
+        userDao = new GenericDao<>(User.class);
         Database database = Database.getInstance();
         database.runSQL("cleanDB.sql");
         database.runSQL("insertData.sql");
 
-        expectedUser = new User(1, "Matt", "Anderson", "mattanderson",
+        User expectedUser = new User(1, "Matt", "Anderson", "mattanderson",
                 "matt@gmail.com", "testing",
                 LocalDateTime.of(2020,1,1,0,0),
                 LocalDateTime.of(2020, 1, 2, 0, 0));
@@ -46,7 +47,7 @@ class UserRoleDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        UserRole actualUserRole = (UserRole) dao.getById(1);
+        UserRole actualUserRole = roleDao.getById(1);
         assertNotNull(actualUserRole);
         assertEquals(expectedRole, actualUserRole);
 
@@ -57,7 +58,7 @@ class UserRoleDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<UserRole> roles = (List<UserRole>) dao.getByPropertyEqual("id", "1");
+        List<UserRole> roles = roleDao.getByPropertyEqual("id", "1");
         assertNotNull(roles);
         for (UserRole role : roles) {
             assertEquals(expectedRole, role);
@@ -69,10 +70,10 @@ class UserRoleDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        UserRole updatedUserRole = (UserRole) dao.getById(1);
+        UserRole updatedUserRole = roleDao.getById(1);
         updatedUserRole.setName("New Role Not Yet Created");
-        dao.saveOrUpdate(updatedUserRole);
-        UserRole actualUserRole = (UserRole) dao.getById(1);
+        roleDao.saveOrUpdate(updatedUserRole);
+        UserRole actualUserRole = roleDao.getById(1);
         assertNotNull(actualUserRole);
         assertEquals(updatedUserRole, actualUserRole);
     }
@@ -88,9 +89,9 @@ class UserRoleDaoTest {
         UserRole insertUserRole = new UserRole("User",
                 LocalDateTime.of(2020,1,1,0,0), insertUser);
         insertUser.addRole(insertUserRole);
-        int insertId = dao.insert(insertUser);
+        int insertId = userDao.insert(insertUser);
         insertUser.setId(insertId);
-        UserRole actualInsertUserRole = (UserRole) dao.getById(insertUserRole.getId());
+        UserRole actualInsertUserRole = roleDao.getById(insertUserRole.getId());
         assertNotNull(actualInsertUserRole);
         assertEquals(insertUserRole, actualInsertUserRole);
 
@@ -101,8 +102,8 @@ class UserRoleDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(1));
-        assertNull(dao.getById(1));
+        roleDao.delete(roleDao.getById(1));
+        assertNull(roleDao.getById(1));
     }
 
     /**
@@ -110,9 +111,9 @@ class UserRoleDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<UserRole> roles = dao.getByPropertyLike("name", "user");
-        assertTrue(!roles.isEmpty());
-        UserRole expectedUserRole = (UserRole) dao.getById(1);
+        List<UserRole> roles = roleDao.getByPropertyLike("name", "user");
+        assertFalse(roles.isEmpty());
+        UserRole expectedUserRole = roleDao.getById(1);
         assertEquals(expectedUserRole, roles.get(0));
     }
 
@@ -121,8 +122,8 @@ class UserRoleDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<UserRole> allRoles = dao.getAll();
-        assertTrue(!allRoles.isEmpty());
+        List<UserRole> allRoles = roleDao.getAll();
+        assertFalse(allRoles.isEmpty());
         assertEquals(5, allRoles.size());
     }
 }
