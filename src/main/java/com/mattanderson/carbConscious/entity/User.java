@@ -3,6 +3,7 @@ package com.mattanderson.carbConscious.entity;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
@@ -16,7 +17,7 @@ import java.util.Set;
  */
 @Entity(name = "User")
 @Table(name = "USERS")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")

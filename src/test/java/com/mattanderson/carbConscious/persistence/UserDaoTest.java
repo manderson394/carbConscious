@@ -22,7 +22,7 @@ class UserDaoTest {
 
     private UserDao dao;
     private User expectedUser;
-    private GenericDao genericDao;
+    private GenericDao genericUserDao;
 
     /**
      * Sets up the instance variables and cleans the database before each test.
@@ -30,7 +30,7 @@ class UserDaoTest {
     @BeforeEach
     void setUp() {
         dao = new UserDao();
-        genericDao = new GenericDao(User.class);
+        genericUserDao = new GenericDao(User.class);
         Database database = Database.getInstance();
         database.runSQL("cleanDB.sql");
         database.runSQL("insertData.sql");
@@ -49,7 +49,7 @@ class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User actualUser = (User)genericDao.getById(1);
+        User actualUser = (User)genericUserDao.getById(1);
         assertNotNull(actualUser);
         assertEquals(expectedUser, actualUser);
 
@@ -60,7 +60,7 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyEqualSuccess() {
-        List<User> users = dao.getByPropertyEqual("userName", "mattanderson");
+        List<User> users = (List<User>)genericUserDao.getByPropertyEqual("userName", "mattanderson");
         assertNotNull(users);
         for (User user : users) {
             assertEquals(expectedUser, user);
@@ -72,14 +72,10 @@ class UserDaoTest {
      */
     @Test
     void saveOrUpdateSuccess() {
-        User updatedUser = new User(1, "Matt", "Peterson", "mattanderson",
-                "matt@gmail.com", "testing",
-                LocalDateTime.of(2020,1,1,0,0),
-                LocalDateTime.of(2020, 1, 2, 0, 0));
-        updatedUser.addRole(new UserRole("User",
-                LocalDateTime.of(2020,1,1,0,0), updatedUser));
-        dao.saveOrUpdate(updatedUser);
-        User actualUser = dao.getById(1);
+        User updatedUser = (User)genericUserDao.getById(1);
+        updatedUser.setLastName("Peterson");
+        genericUserDao.saveOrUpdate(updatedUser);
+        User actualUser = (User)genericUserDao.getById(1);
         assertNotNull(actualUser);
         assertEquals(updatedUser, actualUser);
     }
@@ -94,9 +90,9 @@ class UserDaoTest {
                 LocalDateTime.of(2020, 4, 3, 11, 34));
         insertUser.addRole(new UserRole("User",
                 LocalDateTime.of(2020,1,1,0,0), insertUser));
-        int insertId = dao.insert(insertUser);
+        int insertId = (int)genericUserDao.insert(insertUser);
         insertUser.setId(insertId);
-        User actualInsertUser = dao.getById(insertId);
+        User actualInsertUser = (User)genericUserDao.getById(insertId);
         assertNotNull(actualInsertUser);
         assertEquals(insertUser, actualInsertUser);
 
@@ -107,7 +103,7 @@ class UserDaoTest {
      */
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(1));
-        assertNull(dao.getById(1));
+        genericUserDao.delete((User)genericUserDao.getById(1));
+        assertNull(genericUserDao.getById(1));
     }
 }

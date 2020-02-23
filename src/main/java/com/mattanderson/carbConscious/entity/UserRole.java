@@ -27,7 +27,7 @@ public class UserRole {
     private LocalDateTime creationDateTime;
 
     @ManyToOne
-    @JoinColumn(name = "user_name")
+    @JoinColumn(name = "user_name", referencedColumnName = "user_name")
     private User user;
 
 
