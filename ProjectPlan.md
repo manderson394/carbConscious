@@ -10,13 +10,13 @@
 
 ### Week 4
 - [x] Weekly journal entry
-- [ ] Create database tables
+- [x] Create database tables
 - [x] Create the user class and annotate for hibernate
 - [x] Create the user DAO
 - [x] Create the test database
 - [x] Create user DAO unit tests
 - [x] Set up logging
-- [ ] Prepare for week 5 peer design/code review
+- [x] Prepare for week 5 peer design/code review
 
 ### Week 5
 - [ ] Weekly journal entry
