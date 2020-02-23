@@ -12,11 +12,11 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests database access for the <code>UserDao</code> class.
+ * Unit tests database access for the <code>UserRole</code> class.
  * @author Matt Anderson
  * @version 11
  */
-class UserDaoTest {
+class UserRoleDaoTest {
 
     private User expectedUser;
     private GenericDao dao;
@@ -26,7 +26,7 @@ class UserDaoTest {
      */
     @BeforeEach
     void setUp() {
-        dao = new GenericDao(User.class);
+        dao = new GenericDao(UserRole.class);
         Database database = Database.getInstance();
         database.runSQL("cleanDB.sql");
         database.runSQL("insertData.sql");
