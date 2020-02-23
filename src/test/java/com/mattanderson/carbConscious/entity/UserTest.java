@@ -36,6 +36,21 @@ class UserTest {
         UserRole newRole = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), newUser);
     }
 
+    /**
+     * Validates successful User object creation with Id specification.
+     */
+    @Test
+    void userCreationWithIdSuccess() {
+        Set<UserRole> withIdUserUserRoles = new HashSet<>();
+        withIdUserUserRoles.add(new UserRole("User",  LocalDateTime.of(2020, 1, 1, 1, 1),
+                new User( "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+                        "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
+                        LocalDateTime.of(2020, 2, 2, 2, 2))));
+        User userWithId = new User( 12,"Matt", "Anderson", "mattanderson", "matt@gmail.com",
+                "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
+                LocalDateTime.of(2020, 2, 2, 2, 2), withIdUserUserRoles);
+        assertNotNull(userWithId);
+    }
 
     /**
      * Validates successful user object creation without specifying an id.
@@ -225,11 +240,26 @@ class UserTest {
 
     }
 
+    /**
+     * Validates roles can successfully be added to the user.
+     */
     @Test
     void addRoleSuccess() {
         UserRole addition = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), user);
         user.addRole(addition);
         assertEquals(true, user.getRoles().contains(addition));
+    }
+
+    /**
+     * Validates roles can be successfully removed from the user.
+     */
+    @Test
+    void removeRoleSuccess() {
+        UserRole removal = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), user);
+        user.addRole(removal);
+        user.removeRole(removal);
+        assertEquals(false, user.getRoles().contains(removal));
+        assertEquals(1, user.getRoles().size());
     }
 
     /**
