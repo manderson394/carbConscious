@@ -97,5 +97,23 @@ __
 After chatting with Paula, I think I'm going to remove the PHI that I would be storing from my assignment--it really isn't
 adding value at this point, though it could be a cool idea for a second iteration. 
 
+### Week 5
+
+2/25/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Create database tables for the test database
+    * Saved database table creation SQL to a file for easy re-creation when needed for PRD
+    * Create UserRole class and linked to User class via Hibernate
+    * Created a Generic DAO class and updated the User and UserRole classes to use this (as well as unit tests)
+* Exercise 5
+
+I struggled pretty hard this week with the ManyToOne mapping for Hibernate. But I feel like a learned quite a bit through
+the process. Once I had the USERS and USER_ROLES tables down, the rest of the work went fairly smoothly...until disconnected
+my SSD drive from my laptop in the middle of a push to GitHub! Fortunately I learned how to re-clone the directory, move over
+the .git folder and continue onward. I wouldn't recommend having to do it at all though...
+
+This week I feel a little behind. I'm definitely lagging on my project plan, and that has me fairly nervous.
 
 
