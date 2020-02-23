@@ -24,3 +24,5 @@
 |2/18/2020|Begin UserRole to my project for Exercise 5, Weekly Reflection, project strategy with Paula|1||
 |2/19/2020|Updates to User, UserDao, and UserRole, create GenericDao class, update hibernate config for USER_ROLE table|2||
 |2/21/2020|Exercise 5 troubleshooting|2.5||
+|2/22/2020|Exercise 5 troubleshooting|1.5||
+|2/23/2020|Exercise 5 troubleshooting, Indie Project Refactor for GenericDao, Build out additional database tables|4||

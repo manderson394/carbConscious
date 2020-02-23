@@ -15,12 +15,12 @@
 - [x] Create the user DAO
 - [x] Create the test database
 - [x] Create user DAO unit tests
-- [ ] Set up logging
+- [x] Set up logging
 - [ ] Prepare for week 5 peer design/code review
 
 ### Week 5
 - [ ] Weekly journal entry
-- [ ] Create Generic DAO class
+- [x] Create Generic DAO class
 - [ ] Create template for all JSPs using bootstrap (or materialize)
 - [ ] Create the profile and role classes (table, entity, DAO (might be repetitive -- refactor), unit tests)
 - [ ] Add JSP to sign up a user
