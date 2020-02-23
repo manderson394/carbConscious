@@ -39,7 +39,7 @@ class UserDaoTest {
                 "matt@gmail.com", "testing",
                 LocalDateTime.of(2020,1,1,0,0),
                 LocalDateTime.of(2020, 1, 2, 0, 0));
-        UserRole expectedRole = new UserRole("User", "mattanderson",
+        UserRole expectedRole = new UserRole("User",
                 LocalDateTime.of(2020,1,1,0,0), expectedUser);
         expectedUser.addRole(expectedRole);
     }
@@ -76,7 +76,7 @@ class UserDaoTest {
                 "matt@gmail.com", "testing",
                 LocalDateTime.of(2020,1,1,0,0),
                 LocalDateTime.of(2020, 1, 2, 0, 0));
-        updatedUser.addRole(new UserRole("User", "mattanderson",
+        updatedUser.addRole(new UserRole("User",
                 LocalDateTime.of(2020,1,1,0,0), updatedUser));
         dao.saveOrUpdate(updatedUser);
         User actualUser = dao.getById(1);
@@ -92,7 +92,7 @@ class UserDaoTest {
         User insertUser = new User( "Mike", "Anderson", "mikeAnd23", "mike@yahoo.com", "234(3L!",
                 LocalDateTime.of(2020, 3, 23, 10, 53),
                 LocalDateTime.of(2020, 4, 3, 11, 34));
-        insertUser.addRole(new UserRole("User", "mikeAnd23",
+        insertUser.addRole(new UserRole("User",
                 LocalDateTime.of(2020,1,1,0,0), insertUser));
         int insertId = dao.insert(insertUser);
         insertUser.setId(insertId);

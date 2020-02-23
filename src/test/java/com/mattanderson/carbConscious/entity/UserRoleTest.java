@@ -15,13 +15,13 @@ class UserRoleTest {
     void generateUserRole() {
         User user = new User(1, "Matt", "Anderson", "mattanderson", "matt@gmail.com", "testing", LocalDateTime.of(2020,1,1,0,0),
                 LocalDateTime.of(2020, 1, 2, 0, 0));
-        userRole = new UserRole(1,"User", "mattAnderson",
+        userRole = new UserRole(1,"User",
                 LocalDateTime.of(2020, 1, 1, 10, 23), user);
         user.addRole(userRole);
 
         User newUser = new User(3, "Nicole", "Sannes", "nicoleSannes", "nicole@aol.com", "testing2", LocalDateTime.of(2020, 1, 7, 0, 0),
                 LocalDateTime.of(2020, 1, 8, 0, 0));
-        newRole = new UserRole("Admin", "nicoleSannes",
+        newRole = new UserRole("Administrator",
                 LocalDateTime.of(2020, 2, 10, 14, 54), newUser);
         newUser.addRole(newRole);
     }
@@ -54,19 +54,6 @@ class UserRoleTest {
     }
 
     @Test
-    void getUserNameSuccess() {
-        assertNotNull(userRole.getUserName());
-        assertEquals("mattAnderson", userRole.getUserName());
-    }
-
-    @Test
-    void setUserNameSuccess() {
-        userRole.setUserName("mta");
-        assertNotNull(userRole.getUserName());
-        assertEquals("mta", userRole.getUserName());
-    }
-
-    @Test
     void getCreationDateTimeSuccess() {
         assertNotNull(userRole.getCreationDateTime());
         assertEquals(LocalDateTime.of(2020, 1, 1, 10, 23), userRole.getCreationDateTime());
@@ -84,7 +71,6 @@ class UserRoleTest {
         String expectedToString = "UserRole{" +
                 "id=" + userRole.getId() +
                 ", name='" + userRole.getName() + '\'' +
-                ", userName='" + userRole.getUserName() + '\'' +
                 ", creationDateTime=" + userRole.getCreationDateTime() +
                 ", user=" + userRole.getUser() +
                 '}';

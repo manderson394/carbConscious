@@ -4,3 +4,10 @@ INSERT INTO USERS VALUES (2, 'Drew', 'Peterson', 'drewPeterson', 'drew@madisonco
 INSERT INTO USERS VALUES (3, 'Nicole', 'Sannes', 'nicoleSannes', 'nicole@aol.com', 'testing2', '2020-1-7', '2020-1-8');
 INSERT INTO USERS VALUES (4, 'Shelley', 'Anderson', 'shelleyAnderson1', 'shelley@live.com', 'testing3', '2020-1-7', '2020-1-8');
 INSERT INTO USERS VALUES (5, 'Rich', 'Anderson', 'richAnderson2', 'rich@gmail.com', 'testing3', '2020-1-10', '2020-1-23');
+
+# Insert data into the USER_ROLES Table
+INSERT INTO USER_ROLES VALUES (1, 'User', 'mattanderson', '2020-1-1');
+# INSERT INTO USER_ROLES VALUES (2, );
+# INSERT INTO USER_ROLES VALUES (3, );
+# INSERT INTO USER_ROLES VALUES (4, );
+# INSERT INTO USER_ROLES VALUES (5, );

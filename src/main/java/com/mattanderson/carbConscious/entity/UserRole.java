@@ -23,13 +23,11 @@ public class UserRole {
     @Column(name = "role_name")
     private String name;
 
-    @Column(name = "user_name")
-    private String userName;
-
     @Column(name = "creation_datetime")
     private LocalDateTime creationDateTime;
 
     @ManyToOne
+    @JoinColumn(name = "user_name")
     private User user;
 
 
@@ -44,14 +42,12 @@ public class UserRole {
      * Instantiates a new User role.
      *
      * @param name             the name
-     * @param userName         the user name
      * @param creationDateTime the creation date time
      * @param user             the user
      */
-    public UserRole(String name, String userName, LocalDateTime creationDateTime, User user) {
+    public UserRole(String name, LocalDateTime creationDateTime, User user) {
         this();
         this.name = name;
-        this.userName = userName;
         this.creationDateTime = creationDateTime;
         this.user = user;
     }
@@ -61,15 +57,13 @@ public class UserRole {
      *
      * @param id               the id
      * @param name             the name
-     * @param userName         the user name
      * @param creationDateTime the creation date time
      * @param user             the user
      */
-    public UserRole(int id, String name, String userName, LocalDateTime creationDateTime, User user) {
+    public UserRole(int id, String name, LocalDateTime creationDateTime, User user) {
         this();
         this.id = id;
         this.name = name;
-        this.userName = userName;
         this.creationDateTime = creationDateTime;
         this.user = user;
     }
@@ -108,24 +102,6 @@ public class UserRole {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * Gets user name.
-     *
-     * @return the user name
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * Sets user name.
-     *
-     * @param userName the user name
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     /**
@@ -169,7 +145,6 @@ public class UserRole {
         return "UserRole{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", userName='" + userName + '\'' +
                 ", creationDateTime=" + creationDateTime +
                 ", user=" + user +
                 '}';
@@ -182,13 +157,12 @@ public class UserRole {
         UserRole userRole = (UserRole) o;
         return id == userRole.id &&
                 Objects.equals(name, userRole.name) &&
-                Objects.equals(userName, userRole.userName) &&
                 Objects.equals(creationDateTime, userRole.creationDateTime) &&
                 Objects.equals(user, userRole.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, userName, creationDateTime, user);
+        return Objects.hash(id, name, creationDateTime, user);
     }
 }

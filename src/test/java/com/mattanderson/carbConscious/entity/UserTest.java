@@ -27,13 +27,13 @@ class UserTest {
         user = new User(1, "Matt", "Anderson", "mattanderson", "matt@gmail.com",
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
-        UserRole role = new UserRole("User", "mattanderson", LocalDateTime.of(2020, 1, 1, 1, 1), user);
+        UserRole role = new UserRole("User", LocalDateTime.of(2020, 1, 1, 1, 1), user);
         user.addRole(role);
 
         newUser = new User(2, "Matt", "Anderson", "mattanderson", "matt@gmail.com",
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
-        UserRole newRole = new UserRole("Administrator", "mattanderson", LocalDateTime.of(2020, 1, 1, 1, 1), newUser);
+        UserRole newRole = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), newUser);
     }
 
 
@@ -43,7 +43,7 @@ class UserTest {
     @Test
     void userCreationWithoutIdSuccess() {
         Set<UserRole> noIdUserUserRoles = new HashSet<>();
-        noIdUserUserRoles.add(new UserRole("User", "mattanderson", LocalDateTime.of(2020, 1, 1, 1, 1),
+        noIdUserUserRoles.add(new UserRole("User",  LocalDateTime.of(2020, 1, 1, 1, 1),
                 new User( "Matt", "Anderson", "mattanderson", "matt@gmail.com",
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2))));
@@ -206,7 +206,7 @@ class UserTest {
 
     @Test
     void getRolesSuccess() {
-        UserRole expectedRole = new UserRole("User", "mattanderson", LocalDateTime.of(2020, 1, 1, 1, 1), user);
+        UserRole expectedRole = new UserRole("User",  LocalDateTime.of(2020, 1, 1, 1, 1), user);
         Set<UserRole> expectedSet = new HashSet<>();
         expectedSet.add(expectedRole);
         assertNotNull(user.getRoles());
@@ -216,7 +216,7 @@ class UserTest {
 
     @Test
     void setRolesSuccess() {
-        UserRole newRole = new UserRole("Administrator", "mattanderson", LocalDateTime.of(2020, 1, 1, 1, 1), user);
+        UserRole newRole = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), user);
         Set<UserRole> newSet = new HashSet<>();
         newSet.add(newRole);
         user.setRoles(newSet);
@@ -227,7 +227,7 @@ class UserTest {
 
     @Test
     void addRoleSuccess() {
-        UserRole addition = new UserRole("Administrator", "mattanderson", LocalDateTime.of(2020, 1, 1, 1, 1), user);
+        UserRole addition = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), user);
         user.addRole(addition);
         assertEquals(true, user.getRoles().contains(addition));
     }
