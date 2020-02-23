@@ -56,22 +56,6 @@ create table USER_PROFILES
 create unique index USER_PROFILES_id_uindex
     on USER_PROFILES (id);
 
-#####################################################
-
-# Create the USER_FAVORITES table
-
-create table USER_FAVORITES
-(
-    id int auto_increment,
-    profile_id int not null,
-    favorites_line int null,
-    menu_item_id int not null,
-    constraint USER_FAVORITES_pk
-        primary key (id),
-    constraint USER_FAVORITES_USER_PROFILES_id_fk
-        foreign key (profile_id) references USER_PROFILES (id)
-            on update cascade on delete cascade
-);
 
 #####################################################
 
@@ -120,19 +104,60 @@ create table MENU_ITEMS
         primary key (id),
     constraint MENU_ITEMS_MENU_APIS_id_fk
         foreign key (source_api) references MENU_APIS (id),
-    constraint MENU_ITEMS_RESTAURANTS_api_id_fk
-        foreign key (parent_restaurant_api_id) references RESTAURANTS (api_id),
-    constraint MENU_ITEMS_USER_FAVORITES_menu_item_id_fk
-        foreign key (id) references USER_FAVORITES (menu_item_id)
+    constraint MENU_ITEMS_RESTAURANTS_id_fk
+        foreign key (parent_restaurant_api_id) references RESTAURANTS (id)
 );
-
-
 
 #####################################################
 
-# Create the CARBOHYDRATES table
+# Create the USER_FAVORITES table
+
+create table USER_FAVORITES
+(
+    id int auto_increment,
+    profile_id int not null,
+    favorites_line int null,
+    menu_item_id int not null,
+    constraint USER_FAVORITES_pk
+        primary key (id),
+    constraint USER_FAVORITES_USER_PROFILES_id_fk
+        foreign key (profile_id) references USER_PROFILES (id)
+            on update cascade on delete cascade,
+    constraint USER_FAVORITES_MENU_ITEMS_id_fk
+        foreign key (menu_item_id) references MENU_ITEMS (id)
+
+);
 
 #####################################################
 
 # Create the OUTCOMES table
+create table OUTCOMES
+(
+    id int not null,
+    name varchar(255) not null,
+    constraint OUTCOMES_pk
+        primary key (id)
+);
+
+#####################################################
+
+# Create the CARBOHYDRATES table
+create table CARBOHYDRATES
+(
+    id int not null,
+    menu_item_id int not null,
+    grams_carbohydrate_estimate int not null,
+    outcome int null,
+    user_profile_id int not null,
+    constraint CARBOHYDRATES_pk
+        primary key (id),
+    constraint CARBOHYDRATES_MENU_ITEMS_id_fk
+        foreign key (menu_item_id) references MENU_ITEMS (id),
+    constraint CARBOHYDRATES_OUTCOMES_id_fk
+        foreign key (outcome) references OUTCOMES (id),
+    constraint CARBOHYDRATES_USER_PROFILES_id_fk
+        foreign key (user_profile_id) references USER_PROFILES (id)
+);
+
+
 
