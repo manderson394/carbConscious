@@ -158,6 +158,3 @@ create table CARBOHYDRATES
     constraint CARBOHYDRATES_USER_PROFILES_id_fk
         foreign key (user_profile_id) references USER_PROFILES (id)
 );
-
-
-
