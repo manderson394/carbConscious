@@ -36,6 +36,14 @@
 /log/
 /lib/
 
+# Log files
+/logs/
+
+# Password containing files
+/src/main/resources/hibernate.cfg.xml
+/src/test/resources/hibernate.cfg.xml
+/src/test/resources/database.properties
+
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
