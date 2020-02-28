@@ -99,7 +99,7 @@ adding value at this point, though it could be a cool idea for a second iteratio
 
 ### Week 5
 
-2/25/2020 - ### hours
+2/25/2020 - 11 hours
 
 Tasks Completed:
 * Individual Project:
@@ -115,5 +115,16 @@ my SSD drive from my laptop in the middle of a push to GitHub! Fortunately I lea
 the .git folder and continue onward. I wouldn't recommend having to do it at all though...
 
 This week I feel a little behind. I'm definitely lagging on my project plan, and that has me fairly nervous.
+
+### Week 6
+
+3/3/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * 
+* 
+
+Moving this week took quite a bit of time away from my school work, making it a challenge to keep on track.
 
 

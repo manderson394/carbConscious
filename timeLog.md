@@ -26,3 +26,5 @@
 |2/21/2020|Exercise 5 troubleshooting|2.5||
 |2/22/2020|Exercise 5 troubleshooting|1.5||
 |2/23/2020|Exercise 5 troubleshooting, Indie Project Refactor for GenericDao, Build out additional database tables|4||
+|2/25/2020|Update .gitignore file, revisit screen designs|.75||
+|2/27/2020|Professional Development Presentation Feedback|0.5||
