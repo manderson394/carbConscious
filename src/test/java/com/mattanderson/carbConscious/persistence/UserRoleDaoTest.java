@@ -107,6 +107,17 @@ class UserRoleDaoTest {
     }
 
     /**
+     * Validates that when a role is deleted, the user remains.
+     */
+    @Test
+    void deleteRoleKeepUser() {
+        UserRole roleTestDelete = roleDao.getById(1);
+        User userTestKeep = roleTestDelete.getUser();
+        roleDao.delete(roleTestDelete);
+        assertNotNull(userDao.getById(userTestKeep.getId()));
+    }
+
+    /**
      * Validates the get by property like is successful.
      */
     @Test

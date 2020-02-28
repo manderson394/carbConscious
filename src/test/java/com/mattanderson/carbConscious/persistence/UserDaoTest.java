@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -101,6 +102,21 @@ class UserDaoTest {
     void deleteSuccess() {
         dao.delete(dao.getById(1));
         assertNull(dao.getById(1));
+    }
+
+    /**
+     * Validates that when a user is deleted, the role is also deleted.
+     */
+    @Test
+    void deleteUserDeleteRole() {
+        User deleteUser = dao.getById(1);
+        Set<UserRole> deleteRoles = deleteUser.getRoles();
+        assertTrue(deleteRoles.size() > 0);
+        dao.delete(deleteUser);
+        GenericDao roleDao = new GenericDao(UserRole.class);
+        for (UserRole role : deleteRoles) {
+            assertNull(roleDao.getById(role.getId()));
+        }
     }
 
     /**
