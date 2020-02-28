@@ -27,4 +27,4 @@
 |2/22/2020|Exercise 5 troubleshooting|1.5||
 |2/23/2020|Exercise 5 troubleshooting, Indie Project Refactor for GenericDao, Build out additional database tables|4||
 |2/25/2020|Update .gitignore file, revisit screen designs|.75||
-|2/27/2020|Professional Development Presentation Feedback|0.5||
+|2/27/2020|Professional Development Presentation Feedback, Maven Profiles research, Update DAO tests to make sure deletion is appropriate between the role and user tables|1.5||
