@@ -49,6 +49,6 @@ As a registered user, I should be able to edit my profile settings.
 
 As a user, I should be able to search for restaurant menus near me using my location data.
 
-### Add Comments to Carbohydrate Estimates for Futuer Review (Stretch Goal)
+### Add Comments to Carbohydrate Estimates for Future Review (Stretch Goal)
 
 As a user, when documenting carbohydrate estimates, I should be able to add a comment to my estimate that I can later review.
