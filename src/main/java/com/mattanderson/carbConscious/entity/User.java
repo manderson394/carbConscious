@@ -50,6 +50,9 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserRole> roles;
 
+    //TODO finish implementing link to UserProfile
+    //private UserProfile profile;
+
     /**
      * Instantiates a new User.
      */

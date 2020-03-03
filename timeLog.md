@@ -30,3 +30,4 @@
 |2/27/2020|Professional Development Presentation Feedback, Maven Profiles research, Update DAO tests to make sure deletion is appropriate between the role and user tables|1.5||
 |2/29/2020|Design Review 1 review and feedback submission|1||
 |3/1/2020|Week 7 videos and demo exercise|1.75||
+|3/2/2020|Think through and create foundational entities, controllers, and JSPs for project; Add instance variables to new entities, Update database design|2.5||

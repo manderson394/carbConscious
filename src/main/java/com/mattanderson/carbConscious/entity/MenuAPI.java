@@ -2,11 +2,10 @@ package com.mattanderson.carbConscious.entity;
 
 import java.util.Set;
 
-public class Restaurant {
+public class MenuAPI {
 
     private int id;
     private String name;
-    private MenuAPI menuApi;
-    private int apiId;
+    private Set<Restaurant> restaurants;
     private Set<MenuItem> menuItems;
 }
