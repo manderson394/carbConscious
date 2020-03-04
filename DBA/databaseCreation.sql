@@ -45,6 +45,7 @@ create table MENU_APIS
 (
     id int not null,
     name varchar(255) not null,
+    creation_datetime datetime not null,
     constraint MENU_APIS_pk
         primary key (id)
 );
@@ -58,13 +59,14 @@ create table RESTAURANTS
 (
     id int not null,
     name varchar(255) null,
-    source_api int not null,
+    source_api int null,
     api_id int null,
+    creation_datetime datetime not null,
     constraint RESTAURANTS_pk
         primary key (id),
     constraint RESTAURANTS_MENU_APIS_id_fk
         foreign key (source_api) references MENU_APIS (id)
-            on update cascade on delete cascade
+            on update cascade on delete set null
 );
 create unique index RESTAURANTS_api_id_uindex
     on RESTAURANTS (api_id);
@@ -77,15 +79,18 @@ create table MENU_ITEMS
 (
     id int not null,
     name varchar(255) null,
-    source_api int not null,
+    source_api int null,
     api_id int null,
     parent_restaurant_api_id int null,
+    creation_datetime datetime not null,
     constraint MENU_ITEMS_pk
         primary key (id),
     constraint MENU_ITEMS_MENU_APIS_id_fk
-        foreign key (source_api) references MENU_APIS (id),
+        foreign key (source_api) references MENU_APIS (id)
+            on update cascade on delete set null,
     constraint MENU_ITEMS_RESTAURANTS_id_fk
         foreign key (parent_restaurant_api_id) references RESTAURANTS (id)
+            on update cascade on delete set null
 );
 
 #####################################################
@@ -105,6 +110,7 @@ create table USER_FAVORITES
             on update cascade on delete cascade,
     constraint USER_FAVORITES_MENU_ITEMS_id_fk
         foreign key (menu_item_id) references MENU_ITEMS (id)
+            on update cascade on delete cascade
 
 );
 
@@ -118,10 +124,13 @@ create table CARBOHYDRATE_ESTIMATES
     grams_carbohydrate_estimate int not null,
     outcome varchar(255) null,
     user_id int null,
+    creation_datetime datetime not null,
+    update_datetime datetime not null,
     constraint CARBOHYDRATES_pk
         primary key (id),
     constraint CARBOHYDRATES_MENU_ITEMS_id_fk
-        foreign key (menu_item_id) references MENU_ITEMS (id),
+        foreign key (menu_item_id) references MENU_ITEMS (id)
+            on update cascade on delete cascade,
     constraint CARBOHYDRATES_USERS_id_fk
         foreign key (user_id) references USERS (id)
             on update cascade on delete set null
