@@ -31,3 +31,4 @@
 |2/29/2020|Design Review 1 review and feedback submission|1||
 |3/1/2020|Week 7 videos and demo exercise|1.75||
 |3/2/2020|Think through and create foundational entities, controllers, and JSPs for project; Add instance variables to new entities, Update database design|2.5||
+|3/3/2020|Week 6 reflection, project plan updates, head.jsp updates|.5||

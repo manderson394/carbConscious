@@ -122,9 +122,15 @@ This week I feel a little behind. I'm definitely lagging on my project plan, and
 
 Tasks Completed:
 * Individual Project:
-    * 
-* 
+    * Create entity classes 
+    * Create controller classes (tentative based on future updates)
+    * Create some essential JSPs
+* Exercise 6
 
-Moving this week took quite a bit of time away from my school work, making it a challenge to keep on track.
+Moving this week took quite a bit of time away from my school work, making it a challenge to keep on track. 
+I did get a chance to hop in a create some shell classes, but I certainly feel as though I'm behind on my project...
+and my project plan shows it! I need to revisit my plan and make some updates.
+
+My goal for the next week is to get back on track in terms of my project plan.
 
 
