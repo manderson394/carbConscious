@@ -116,13 +116,29 @@ create table USER_FAVORITES
 
 #####################################################
 
+# Create the OUTCOMES table
+
+create table OUTCOMES
+(
+    id int not null,
+    name varchar(255) not null,
+    creation_datetime datetime not null,
+    constraint OUTCOMES_pk
+        primary key (id)
+);
+
+
+
+#####################################################
+
 # Create the CARBOHYDRATE_ESTIMATES table
+
 create table CARBOHYDRATE_ESTIMATES
 (
     id int not null,
     menu_item_id int not null,
     grams_carbohydrate_estimate int not null,
-    outcome varchar(255) null,
+    outcome_id int null,
     user_id int null,
     creation_datetime datetime not null,
     update_datetime datetime not null,
@@ -133,5 +149,8 @@ create table CARBOHYDRATE_ESTIMATES
             on update cascade on delete cascade,
     constraint CARBOHYDRATES_USERS_id_fk
         foreign key (user_id) references USERS (id)
+            on update cascade on delete set null,
+    constraint CARBOHYDRATE_ESTIMATES_OUTCOMES_id_fk
+        foreign key (outcome_id) references OUTCOMES (id)
             on update cascade on delete set null
 );

@@ -1,6 +1,9 @@
 package com.mattanderson.carbConscious.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -42,9 +45,11 @@ public class User implements Serializable {
     private String password;
 
     @Column(name = "creation_datetime")
+    @CreationTimestamp
     private LocalDateTime creationDateTime;
 
     @Column(name = "update_datetime")
+    @UpdateTimestamp
     private LocalDateTime updateDateTime;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
