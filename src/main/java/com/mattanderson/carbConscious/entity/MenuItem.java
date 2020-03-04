@@ -1,5 +1,6 @@
 package com.mattanderson.carbConscious.entity;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 public class MenuItem {
@@ -10,4 +11,5 @@ public class MenuItem {
     private int apiId;
     private Restaurant parentRestaurant;
     private Set<CarbohydratesEstimate> carbohydratesEstimates;
+    private LocalDateTime creationDateTime;
 }
