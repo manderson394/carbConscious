@@ -5,6 +5,8 @@ public class CarbohydratesEstimate {
     private int id;
     private int carbohydrateGramsEstimate;
     private MenuItem menuItem;
-    private Outcome outcome;
-    private UserProfile userProfile;
+    private enum outcome {
+        HIGH, IN_RANGE, LOW
+    }
+    private User user;
 }

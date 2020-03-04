@@ -4,6 +4,6 @@ public class UserFavorites {
 
     private int id;
     private int line;
-    private UserProfile profile;
+    private User user;
     private MenuItem menuItem;
 }

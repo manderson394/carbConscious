@@ -39,26 +39,6 @@ create unique index USER_ROLES_user_name_uindex
 
 #####################################################
 
-# Create the USER_PROFILES table
-
-create table USER_PROFILES
-(
-    id int auto_increment,
-    profile_name varchar(255) null,
-    user_id int not null,
-    constraint USER_PROFILES_pk
-        primary key (id),
-    constraint USER_PROFILES_USERS_id_fk
-        foreign key (user_id) references USERS (id)
-            on update cascade on delete cascade
-);
-
-create unique index USER_PROFILES_id_uindex
-    on USER_PROFILES (id);
-
-
-#####################################################
-
 # Create the MENU_APIS table
 
 create table MENU_APIS
@@ -115,13 +95,13 @@ create table MENU_ITEMS
 create table USER_FAVORITES
 (
     id int auto_increment,
-    profile_id int not null,
+    user_id int not null,
     favorites_line int null,
     menu_item_id int not null,
     constraint USER_FAVORITES_pk
         primary key (id),
-    constraint USER_FAVORITES_USER_PROFILES_id_fk
-        foreign key (profile_id) references USER_PROFILES (id)
+    constraint USER_FAVORITES_USERS_id_fk
+        foreign key (user_id) references USERS (id)
             on update cascade on delete cascade,
     constraint USER_FAVORITES_MENU_ITEMS_id_fk
         foreign key (menu_item_id) references MENU_ITEMS (id)
@@ -130,31 +110,19 @@ create table USER_FAVORITES
 
 #####################################################
 
-# Create the OUTCOMES table
-create table OUTCOMES
-(
-    id int not null,
-    name varchar(255) not null,
-    constraint OUTCOMES_pk
-        primary key (id)
-);
-
-#####################################################
-
-# Create the CARBOHYDRATES table
-create table CARBOHYDRATES
+# Create the CARBOHYDRATE_ESTIMATES table
+create table CARBOHYDRATE_ESTIMATES
 (
     id int not null,
     menu_item_id int not null,
     grams_carbohydrate_estimate int not null,
-    outcome int null,
-    user_profile_id int not null,
+    outcome varchar(255) null,
+    user_id int null,
     constraint CARBOHYDRATES_pk
         primary key (id),
     constraint CARBOHYDRATES_MENU_ITEMS_id_fk
         foreign key (menu_item_id) references MENU_ITEMS (id),
-    constraint CARBOHYDRATES_OUTCOMES_id_fk
-        foreign key (outcome) references OUTCOMES (id),
-    constraint CARBOHYDRATES_USER_PROFILES_id_fk
-        foreign key (user_profile_id) references USER_PROFILES (id)
+    constraint CARBOHYDRATES_USERS_id_fk
+        foreign key (user_id) references USERS (id)
+            on update cascade on delete set null
 );
