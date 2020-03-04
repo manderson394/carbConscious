@@ -24,9 +24,12 @@
 - [x] Create the role class (table, entity, DAO (might be repetitive -- refactor), unit tests)
 
 ### Week 6
+- [x] Weekly journal entry
+- [x] Prepare for Checkpoint #2 (Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J implemented, class design and any other diagrams I plan to use have been created)
+
+### Week 7
 - [ ] Weekly journal entry
 - [ ] Create template for all JSPs using bootstrap (or materialize)
-- [ ] Create the profile class (table, entity, DAO)
 - [ ] Create database on AWS
 - [ ] Deploy to AWS for first time
 - [ ] Create the restaurant menu class (table, entity, DAO (might be repetitive--refactor))
@@ -37,10 +40,6 @@
 - [ ] Add JSP to create a user profile
 - [ ] Build a home page JSP
 - [ ] Create the menu item class (table, entity, DAO)
-- [ ] Prepare for Checkpoint #2 (Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J implemented, class design and any other diagrams I plan to use have been created)
-
-### Week 7
-- [ ] Weekly journal entry
 - [ ] Setup authentication locally
 - [ ] Setup authentication on AWS
 - [ ] Build a JSP for login

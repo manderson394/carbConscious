@@ -118,7 +118,7 @@ This week I feel a little behind. I'm definitely lagging on my project plan, and
 
 ### Week 6
 
-3/3/2020 - ### hours
+3/3/2020 - 10.5 hours
 
 Tasks Completed:
 * Individual Project:
