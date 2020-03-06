@@ -44,6 +44,8 @@
 /src/test/resources/hibernate.cfg.xml
 /src/test/resources/database.properties
 /src/main/webapp/META-INF/context.xml
+/profiles/aws.properties
+/profiles/local.properties
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/

@@ -83,8 +83,8 @@ class UserDaoTest {
     @Test
     void insertSuccess() {
         User insertUser = new User( "Mike", "Anderson", "mikeAnd23", "mike@yahoo.com", "234(3L!",
-                LocalDateTime.of(2020, 3, 23, 10, 53),
-                LocalDateTime.of(2020, 4, 3, 11, 34));
+                LocalDateTime.of(2020, 3, 23, 10, 53, 3, 3),
+                LocalDateTime.of(2020, 4, 3, 11, 34, 3, 3));
         insertUser.addRole(new UserRole("User",
                 LocalDateTime.of(2020,1,1,0,0), insertUser));
         int insertId = dao.insert(insertUser);
