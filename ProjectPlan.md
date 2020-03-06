@@ -29,6 +29,7 @@
 
 ### Week 7
 - [ ] Weekly journal entry
+- [x] Implement Maven Profiles in project
 - [ ] Create template for all JSPs using bootstrap (or materialize)
 - [ ] Create database on AWS
 - [ ] Deploy to AWS for first time

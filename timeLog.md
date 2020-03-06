@@ -32,3 +32,4 @@
 |3/1/2020|Week 7 videos and demo exercise|1.75||
 |3/2/2020|Think through and create foundational entities, controllers, and JSPs for project; Add instance variables to new entities, Update database design|2.5||
 |3/3/2020|Week 6 reflection, project plan updates, head, header, index, navigator, and footer JSP updates, hibernate entity annotation updates, database table creation updates, checkpoint 2 review|3||
+|3/5/2020|Continue fleshing out entity classes, add Maven Profile functionality to project, hibernate mapping research|3||
