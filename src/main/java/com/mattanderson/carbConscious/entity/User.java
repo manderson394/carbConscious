@@ -58,7 +58,8 @@ public class User implements Serializable {
     private Set<UserRole> roles;
 
     //TODO finish links to User class
-    //private Set<UserFavorites> favorites;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Set<UserFavorite> favorites;
 
     //private Set<CarbohydratesEstimate> estimates;
 
@@ -182,6 +183,25 @@ public class User implements Serializable {
     public void removeRole(UserRole role) {
         roles.remove(role);
         role.setUser(null);
+    }
+
+    /**
+     * Add favorite.
+     *
+     * @param favorite the favorite
+     */
+    public void addFavorite(UserFavorite favorite) {
+        favorites.add(favorite);
+    }
+
+    /**
+     * Remove favorite.
+     *
+     * @param favorite the favorite
+     */
+    public void removeFavorite(UserFavorite favorite) {
+        favorites.remove(favorite);
+        favorite.setUser(null);
     }
 
     @Override
