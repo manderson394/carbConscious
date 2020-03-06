@@ -1,5 +1,6 @@
 package com.mattanderson.carbConscious.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.Objects;
  */
 @Entity(name = "UserRole")
 @Table(name = "USER_ROLES")
+@Data
 public class UserRole {
 
     @Id
@@ -66,103 +68,5 @@ public class UserRole {
         this.name = name;
         this.creationDateTime = creationDateTime;
         this.user = user;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * Gets creation date time.
-     *
-     * @return the creation date time
-     */
-    public LocalDateTime getCreationDateTime() {
-        return creationDateTime;
-    }
-
-    /**
-     * Sets creation date time.
-     *
-     * @param creationDateTime the creation date time
-     */
-    public void setCreationDateTime(LocalDateTime creationDateTime) {
-        this.creationDateTime = creationDateTime;
-    }
-
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
-    }
-
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        return "UserRole{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", creationDateTime=" + creationDateTime +
-                ", user=" + user +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UserRole userRole = (UserRole) o;
-        return id == userRole.id &&
-                Objects.equals(name, userRole.name) &&
-                Objects.equals(creationDateTime, userRole.creationDateTime) &&
-                Objects.equals(user, userRole.user);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, creationDateTime, user);
     }
 }

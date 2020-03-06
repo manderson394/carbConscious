@@ -126,12 +126,12 @@ class UserRoleTest {
      */
     @Test
     void testToStringSuccess() {
-        String expectedToString = "UserRole{" +
+        String expectedToString = "UserRole(" +
                 "id=" + userRole.getId() +
-                ", name='" + userRole.getName() + '\'' +
+                ", name=" + userRole.getName() +
                 ", creationDateTime=" + userRole.getCreationDateTime() +
                 ", user=" + userRole.getUser() +
-                '}';
+                ')';
         assertNotNull(userRole.toString());
         assertEquals(expectedToString, userRole.toString());
     }
