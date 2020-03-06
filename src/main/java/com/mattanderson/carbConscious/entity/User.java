@@ -1,5 +1,6 @@
 package com.mattanderson.carbConscious.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -20,6 +21,7 @@ import java.util.Set;
  */
 @Entity(name = "User")
 @Table(name = "USERS")
+@Data
 public class User implements Serializable {
 
     @Id
@@ -160,168 +162,6 @@ public class User implements Serializable {
         this.password = password;
         this.creationDateTime = creationDateTime;
         this.updateDateTime = updateDateTime;
-        this.roles = roles;
-    }
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets first name.
-     *
-     * @return the first name
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * Gets last name.
-     *
-     * @return the last name
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    /**
-     * Gets user name.
-     *
-     * @return the user names
-     */
-    public String getUserName() {
-        return userName;
-    }
-
-    /**
-     * Sets user name.
-     *
-     * @param userName the user names
-     */
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    /**
-     * Gets user email.
-     *
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * Sets user email.
-     *
-     * @param email the email
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * Gets password.
-     *
-     * @return the password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * Sets password.
-     *
-     * @param password the password
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
-     * Gets creation date time.
-     *
-     * @return the creation date time
-     */
-    public LocalDateTime getCreationDateTime() {
-        return creationDateTime;
-    }
-
-    /**
-     * Sets creation date time.
-     *
-     * @param creationDateTime the creation date time
-     */
-    public void setCreationDateTime(LocalDateTime creationDateTime) {
-        this.creationDateTime = creationDateTime;
-    }
-
-    /**
-     * Gets update date time.
-     *
-     * @return the update date time
-     */
-    public LocalDateTime getUpdateDateTime() {
-        return updateDateTime;
-    }
-
-    /**
-     * Sets update date time.
-     *
-     * @param updateDateTime the update date time
-     */
-    public void setUpdateDateTime(LocalDateTime updateDateTime) {
-        this.updateDateTime = updateDateTime;
-    }
-
-    /**
-     * Gets roles.
-     *
-     * @return the roles
-     */
-    public Set<UserRole> getRoles() {
-        return roles;
-    }
-
-    /**
-     * Sets roles.
-     *
-     * @param roles the roles
-     */
-    public void setRoles(Set<UserRole> roles) {
         this.roles = roles;
     }
 
