@@ -7,7 +7,7 @@
         <c:import url="header.jsp"/>
 
         <div>
-            <h2>Counting Carbs better together</h2>
+            <h2>Counting carbs better together</h2>
         </div>
 
         <section>

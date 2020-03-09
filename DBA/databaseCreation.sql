@@ -6,6 +6,7 @@ create table USERS
     last_name varchar(255) default NULL null,
     user_name varchar(255) not null,
     email varchar(255) not null,
+    password varchar (255) not null,
     creation_datetime datetime not null,
     update_datetime datetime not null,
     constraint USERS_pk

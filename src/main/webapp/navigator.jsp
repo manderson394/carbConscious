@@ -15,4 +15,5 @@
     </form>
     <!-- TODO Add dynamic Sign-Up/Welcome, User field -->
     <!-- TODO Add dynamic Login/Account Menu -->
+    <a href="loginAction"><button>Login</button></a>
 </nav>
