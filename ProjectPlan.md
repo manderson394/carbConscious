@@ -41,7 +41,7 @@
 - [ ] Add JSP to create a user profile
 - [ ] Build a home page JSP
 - [ ] Create the menu item class (table, entity, DAO)
-- [ ] Setup authentication locally
+- [x] Setup authentication locally
 - [ ] Setup authentication on AWS
 - [ ] Build a JSP for login
 - [ ] Build carbs class (table, entity, DAO)
