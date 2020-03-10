@@ -3,7 +3,12 @@ package com.mattanderson.carbConscious.entity;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 @Log4j2
+@Entity(name = "Outcome")
+@Table(name = "OUTCOMES")
 public enum Outcome {
     HIGH(2),
     IN_RANGE(1),

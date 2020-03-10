@@ -37,4 +37,25 @@ public class MenuItem {
     @Column(name = "creation_datetime")
     @CreationTimestamp
     private LocalDateTime creationDateTime;
+
+    public MenuItem() {
+
+    }
+
+    public MenuItem(String name, int apiId, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+        this();
+        this.name = name;
+        this.apiId = apiId;
+        this.carbohydratesEstimates = carbohydratesEstimates;
+        this.creationDateTime = creationDateTime;
+    }
+
+    public MenuItem(int id, String name, int apiId, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+        this();
+        this.id = id;
+        this.name = name;
+        this.apiId = apiId;
+        this.carbohydratesEstimates = carbohydratesEstimates;
+        this.creationDateTime = creationDateTime;
+    }
 }
