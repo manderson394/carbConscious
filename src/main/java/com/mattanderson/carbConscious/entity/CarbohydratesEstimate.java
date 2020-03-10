@@ -26,6 +26,8 @@ public class CarbohydratesEstimate {
     @JoinColumn(name = "menu_item_id", referencedColumnName = "id")
     private MenuItem menuItem;
 
+    @Enumerated(value = EnumType.ORDINAL)
+    @Column(name = "outcome_id")
     private Outcome outcome;
 
     @ManyToOne

@@ -34,3 +34,4 @@
 |3/3/2020|Week 6 reflection, project plan updates, head, header, index, navigator, and footer JSP updates, hibernate entity annotation updates, database table creation updates, checkpoint 2 review|3||
 |3/5/2020|Continue fleshing out entity classes, add Maven Profile functionality to project, hibernate mapping research|3||
 |3/8/2020|Update project to include Tomcat Authentication (spending a lot of time troubleshooting database connection issues)|3.5||
+|3/9/2020|Troubleshoot database connection issue on AWS|3||
