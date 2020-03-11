@@ -20,10 +20,10 @@ public class MenuAPI {
 
     private String name;
 
-    //@OneToMany()
+    @OneToMany(mappedBy = "menuApi", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.LAZY)
     private Set<Restaurant> restaurants;
 
-    //@OneToMany()
+    @OneToMany(mappedBy = "menuApi", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.LAZY)
     private Set<MenuItem> menuItems;
 
     @Column(name = "creation_datetime")

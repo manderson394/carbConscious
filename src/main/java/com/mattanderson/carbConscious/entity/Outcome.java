@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Log4j2
-@Entity(name = "Outcome")
-@Table(name = "OUTCOMES")
 public enum Outcome {
     HIGH(2),
     IN_RANGE(1),

@@ -54,7 +54,7 @@
 - [ ] Weekly journal entry
 
 - [ ] Create template for all JSPs using bootstrap (or materialize)
-- [ ] Deploy to AWS for first time
+- [x] Deploy to AWS for first time
 - [ ] Create the restaurant menu class (table, entity, DAO (might be repetitive--refactor))
 - [ ] Add edit and delete functionality in JSP for user (and other classes)
 - [ ] Build menu item search JSP

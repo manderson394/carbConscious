@@ -20,16 +20,16 @@ public class MenuItem {
 
     private String name;
 
-    //@Column(name = "source_api")
-    //@ManyToOne
-    //@JoinColumn
-    //private MenuAPI menuApi;
+    @ManyToOne
+    @JoinColumn(name = "source_api", referencedColumnName = "id")
+    private MenuAPI menuApi;
 
     @Column(name = "api_id")
     private int apiId;
 
-    //@Column(name = "parent_restaurant_api_id")
-    //private Restaurant parentRestaurant;
+    @ManyToOne
+    @JoinColumn(name = "parent_restaurant_api_id", referencedColumnName = "id")
+    private Restaurant parentRestaurant;
 
     @OneToMany(mappedBy = "menuItem", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.LAZY)
     private Set<CarbohydratesEstimate> carbohydratesEstimates;
