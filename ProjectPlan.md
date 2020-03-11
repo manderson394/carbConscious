@@ -28,10 +28,10 @@
 - [x] Prepare for Checkpoint #2 (Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J implemented, class design and any other diagrams I plan to use have been created)
 
 ### Week 7
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
 - [x] Implement Maven Profiles in project
 - [ ] Create template for all JSPs using bootstrap (or materialize)
-- [ ] Create database on AWS
+- [x] Create database on AWS
 - [ ] Deploy to AWS for first time
 - [ ] Create the restaurant menu class (table, entity, DAO (might be repetitive--refactor))
 - [ ] Add edit and delete functionality in JSP for user (and other classes)
@@ -52,6 +52,25 @@
 
 ### Week 8
 - [ ] Weekly journal entry
+
+- [ ] Create template for all JSPs using bootstrap (or materialize)
+- [ ] Deploy to AWS for first time
+- [ ] Create the restaurant menu class (table, entity, DAO (might be repetitive--refactor))
+- [ ] Add edit and delete functionality in JSP for user (and other classes)
+- [ ] Build menu item search JSP
+- [ ] Build a menu item results JSP
+- [ ] Add JSP to sign up a user
+- [ ] Add JSP to create a user profile
+- [ ] Build a home page JSP
+- [ ] Create the menu item class (table, entity, DAO)
+- [ ] Setup authentication on AWS
+- [ ] Build a JSP for login
+- [ ] Build carbs class (table, entity, DAO)
+- [ ] Add any other tables (test, dev, and production databases)
+- [ ] Add any other entities
+- [ ] Update any result reports and tests
+- [ ] Review and incorporate any feedback from Checkpoint #2
+
 - [ ] Integration with restaurant menu items integration (and google maps?)
 - [ ] Build search JSP for restaurant menus
 - [ ] Build result JSP for restaurant menus

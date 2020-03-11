@@ -133,4 +133,21 @@ and my project plan shows it! I need to revisit my plan and make some updates.
 
 My goal for the next week is to get back on track in terms of my project plan.
 
+### Week 6
 
+3/10/2020 - 13.25 hours
+
+Tasks Completed:
+* Individual Project:
+    * Update database table linkages
+    * Improve JSP page structure
+    * Add Tomcat Realm Authentication to project
+* Exercise 7
+
+I feel like I didn't get to my project much this week (and my ProjectPlan.md shows it). I'm not quite getting to the point that 
+I'm comfortable with where I'm at in my project, and I'm still looking to make some big leaps in the next week or so.
+
+It didn't help that most of my time this week, I feel like I spent troubleshooting MySQL issues with time zones and access--I wanted to 
+be way more productive! 
+
+I'm still struggling with Hibernate mapping for my Enum class...do I need to creat a customer Enum Type? 

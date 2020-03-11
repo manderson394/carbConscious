@@ -35,4 +35,4 @@
 |3/5/2020|Continue fleshing out entity classes, add Maven Profile functionality to project, hibernate mapping research|3||
 |3/8/2020|Update project to include Tomcat Authentication (spending a lot of time troubleshooting database connection issues)|3.5||
 |3/9/2020|Troubleshoot database connection issue on AWS, updates entity classes with additional skeletal code|4||
-|||||
+|3/10/2020|Resolve AWS MySQL issue|.75||
