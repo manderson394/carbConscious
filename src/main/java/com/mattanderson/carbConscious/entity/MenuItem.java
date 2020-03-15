@@ -6,8 +6,12 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.Set;
 
+/**
+ * The type Menu item.
+ */
 @Entity(name = "MenuItem")
 @Table(name = "MENU_ITEMS")
 @Data
@@ -38,10 +42,21 @@ public class MenuItem {
     @CreationTimestamp
     private LocalDateTime creationDateTime;
 
+    /**
+     * Instantiates a new Menu item.
+     */
     public MenuItem() {
 
     }
 
+    /**
+     * Instantiates a new Menu item.
+     *
+     * @param name                   the name
+     * @param apiId                  the api id
+     * @param carbohydratesEstimates the carbohydrates estimates
+     * @param creationDateTime       the creation date time
+     */
     public MenuItem(String name, int apiId, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
         this();
         this.name = name;
@@ -50,6 +65,15 @@ public class MenuItem {
         this.creationDateTime = creationDateTime;
     }
 
+    /**
+     * Instantiates a new Menu item.
+     *
+     * @param id                     the id
+     * @param name                   the name
+     * @param apiId                  the api id
+     * @param carbohydratesEstimates the carbohydrates estimates
+     * @param creationDateTime       the creation date time
+     */
     public MenuItem(int id, String name, int apiId, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
         this();
         this.id = id;
@@ -57,5 +81,41 @@ public class MenuItem {
         this.apiId = apiId;
         this.carbohydratesEstimates = carbohydratesEstimates;
         this.creationDateTime = creationDateTime;
+    }
+
+    /**
+     * Add carbohydrates estimate.
+     *
+     * @param estimate the estimate
+     */
+    public void addCarbohydratesEstimate(CarbohydratesEstimate estimate) {
+        carbohydratesEstimates.add(estimate);
+    }
+
+    /**
+     * Remove carbohydrates estimate.
+     *
+     * @param estimate the estimate
+     */
+    public void removeCarbohydratesEstimate(CarbohydratesEstimate estimate) {
+        carbohydratesEstimates.remove(estimate);
+        estimate.setMenuItem(null);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return id == menuItem.id &&
+                apiId == menuItem.apiId &&
+                Objects.equals(name, menuItem.name) &&
+                Objects.equals(menuApi, menuItem.menuApi) &&
+                Objects.equals(parentRestaurant, menuItem.parentRestaurant);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, menuApi, apiId, parentRestaurant);
     }
 }
