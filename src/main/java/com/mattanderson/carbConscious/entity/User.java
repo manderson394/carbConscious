@@ -61,7 +61,8 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Set<UserFavorite> favorites;
 
-    //private Set<CarbohydratesEstimate> estimates;
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.LAZY)
+    private Set<CarbohydratesEstimate> estimates;
 
     /**
      * Instantiates a new User.
@@ -202,6 +203,15 @@ public class User implements Serializable {
     public void removeFavorite(UserFavorite favorite) {
         favorites.remove(favorite);
         favorite.setUser(null);
+    }
+
+    public void addCarbohydratesEstimate(CarbohydratesEstimate estimate) {
+        estimates.add(estimate);
+    }
+
+    public void removeCarbohydratesEstimate(CarbohydratesEstimate estimate) {
+        estimates.remove(estimate);
+        estimate.setUser(null);
     }
 
     @Override
