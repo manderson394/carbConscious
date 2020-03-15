@@ -8,6 +8,9 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+/**
+ * The type Menu api.
+ */
 @Entity(name = "MenuAPI")
 @Table(name = "MENU_APIS")
 @Data
@@ -30,8 +33,19 @@ public class MenuAPI {
     @CreationTimestamp
     private LocalDateTime creationDateTime;
 
+    /**
+     * Instantiates a new Menu api.
+     */
     public MenuAPI() {}
 
+    /**
+     * Instantiates a new Menu api.
+     *
+     * @param name             the name
+     * @param restaurants      the restaurants
+     * @param menuItems        the menu items
+     * @param creationDateTime the creation date time
+     */
     public MenuAPI(String name, Set<Restaurant> restaurants, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
         this();
         this.name = name;
@@ -40,6 +54,15 @@ public class MenuAPI {
         this.creationDateTime = creationDateTime;
     }
 
+    /**
+     * Instantiates a new Menu api.
+     *
+     * @param id               the id
+     * @param name             the name
+     * @param restaurants      the restaurants
+     * @param menuItems        the menu items
+     * @param creationDateTime the creation date time
+     */
     public MenuAPI(int id, String name, Set<Restaurant> restaurants, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
         this();
         this.id = id;
@@ -47,5 +70,43 @@ public class MenuAPI {
         this.restaurants = restaurants;
         this.menuItems = menuItems;
         this.creationDateTime = creationDateTime;
+    }
+
+    /**
+     * Add restaurant.
+     *
+     * @param restaurant the restaurant
+     */
+    public void addRestaurant(Restaurant restaurant) {
+        restaurants.add(restaurant);
+    }
+
+    /**
+     * Remove restaurant.
+     *
+     * @param restaurant the restaurant
+     */
+    public void removeRestaurant(Restaurant restaurant) {
+        restaurants.remove(restaurant);
+        restaurant.setMenuApi(null);
+    }
+
+    /**
+     * Add menu item.
+     *
+     * @param menuItem the menu item
+     */
+    public void addMenuItem(MenuItem menuItem) {
+        menuItems.add(menuItem);
+    }
+
+    /**
+     * Remove menu item.
+     *
+     * @param menuItem the menu item
+     */
+    public void removeMenuItem(MenuItem menuItem) {
+        menuItems.remove(menuItem);
+        menuItem.setMenuApi(null);
     }
 }

@@ -205,10 +205,20 @@ public class User implements Serializable {
         favorite.setUser(null);
     }
 
+    /**
+     * Add carbohydrates estimate.
+     *
+     * @param estimate the estimate
+     */
     public void addCarbohydratesEstimate(CarbohydratesEstimate estimate) {
         estimates.add(estimate);
     }
 
+    /**
+     * Remove carbohydrates estimate.
+     *
+     * @param estimate the estimate
+     */
     public void removeCarbohydratesEstimate(CarbohydratesEstimate estimate) {
         estimates.remove(estimate);
         estimate.setUser(null);
