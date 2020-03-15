@@ -28,6 +28,8 @@
     <hibernate-validator-version>5.4.1.Final</hibernate-validator-version>
     <hibernate-validator-annotation-processor-version>6.1.2.Final</hibernate-validator-annotation-processor-version>
     <lombok-version>1.18.12</lombok-version>
+    <jersey-version>2.29.1</jersey-version>
+    <jackson-version>2.10.0</jackson-version>
   </properties>
   <dependencies>
     <dependency>
@@ -111,6 +113,40 @@
       <artifactId>lombok</artifactId>
       <version>${lombok-version}</version>
       <scope>provided</scope>
+    </dependency>
+    <!-- Next 2 dependencies are for Jersey -->
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>${jersey-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>${jersey-version}</version>
+    </dependency>
+
+    <!-- Next 3 dependencies are for Jackson -->
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${jackson-version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-version}</version>
     </dependency>
   </dependencies>
 <!-- Configure profiles since deploying in more than one environment -->

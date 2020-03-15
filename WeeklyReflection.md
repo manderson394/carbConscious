@@ -151,3 +151,17 @@ It didn't help that most of my time this week, I feel like I spent troubleshooti
 be way more productive! 
 
 I'm still struggling with Hibernate mapping for my Enum class...do I need to creat a customer Enum Type? 
+
+### Week 8
+
+3/17/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * 
+* Exercise 8
+
+Yet another snafu with the API I was going to use. As it turns out, it looks like the developer community has identified 
+that the API is broken and it doesn't seem like anyone is maintaining it. So, I spent another hour looking for a new, reasonable 
+API but with the added difficulty of it needing to allow relative compatibility with the data structure/classes I already have in place.
+I think I'll use [Recipe-Food-Nutrition API](rapidapi.com/spoonacular/api/recipe-food-nutrition/pricing) now. 
