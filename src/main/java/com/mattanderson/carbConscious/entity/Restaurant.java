@@ -6,8 +6,12 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.Set;
 
+/**
+ * The type Restaurant.
+ */
 @Entity(name = "Restaurant")
 @Table(name = "RESTAURANTS")
 @Data
@@ -34,10 +38,22 @@ public class Restaurant {
     @CreationTimestamp
     private LocalDateTime creationDateTime;
 
+    /**
+     * Instantiates a new Restaurant.
+     */
     public Restaurant() {
 
     }
 
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param name             the name
+     * @param menuApi          the menu api
+     * @param apiId            the api id
+     * @param menuItems        the menu items
+     * @param creationDateTime the creation date time
+     */
     public Restaurant(String name, MenuAPI menuApi, int apiId, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
         this();
         this.name = name;
@@ -47,6 +63,16 @@ public class Restaurant {
         this.creationDateTime = creationDateTime;
     }
 
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param id               the id
+     * @param name             the name
+     * @param menuApi          the menu api
+     * @param apiId            the api id
+     * @param menuItems        the menu items
+     * @param creationDateTime the creation date time
+     */
     public Restaurant(int id, String name, MenuAPI menuApi, int apiId, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
         this();
         this.id = id;
@@ -55,5 +81,40 @@ public class Restaurant {
         this.apiId = apiId;
         this.menuItems = menuItems;
         this.creationDateTime = creationDateTime;
+    }
+
+    /**
+     * Add menu item.
+     *
+     * @param menuItem the menu item
+     */
+    public void addMenuItem(MenuItem menuItem) {
+        menuItems.add(menuItem);
+    }
+
+    /**
+     * Remove menu item.
+     *
+     * @param menuItem the menu item
+     */
+    public void removeMenuItem(MenuItem menuItem) {
+        menuItems.remove(menuItem);
+        menuItem.setParentRestaurant(null);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Restaurant that = (Restaurant) o;
+        return id == that.id &&
+                apiId == that.apiId &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(menuApi, that.menuApi);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, menuApi, apiId);
     }
 }

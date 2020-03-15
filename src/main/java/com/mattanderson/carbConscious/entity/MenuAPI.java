@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -108,5 +109,19 @@ public class MenuAPI {
     public void removeMenuItem(MenuItem menuItem) {
         menuItems.remove(menuItem);
         menuItem.setMenuApi(null);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuAPI menuAPI = (MenuAPI) o;
+        return id == menuAPI.id &&
+                Objects.equals(name, menuAPI.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 }
