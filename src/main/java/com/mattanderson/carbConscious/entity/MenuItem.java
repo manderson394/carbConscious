@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -46,21 +47,46 @@ public class MenuItem {
      * Instantiates a new Menu item.
      */
     public MenuItem() {
+        carbohydratesEstimates = new HashSet<>();
+    }
 
+    /**
+     * Instantiates a new Menu item.
+     *
+     * @param name    the name
+     * @param menuApi the menu api
+     * @param apiId   the api id
+     */
+    public MenuItem(String name, MenuAPI menuApi, int apiId) {
+        this();
+        this.name = name;
+        this.menuApi = menuApi;
+        this.apiId = apiId;
+    }
+
+    public MenuItem(String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
+        this.name = name;
+        this.menuApi = menuApi;
+        this.apiId = apiId;
+        this.parentRestaurant = parentRestaurant;
     }
 
     /**
      * Instantiates a new Menu item.
      *
      * @param name                   the name
+     * @param menuApi                the menu api
      * @param apiId                  the api id
+     * @param parentRestaurant       the parent restaurant
      * @param carbohydratesEstimates the carbohydrates estimates
      * @param creationDateTime       the creation date time
      */
-    public MenuItem(String name, int apiId, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+    public MenuItem(String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
         this();
         this.name = name;
+        this.menuApi = menuApi;
         this.apiId = apiId;
+        this.parentRestaurant = parentRestaurant;
         this.carbohydratesEstimates = carbohydratesEstimates;
         this.creationDateTime = creationDateTime;
     }
@@ -70,15 +96,19 @@ public class MenuItem {
      *
      * @param id                     the id
      * @param name                   the name
+     * @param menuApi                the menu api
      * @param apiId                  the api id
+     * @param parentRestaurant       the parent restaurant
      * @param carbohydratesEstimates the carbohydrates estimates
      * @param creationDateTime       the creation date time
      */
-    public MenuItem(int id, String name, int apiId, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+    public MenuItem(int id, String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
         this();
         this.id = id;
         this.name = name;
+        this.menuApi = menuApi;
         this.apiId = apiId;
+        this.parentRestaurant = parentRestaurant;
         this.carbohydratesEstimates = carbohydratesEstimates;
         this.creationDateTime = creationDateTime;
     }

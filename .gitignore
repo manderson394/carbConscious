@@ -43,6 +43,8 @@
 /src/main/resources/hibernate.cfg.xml
 /src/test/resources/hibernate.cfg.xml
 /src/test/resources/database.properties
+/src/test/resources/api.properties
+/src/main/resources/api.properties
 /src/main/webapp/META-INF/context.xml
 /profiles/aws.properties
 /profiles/local.properties
