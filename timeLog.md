@@ -37,3 +37,4 @@
 |3/9/2020|Troubleshoot database connection issue on AWS, updates entity classes with additional skeletal code|4||
 |3/10/2020|Resolve AWS MySQL issue, Update Java entity Hibernate annotation|2.75||
 |3/12/2020|Troubleshoot MySQL root password change, Inevitably reinstall MySQL|2||
+|3/14/2020|Build out entity classes|1.5||
