@@ -228,13 +228,11 @@ public class User implements Serializable {
                 Objects.equals(lastName, user.lastName) &&
                 Objects.equals(userName, user.userName) &&
                 Objects.equals(email, user.email) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(creationDateTime, user.creationDateTime) &&
-                Objects.equals(updateDateTime, user.updateDateTime);
+                Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, userName, email, password, creationDateTime, updateDateTime);
+        return Objects.hash(id, firstName, lastName, userName, email, password);
     }
 }

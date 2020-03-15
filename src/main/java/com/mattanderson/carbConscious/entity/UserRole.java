@@ -1,6 +1,7 @@
 package com.mattanderson.carbConscious.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -26,6 +27,7 @@ public class UserRole {
     private String name;
 
     @Column(name = "creation_datetime")
+    @CreationTimestamp
     private LocalDateTime creationDateTime;
 
     @ManyToOne
@@ -68,5 +70,20 @@ public class UserRole {
         this.name = name;
         this.creationDateTime = creationDateTime;
         this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserRole userRole = (UserRole) o;
+        return id == userRole.id &&
+                Objects.equals(name, userRole.name) &&
+                Objects.equals(user, userRole.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, user);
     }
 }
