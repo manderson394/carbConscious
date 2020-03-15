@@ -8,7 +8,11 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
+/**
+ * The type Carbohydrates estimate.
+ */
 @Entity(name = "CarbohydratesEstimate")
 @Table(name = "CARBOHYDRATE_ESTIMATES")
 @Data
@@ -42,10 +46,23 @@ public class CarbohydratesEstimate {
     @UpdateTimestamp
     private LocalDateTime updateDateTime;
 
+    /**
+     * Instantiates a new Carbohydrates estimate.
+     */
     public CarbohydratesEstimate() {
 
     }
 
+    /**
+     * Instantiates a new Carbohydrates estimate.
+     *
+     * @param carbohydrateGramsEstimate the carbohydrate grams estimate
+     * @param menuItem                  the menu item
+     * @param outcome                   the outcome
+     * @param user                      the user
+     * @param creationDateTime          the creation date time
+     * @param updateDateTime            the update date time
+     */
     public CarbohydratesEstimate(int carbohydrateGramsEstimate, MenuItem menuItem, Outcome outcome, User user, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.carbohydrateGramsEstimate = carbohydrateGramsEstimate;
@@ -56,6 +73,17 @@ public class CarbohydratesEstimate {
         this.updateDateTime = updateDateTime;
     }
 
+    /**
+     * Instantiates a new Carbohydrates estimate.
+     *
+     * @param id                        the id
+     * @param carbohydrateGramsEstimate the carbohydrate grams estimate
+     * @param menuItem                  the menu item
+     * @param outcome                   the outcome
+     * @param user                      the user
+     * @param creationDateTime          the creation date time
+     * @param updateDateTime            the update date time
+     */
     public CarbohydratesEstimate(int id, int carbohydrateGramsEstimate, MenuItem menuItem, Outcome outcome, User user, LocalDateTime creationDateTime, LocalDateTime updateDateTime) {
         this();
         this.id = id;
@@ -65,5 +93,22 @@ public class CarbohydratesEstimate {
         this.user = user;
         this.creationDateTime = creationDateTime;
         this.updateDateTime = updateDateTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CarbohydratesEstimate that = (CarbohydratesEstimate) o;
+        return id == that.id &&
+                carbohydrateGramsEstimate == that.carbohydrateGramsEstimate &&
+                Objects.equals(menuItem, that.menuItem) &&
+                outcome == that.outcome &&
+                Objects.equals(user, that.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, carbohydrateGramsEstimate, menuItem, outcome, user);
     }
 }
