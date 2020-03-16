@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mattanderson.carbConscious.util.PropertiesLoader;
 import com.spoonacular.entity.SpoonacularMenuItemSearch;
+import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 
 import javax.json.Json;
@@ -23,20 +24,22 @@ public class SpoonacularDao<T> implements PropertiesLoader {
     private Client client;
     private ObjectMapper mapper;
     private Class<T> type;
+    @Getter
     private String queryUri;
 
     public SpoonacularDao(Class<T> type) {
         properties = loadProperties("/api.properties");
         baseUri = properties.getProperty("api.spoonacular.url");
-        searchMenuItemsString = properties.getProperty("/food/menuItems/search?");
+        searchMenuItemsString = properties.getProperty("api.spoonacular.menu.item.search.url");
         authenticationString = properties.getProperty("api.spoonacular.url.key");
 
         client = ClientBuilder.newClient();
         mapper = new ObjectMapper();
 
         this.type = type;
-
     }
+
+
 
     public void createMenuItemSearchURI(String query, int offsetForPaging, int numberOfResults) {
         String queryString = "&query=" + query + "&offset=" + offsetForPaging + "&number=" + numberOfResults;
