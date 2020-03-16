@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 /**
  * Unit tests the <code>SpoonacularMenuItemSearch</code> class.
@@ -193,7 +192,7 @@ public class SpoonacularMenuItemSearchTest implements PropertiesLoader {
     void setStaleSuccess() {
         boolean expectedStale = true;
         search.setStale(expectedStale);
-        assertEquals(true, search.isStale());
+        assertTrue(search.isStale());
     }
 
     /**
