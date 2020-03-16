@@ -58,4 +58,6 @@ public class SpoonacularMenuItemSearchTest implements PropertiesLoader {
         }
         assertEquals(search, spoonacularMenuItemSearch);
     }
+
+
 }
