@@ -12,6 +12,9 @@ import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests the <code>SpoonacularDao</code> for menu item searches.
+ */
 class SpoonacularMenuItemSearchDaoTest implements PropertiesLoader {
 
     private SpoonacularMenuItem item;
@@ -20,6 +23,9 @@ class SpoonacularMenuItemSearchDaoTest implements PropertiesLoader {
     private SpoonacularDao<SpoonacularMenuItemSearch> dao;
     private Properties properties;
 
+    /**
+     * Sets up instance variables before each unit test.
+     */
     @BeforeEach
     void setup() {
         dao = new SpoonacularDao<>(SpoonacularMenuItemSearch.class);
@@ -33,6 +39,9 @@ class SpoonacularMenuItemSearchDaoTest implements PropertiesLoader {
         properties = loadProperties("/api.properties");
     }
 
+    /**
+     * Validates creating menu item search uri successfully.
+     */
     @Test
     void createMenuItemSearchURISuccess() {
         String expectedURI = "https://api.spoonacular.com/food/menuItems/search?"
@@ -41,6 +50,9 @@ class SpoonacularMenuItemSearchDaoTest implements PropertiesLoader {
         assertEquals(expectedURI, dao.getQueryUri());
     }
 
+    /**
+     * Validates searching Spoonacular successfully.
+     */
     @Test
     void searchSpoonacularSuccess() {
         dao.createMenuItemSearchURI("burger", 0, 1);
