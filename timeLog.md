@@ -39,4 +39,4 @@
 |3/12/2020|Troubleshoot MySQL root password change, Inevitably reinstall MySQL|2||
 |3/14/2020|Build out entity classes|1.5||
 |3/15/2020|Week 8 videos, API replacement search, Implement Spoonacular API (unit tests, entities, DAO)|7.5||
-|3/18/2020|Week 8 Reflection|0.25||
+|3/18/2020|Week 8 Reflection, Add more data to insertData SQL|0.75||

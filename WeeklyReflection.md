@@ -154,7 +154,7 @@ I'm still struggling with Hibernate mapping for my Enum class...do I need to cre
 
 ### Week 8
 
-3/17/2020 - ### hours
+3/17/2020 - 14.5 hours
 
 Tasks Completed:
 * Individual Project:
