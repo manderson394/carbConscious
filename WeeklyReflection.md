@@ -158,10 +158,14 @@ I'm still struggling with Hibernate mapping for my Enum class...do I need to cre
 
 Tasks Completed:
 * Individual Project:
-    * 
+    * Deploy to AWS
+    * Integration classes for Spoonacular
 * Exercise 8
 
 Yet another snafu with the API I was going to use. As it turns out, it looks like the developer community has identified 
 that the API is broken and it doesn't seem like anyone is maintaining it. So, I spent another hour looking for a new, reasonable 
 API but with the added difficulty of it needing to allow relative compatibility with the data structure/classes I already have in place.
-I think I'll use [Recipe-Food-Nutrition API](rapidapi.com/spoonacular/api/recipe-food-nutrition/pricing) now. 
+I think I'll use [Recipe-Food-Nutrition API](rapidapi.com/spoonacular/api/recipe-food-nutrition/pricing) now. We'll see how it goes!
+
+The next week is spring break, but I plan to use the weekend of "social distancing" to hopefully jump forward on the week 8 things 
+I haven't yet finished.

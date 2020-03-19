@@ -51,7 +51,7 @@
 - [ ] Review and incorporate any feedback from Checkpoint #2
 
 ### Week 8
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
 
 - [ ] Create template for all JSPs using bootstrap (or materialize)
 - [x] Deploy to AWS for first time
@@ -77,13 +77,13 @@
 - [ ] Build C.R.U.D. functionality for menu item carbs
 - [ ] Prepare for Checkpoint #3 (Deployed to AWS, at least one JSP that displays data from the database implemented)
 - [ ] Implement search result paging
-- [ ] Code Review
 
 ### Week 9
 - [ ] Weekly journal entry
 - [ ] Add password reset/reminder functionality
 - [ ] Review and incorporate feedback from Checkpoint #3
 - [ ] Review code for code standards and best practices (use a code quality tool?)
+- [ ] Code Review
 
 ### Week 10 - Team project work week
 - [ ] Weekly journal entry
