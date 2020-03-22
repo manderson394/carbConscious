@@ -70,7 +70,7 @@ public class GenericDao<T> {
      * @param propertyValue the property value
      * @return the entities with equivalent property values
      */
-    public List<T> getByPropertyEqual(String propertyName, String propertyValue) {
+    public List<T> getByPropertyEqual(String propertyName, Object propertyValue) {
         Session session = sessionFactory.openSession();
         logger.debug("Searching for {} with {} = {}.", type, propertyName, propertyValue);
         CriteriaBuilder builder = session.getCriteriaBuilder();

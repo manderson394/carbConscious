@@ -1,6 +1,8 @@
 package com.mattanderson.carbConscious.persistence;
 
+import com.mattanderson.carbConscious.entity.CarbohydratesEstimate;
 import com.mattanderson.carbConscious.entity.User;
+import com.mattanderson.carbConscious.entity.UserFavorite;
 import com.mattanderson.carbConscious.entity.UserRole;
 import com.mattanderson.carbConscious.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -108,7 +110,7 @@ class UserDaoTest {
      * Validates that when a user is deleted, the role is also deleted.
      */
     @Test
-    void deleteUserDeleteRole() {
+    void deleteUserDeleteRoleSuccess() {
         User deleteUser = dao.getById(1);
         Set<UserRole> deleteRoles = deleteUser.getRoles();
         assertTrue(deleteRoles.size() > 0);
@@ -116,6 +118,37 @@ class UserDaoTest {
         GenericDao roleDao = new GenericDao(UserRole.class);
         for (UserRole role : deleteRoles) {
             assertNull(roleDao.getById(role.getId()));
+        }
+    }
+
+    /**
+     * Validates that when a user is deleted, the carbohydrate estimates are not deleted.
+     */
+    @Test
+    void deleteUserKeepEstimatesSuccess() {
+        User deleteUserWithEstimates = dao.getById(1);
+        GenericDao estimatesDao = new GenericDao(CarbohydratesEstimate.class);
+        //TODO Resolve ArrayIndexOutOfBoundsException
+        List<CarbohydratesEstimate> savedEstimates = estimatesDao.getByPropertyEqual("user", deleteUserWithEstimates);
+        assertTrue(savedEstimates.size() > 0);
+        dao.delete(deleteUserWithEstimates);
+        for (CarbohydratesEstimate keptEstimates: savedEstimates) {
+            assertNotNull(estimatesDao.getById(keptEstimates.getId()));
+        }
+    }
+
+    /**
+     * Validates that when a user is deleted, the user favorites are also deleted.
+     */
+    @Test
+    void deleteUserDeleteFavoritesSuccess() {
+        User deleteUserWithFavorites = dao.getById(1);
+        GenericDao favoritesDao = new GenericDao(UserFavorite.class);
+        List<UserFavorite> deleteFavorites = favoritesDao.getByPropertyEqual("user", deleteUserWithFavorites);
+        assertTrue(deleteFavorites.size() > 0);
+        dao.delete(deleteUserWithFavorites);
+        for (UserFavorite deletedFavorite : deleteFavorites) {
+            assertNull(favoritesDao.getById(deletedFavorite.getId()));
         }
     }
 
