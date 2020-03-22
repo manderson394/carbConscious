@@ -75,6 +75,7 @@ public class MenuItem {
      * @param parentRestaurant the parent restaurant
      */
     public MenuItem(String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
+        this();
         this.name = name;
         this.menuApi = menuApi;
         this.apiId = apiId;
@@ -91,6 +92,7 @@ public class MenuItem {
      * @param parentRestaurant the parent restaurant
      */
     public MenuItem(int id, String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
+        this();
         this.name = name;
         this.id = id;
         this.menuApi = menuApi;

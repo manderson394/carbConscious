@@ -64,6 +64,16 @@ public class CarbohydratesEstimate {
      * @param user                      the user
      */
     public CarbohydratesEstimate(int carbohydrateGramsEstimate, MenuItem menuItem, Outcome outcome, User user) {
+        this();
+        this.carbohydrateGramsEstimate = carbohydrateGramsEstimate;
+        this.menuItem = menuItem;
+        this.outcome = outcome;
+        this.user = user;
+    }
+
+    public CarbohydratesEstimate(int id, int carbohydrateGramsEstimate, MenuItem menuItem, Outcome outcome, User user) {
+        this();
+        this.id = id;
         this.carbohydrateGramsEstimate = carbohydrateGramsEstimate;
         this.menuItem = menuItem;
         this.outcome = outcome;
