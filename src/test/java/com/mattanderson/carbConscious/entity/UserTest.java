@@ -46,6 +46,24 @@ class UserTest {
     }
 
     /**
+     * Validates successful User object creation with basic user data.
+     */
+    @Test
+    void userCreationBasicSuccess() {
+        User basicUser = new User("New", "User", "basicUser", "basic@aol.com", "testBasic");
+        assertNotNull(basicUser);
+    }
+
+    /**
+     * Validates successful User object creation with basic user data and an ID.
+     */
+    @Test
+    void userCreationBasicWithIdSuccess() {
+        User basicUserId = new User(23, "new", "basic", "user", "test@live.com", "tester");
+        assertNotNull(basicUserId);
+    }
+
+    /**
      * Validates successful User object creation with Id specification.
      */
     @Test

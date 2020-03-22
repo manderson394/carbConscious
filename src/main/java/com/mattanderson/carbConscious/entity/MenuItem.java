@@ -66,8 +66,33 @@ public class MenuItem {
         this.apiId = apiId;
     }
 
+    /**
+     * Instantiates a new Menu item.
+     *
+     * @param name             the name
+     * @param menuApi          the menu api
+     * @param apiId            the api id
+     * @param parentRestaurant the parent restaurant
+     */
     public MenuItem(String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
         this.name = name;
+        this.menuApi = menuApi;
+        this.apiId = apiId;
+        this.parentRestaurant = parentRestaurant;
+    }
+
+    /**
+     * Instantiates a new Menu item.
+     *
+     * @param id               the id
+     * @param name             the name
+     * @param menuApi          the menu api
+     * @param apiId            the api id
+     * @param parentRestaurant the parent restaurant
+     */
+    public MenuItem(int id, String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
+        this.name = name;
+        this.id = id;
         this.menuApi = menuApi;
         this.apiId = apiId;
         this.parentRestaurant = parentRestaurant;
@@ -132,6 +157,18 @@ public class MenuItem {
     public void removeCarbohydratesEstimate(CarbohydratesEstimate estimate) {
         carbohydratesEstimates.remove(estimate);
         estimate.setMenuItem(null);
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", menuApi=" + menuApi +
+                ", apiId=" + apiId +
+                ", parentRestaurant=" + parentRestaurant +
+                ", creationDateTime=" + creationDateTime +
+                '}';
     }
 
     @Override

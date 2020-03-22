@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -39,7 +40,10 @@ public class MenuAPI {
     /**
      * Instantiates a new Menu api.
      */
-    public MenuAPI() {}
+    public MenuAPI() {
+        restaurants = new HashSet<>();
+        menuItems = new HashSet<>();
+    }
 
     /**
      * Instantiates a new Menu api.
@@ -48,6 +52,18 @@ public class MenuAPI {
      */
     public MenuAPI(String name) {
         this();
+        this.name = name;
+    }
+
+    /**
+     * Instantiates a new Menu api.
+     *
+     * @param id   the id
+     * @param name the name
+     */
+    public MenuAPI(int id, String name) {
+        this();
+        this.id = id;
         this.name = name;
     }
 
@@ -121,6 +137,15 @@ public class MenuAPI {
     public void removeMenuItem(MenuItem menuItem) {
         menuItems.remove(menuItem);
         menuItem.setMenuApi(null);
+    }
+
+    @Override
+    public String toString() {
+        return "MenuAPI{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", creationDateTime=" + creationDateTime +
+                '}';
     }
 
     @Override

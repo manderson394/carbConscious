@@ -6,11 +6,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 /**
  * Defines Restaurants.
+ *
  * @author Matt Anderson
  * @version 11
  */
@@ -44,7 +46,37 @@ public class Restaurant {
      * Instantiates a new Restaurant.
      */
     public Restaurant() {
+        menuItems = new HashSet<>();
+    }
 
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param name    the name
+     * @param menuApi the menu api
+     * @param apiId   the api id
+     */
+    public Restaurant(String name, MenuAPI menuApi, int apiId) {
+        this();
+        this.name = name;
+        this.menuApi = menuApi;
+        this.apiId = apiId;
+    }
+
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param id      the id
+     * @param name    the name
+     * @param menuApi the menu api
+     * @param apiId   the api id
+     */
+    public Restaurant(int id, String name, MenuAPI menuApi, int apiId) {
+        this();
+        this.id = id;
+        this.name = name;
+        this.menuApi = menuApi;
+        this.apiId = apiId;
     }
 
     /**
@@ -102,6 +134,17 @@ public class Restaurant {
     public void removeMenuItem(MenuItem menuItem) {
         menuItems.remove(menuItem);
         menuItem.setParentRestaurant(null);
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", menuApi=" + menuApi +
+                ", apiId=" + apiId +
+                ", creationDateTime=" + creationDateTime +
+                '}';
     }
 
     @Override

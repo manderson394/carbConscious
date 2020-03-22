@@ -76,6 +76,44 @@ public class User implements Serializable {
     /**
      * Instantiates a new User.
      *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param email     the email
+     * @param password  the password
+     */
+    public User(String firstName, String lastName, String userName, String email, String password) {
+        this();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param id        the id
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param email     the email
+     * @param password  the password
+     */
+    public User(int id, String firstName, String lastName, String userName, String email, String password) {
+        this();
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
      * @param firstName        the first name
      * @param lastName         the last name
      * @param userName        the user name
