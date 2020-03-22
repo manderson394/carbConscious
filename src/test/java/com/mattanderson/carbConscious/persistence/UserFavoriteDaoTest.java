@@ -117,7 +117,7 @@ class UserFavoriteDaoTest {
      * Validates that when a favorite is deleted, the user remains.
      */
     @Test
-    void deleteRoleKeepUser() {
+    void deleteFavoriteKeepUser() {
         UserFavorite favoriteTestDelete = favoriteDao.getById(1);
         User userTestKeep = favoriteTestDelete.getUser();
         favoriteDao.delete(favoriteTestDelete);
