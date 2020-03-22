@@ -128,7 +128,6 @@ class UserDaoTest {
     void deleteUserKeepEstimatesSuccess() {
         User deleteUserWithEstimates = dao.getById(1);
         GenericDao estimatesDao = new GenericDao(CarbohydratesEstimate.class);
-        //TODO Resolve ArrayIndexOutOfBoundsException
         List<CarbohydratesEstimate> savedEstimates = estimatesDao.getByPropertyEqual("user", deleteUserWithEstimates);
         assertTrue(savedEstimates.size() > 0);
         dao.delete(deleteUserWithEstimates);
