@@ -18,6 +18,10 @@ class UserTest {
 
     private User user;
     private User newUser;
+    private MenuAPI api;
+    private MenuItem item;
+    private UserFavorite favorite;
+    private CarbohydratesEstimate estimate;
 
     /**
      * Generate user for each unit test.
@@ -34,6 +38,11 @@ class UserTest {
                 "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
         UserRole newRole = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), newUser);
+
+        api = new MenuAPI("Matt's API");
+        item = new MenuItem("Hot cakes", api, 23);
+        favorite = new UserFavorite(1,  user, item);
+        estimate = new CarbohydratesEstimate(80, item, Outcome.fromId(2), user);
     }
 
     /**
@@ -67,6 +76,28 @@ class UserTest {
                 LocalDateTime.of(2020, 2, 2, 2, 2), noIdUserUserRoles);
         assertNotNull(userNoId);
     }
+
+    /**
+     * Validates successful User constructions with all non-ID instance variables.
+     */
+    @Test
+    void userCreationAllInstanceVariablesSuccess() {
+        Set<UserRole> allRoles = new HashSet<>();
+        Set<UserFavorite> allFavorites = new HashSet<>();
+        Set<CarbohydratesEstimate> allEstimates = new HashSet<>();
+        allRoles.add(new UserRole("User",  LocalDateTime.of(2020, 1, 1, 1, 1),
+                new User( "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+                        "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
+                        LocalDateTime.of(2020, 2, 2, 2, 2))));
+        allFavorites.add(favorite);
+        allEstimates.add(estimate);
+
+        User allUser = new User( "Matt", "Anderson", "mattanderson", "matt@gmail.com",
+                "test1", LocalDateTime.of(2020, 1, 1, 1, 1),
+                LocalDateTime.of(2020, 2, 2, 2, 2), allRoles, allFavorites, allEstimates);
+        assertNotNull(allUser);
+    }
+
     /**
      * Validates successful ability to retrieve the user Id.
      */
@@ -219,6 +250,9 @@ class UserTest {
         assertEquals(LocalDateTime.of(2020, 2, 2, 2, 34), user.getUpdateDateTime());
     }
 
+    /**
+     * Validates successful role retreival.
+     */
     @Test
     void getRolesSuccess() {
         UserRole expectedRole = new UserRole("User",  LocalDateTime.of(2020, 1, 1, 1, 1), user);
@@ -229,6 +263,9 @@ class UserTest {
 
     }
 
+    /**
+     * Validates successful role setting.
+     */
     @Test
     void setRolesSuccess() {
         UserRole newRole = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), user);
@@ -260,6 +297,53 @@ class UserTest {
         user.removeRole(removal);
         assertEquals(false, user.getRoles().contains(removal));
         assertEquals(1, user.getRoles().size());
+    }
+
+    /**
+     * Validates successful favorite addition to a user.
+     */
+    @Test
+    void addFavoriteSuccess() {
+        user.addFavorite(favorite);
+        Set<UserFavorite> favorites = user.getFavorites();
+        assertEquals(1, favorites.size());
+        for (UserFavorite fav : favorites) {
+            assertEquals(favorite, fav);
+        }
+    }
+
+    /**
+     * Validates successful favorite removal from a user.
+     */
+    @Test
+    void removeFavoriteSuccess() {
+        user.addFavorite(favorite);
+        assertEquals(1, user.getFavorites().size());
+        user.removeFavorite(favorite);
+        assertEquals(0, user.getFavorites().size());
+    }
+
+    /**
+     * Validates successful estimate addition to a user.
+     */
+    @Test
+    void addCarbohydrateEstimate() {
+        user.addCarbohydratesEstimate(estimate);
+        assertEquals(1, user.getEstimates().size());
+        for (CarbohydratesEstimate estimateTest : user.getEstimates()) {
+            assertEquals(estimate, estimateTest);
+        }
+    }
+
+    /**
+     * Validates successful estimate removal from a user.
+     */
+    @Test
+    void removeCarbohydrateEstimate() {
+        user.addCarbohydratesEstimate(estimate);
+        assertEquals(1, user.getEstimates().size());
+        user.removeCarbohydratesEstimate(estimate);
+        assertEquals(0, user.getEstimates().size());
     }
 
     /**

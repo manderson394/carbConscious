@@ -69,6 +69,8 @@ public class User implements Serializable {
      */
     public User() {
         roles = new HashSet<>();
+        favorites = new HashSet<>();
+        estimates = new HashSet<>();
     }
 
     /**
@@ -165,6 +167,34 @@ public class User implements Serializable {
         this.creationDateTime = creationDateTime;
         this.updateDateTime = updateDateTime;
         this.roles = roles;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName        the first name
+     * @param lastName         the last name
+     * @param userName         the user name
+     * @param email            the email
+     * @param password         the password
+     * @param creationDateTime the creation date time
+     * @param updateDateTime   the update date time
+     * @param roles            the roles
+     * @param favorites        the favorites
+     * @param estimates        the estimates
+     */
+    public User(String firstName, String lastName, String userName, String email, String password, LocalDateTime creationDateTime, LocalDateTime updateDateTime, Set<UserRole> roles, Set<UserFavorite> favorites, Set<CarbohydratesEstimate> estimates) {
+        this();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.creationDateTime = creationDateTime;
+        this.updateDateTime = updateDateTime;
+        this.roles = roles;
+        this.favorites = favorites;
+        this.estimates = estimates;
     }
 
     /**

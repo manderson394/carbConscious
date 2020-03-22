@@ -42,6 +42,16 @@ public class MenuAPI {
     /**
      * Instantiates a new Menu api.
      *
+     * @param name the name
+     */
+    public MenuAPI(String name) {
+        this();
+        this.name = name;
+    }
+
+    /**
+     * Instantiates a new Menu api.
+     *
      * @param name             the name
      * @param restaurants      the restaurants
      * @param menuItems        the menu items
