@@ -12,6 +12,8 @@ import static org.junit.Assert.*;
 
 /**
  * Unit tests the <code>SpoonacularMenuItemSearch</code> class.
+ * @author Matt Anderson
+ * @version 11
  */
 @Log4j2
 public class SpoonacularMenuItemSearchTest implements PropertiesLoader {

@@ -7,7 +7,9 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 /**
- * The type User favorite.
+ * Defines user favorites.
+ * @author Matt Anderson
+ * @version 11
  */
 @Entity(name = "UserFavorite")
 @Table(name = "USER_FAVORITES")

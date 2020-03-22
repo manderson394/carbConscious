@@ -10,7 +10,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * The type Menu api.
+ * Defines Menu API.
+ * @author Matt Anderson
+ * @version 11
  */
 @Entity(name = "MenuAPI")
 @Table(name = "MENU_APIS")

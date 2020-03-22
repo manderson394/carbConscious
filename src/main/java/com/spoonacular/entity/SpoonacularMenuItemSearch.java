@@ -10,6 +10,11 @@ import lombok.Data;
 
 import javax.annotation.Generated;
 
+/**
+ * Defines Spoonacular menu item searchs.
+ * @author Matt Anderson
+ * @version 11
+ */
 @Generated("com.robohorse.robopojogenerator")
 @Data
 public class SpoonacularMenuItemSearch {
@@ -38,10 +43,25 @@ public class SpoonacularMenuItemSearch {
 	@JsonProperty("isStale")
 	private boolean isStale;
 
+	/**
+	 * Instantiates a new Spoonacular menu item search.
+	 */
 	public SpoonacularMenuItemSearch() {
 		menuItems = new ArrayList<>();
 	}
 
+	/**
+	 * Instantiates a new Spoonacular menu item search.
+	 *
+	 * @param totalMenuItems   the total menu items
+	 * @param number           the number
+	 * @param expires          the expires
+	 * @param offset           the offset
+	 * @param processingTimeMs the processing time ms
+	 * @param menuItems        the menu items
+	 * @param type             the type
+	 * @param isStale          the is stale
+	 */
 	public SpoonacularMenuItemSearch(int totalMenuItems, int number, String expires, int offset, int processingTimeMs, List<SpoonacularMenuItem> menuItems, String type, boolean isStale) {
 		this();
 		this.totalMenuItems = totalMenuItems;

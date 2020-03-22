@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests the <code>SpoonacularMenuItem</code> class.
+ * @author Matt Anderson
+ * @version 11
  */
 class SpoonacularMenuItemTest {
 

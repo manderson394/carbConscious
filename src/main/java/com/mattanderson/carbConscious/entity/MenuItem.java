@@ -11,7 +11,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * The type Menu item.
+ * Defines Menu items.
+ * @author Matt Anderson
+ * @version 11
  */
 @Entity(name = "MenuItem")
 @Table(name = "MENU_ITEMS")

@@ -14,6 +14,13 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import java.util.Properties;
 
+/**
+ * Defines Spoonacular Data Access Objects.
+ * @author Matt Anderson
+ * @version 11
+ *
+ * @param <T> the type parameter
+ */
 @Log4j2
 public class SpoonacularDao<T> implements PropertiesLoader {
 
@@ -27,6 +34,11 @@ public class SpoonacularDao<T> implements PropertiesLoader {
     @Getter
     private String queryUri;
 
+    /**
+     * Instantiates a new Spoonacular dao.
+     *
+     * @param type the type
+     */
     public SpoonacularDao(Class<T> type) {
         properties = loadProperties("/api.properties");
         baseUri = properties.getProperty("api.spoonacular.url");
@@ -40,7 +52,13 @@ public class SpoonacularDao<T> implements PropertiesLoader {
     }
 
 
-
+    /**
+     * Create menu item search uri.
+     *
+     * @param query           the query
+     * @param offsetForPaging the offset for paging
+     * @param numberOfResults the number of results
+     */
     public void createMenuItemSearchURI(String query, int offsetForPaging, int numberOfResults) {
         String queryString = "&query=" + query + "&offset=" + offsetForPaging + "&number=" + numberOfResults;
 
@@ -48,6 +66,12 @@ public class SpoonacularDao<T> implements PropertiesLoader {
         queryUri = baseUri + searchMenuItemsString + authenticationString + queryString;
     }
 
+    /**
+     * Queries spoonacular.com API.
+     *
+     * @return an object of the type requested
+     * @throws NullPointerException the null pointer exception
+     */
     public T searchSpoonacular() throws NullPointerException {
         if (queryUri.isEmpty() || queryUri.isBlank()) {
             throw new NullPointerException("Query URI is null. Please generate the query URI before searching.");

@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 
 import javax.annotation.Generated;
 
+/**
+ * Defines Spoonacular menu items.
+ * @author Matt Anderson
+ * @version 11
+ */
 @Generated("com.robohorse.robopojogenerator")
 @Data
 @AllArgsConstructor

@@ -10,7 +10,9 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * The type Restaurant.
+ * Defines Restaurants.
+ * @author Matt Anderson
+ * @version 11
  */
 @Entity(name = "Restaurant")
 @Table(name = "RESTAURANTS")

@@ -14,6 +14,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests the <code>SpoonacularDao</code> for menu item searches.
+ * @author Matt Anderson
+ * @version 11
  */
 class SpoonacularMenuItemSearchDaoTest implements PropertiesLoader {
 

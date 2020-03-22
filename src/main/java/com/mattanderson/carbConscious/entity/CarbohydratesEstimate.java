@@ -11,7 +11,9 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
- * The type Carbohydrates estimate.
+ * Defines Carbohydrates estimates.
+ * @author Matt Anderson
+ * @version 11
  */
 @Entity(name = "CarbohydratesEstimate")
 @Table(name = "CARBOHYDRATE_ESTIMATES")

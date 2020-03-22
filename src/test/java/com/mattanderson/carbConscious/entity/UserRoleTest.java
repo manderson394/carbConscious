@@ -7,7 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 
 /**
- * Unit tests the <code>UserRole</code> class
+ * Unit tests the <code>UserRole</code> class.
+ * @author Matt Anderson
+ * @version 11
  */
 class UserRoleTest {
 
