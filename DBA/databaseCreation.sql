@@ -44,7 +44,7 @@ create unique index USER_ROLES_user_name_uindex
 
 create table MENU_APIS
 (
-    id int not null,
+    id int auto_increment,
     name varchar(255) not null,
     creation_datetime datetime not null,
     constraint MENU_APIS_pk
@@ -58,7 +58,7 @@ create table MENU_APIS
 
 create table RESTAURANTS
 (
-    id int not null,
+    id int auto_increment,
     name varchar(255) null,
     source_api int null,
     api_id int null,
@@ -78,7 +78,7 @@ create unique index RESTAURANTS_api_id_uindex
 
 create table MENU_ITEMS
 (
-    id int not null,
+    id int auto_increment,
     name varchar(255) null,
     source_api int null,
     api_id int null,
@@ -136,7 +136,7 @@ create table OUTCOMES
 
 create table CARBOHYDRATE_ESTIMATES
 (
-    id int not null,
+    id int auto_increment,
     menu_item_id int not null,
     grams_carbohydrate_estimate int not null,
     outcome_id int null,
