@@ -55,26 +55,26 @@
 
 - [ ] Create template for all JSPs using bootstrap (or materialize)
 - [x] Deploy to AWS for first time
-- [ ] Create the restaurant menu class (table, entity, DAO (might be repetitive--refactor))
+- [x] Create the restaurant menu class (table, entity, DAO (might be repetitive--refactor))
 - [ ] Add edit and delete functionality in JSP for user (and other classes)
 - [ ] Build menu item search JSP
 - [ ] Build a menu item results JSP
 - [ ] Add JSP to sign up a user
 - [ ] Add JSP to create a user profile
 - [ ] Build a home page JSP
-- [ ] Create the menu item class (table, entity, DAO)
+- [x] Create the menu item class (table, entity, DAO)
 - [ ] Setup authentication on AWS
 - [ ] Build a JSP for login
-- [ ] Build carbs class (table, entity, DAO)
-- [ ] Add any other tables (test, dev, and production databases)
-- [ ] Add any other entities
+- [x] Build carbs class (table, entity, DAO)
+- [x] Add any other tables (test, dev, and production databases)
+- [x] Add any other entities
 - [ ] Update any result reports and tests
 - [ ] Review and incorporate any feedback from Checkpoint #2
 
 - [ ] Integration with restaurant menu items integration (and google maps?)
 - [ ] Build search JSP for restaurant menus
 - [ ] Build result JSP for restaurant menus
-- [ ] Build C.R.U.D. functionality for menu item carbs
+- [x] Build C.R.U.D. functionality for menu item carbs
 - [ ] Prepare for Checkpoint #3 (Deployed to AWS, at least one JSP that displays data from the database implemented)
 - [ ] Implement search result paging
 

@@ -169,3 +169,16 @@ I think I'll use [Recipe-Food-Nutrition API](rapidapi.com/spoonacular/api/recipe
 
 The next week is spring break, but I plan to use the weekend of "social distancing" to hopefully jump forward on the week 8 things 
 I haven't yet finished.
+
+### Spring Break
+
+3/24/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Build test cases for all entities in the database
+    * Unit test all remaining entities
+    * Unit test all database access for remaining entities
+
+I was projecting a little more ambitious outcome, but getting all of my entities unit tested was quite the feat to its own
+(at least it feels like it).
