@@ -23,6 +23,7 @@ class MenuItemDaoTest {
     private User user;
     private UserFavorite favorite;
     private Restaurant restaurant;
+    private CarbohydratesEstimate estimate;
 
 
     /**
@@ -49,6 +50,9 @@ class MenuItemDaoTest {
 
         favorite = new UserFavorite(1, user, item);
         user.addFavorite(favorite);
+
+        estimate = new CarbohydratesEstimate(1, 75, item, Outcome.fromId(1), user);
+        item.addCarbohydratesEstimate(estimate);
     }
 
     /**
@@ -146,6 +150,17 @@ class MenuItemDaoTest {
         itemDao.delete(itemDeleteTest);
         assertNotNull(restaurantDao.getById(1));
 
+    }
+
+    /**
+     * Validate that when a menu item is deleted, the carbohydrate estimate is also deleted.
+     */
+    @Test
+    void deleteMenuItemDeleteEstimate() {
+        MenuItem deletionItem = itemDao.getById(1);
+        GenericDao<CarbohydratesEstimate> estimateDao = new GenericDao<>(CarbohydratesEstimate.class);
+        itemDao.delete(deletionItem);
+        assertNull(estimateDao.getById(1));
     }
 
     /**

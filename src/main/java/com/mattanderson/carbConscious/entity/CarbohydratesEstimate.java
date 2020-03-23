@@ -71,6 +71,15 @@ public class CarbohydratesEstimate {
         this.user = user;
     }
 
+    /**
+     * Instantiates a new Carbohydrates estimate.
+     *
+     * @param id                        the id
+     * @param carbohydrateGramsEstimate the carbohydrate grams estimate
+     * @param menuItem                  the menu item
+     * @param outcome                   the outcome
+     * @param user                      the user
+     */
     public CarbohydratesEstimate(int id, int carbohydrateGramsEstimate, MenuItem menuItem, Outcome outcome, User user) {
         this();
         this.id = id;
