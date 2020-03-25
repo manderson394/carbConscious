@@ -12,7 +12,7 @@
 
 <section>
     <c:choose>
-        <c:when test="${empty menuItemResults}">
+        <c:when test="${empty restaurantResults}">
             <p>Your search returned no results.</p>
         </c:when>
         <c:otherwise>
@@ -22,7 +22,7 @@
                     <th>Location</th>
                     <th>Phone Number</th>
                 </tr>
-                <c:forEach var="restaurant" items="${restaurantList}">
+                <c:forEach var="restaurant" items="${restaurantResults}">
                     <tr>
                         <td>${restaurant.name}</td>
                         <td></td> <!--TODO Build out support for location-->
