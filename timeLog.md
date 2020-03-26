@@ -42,3 +42,5 @@
 |3/18/2020|Week 8 Reflection, Add more data to insertData SQL|0.75||
 |3/21/2020|Refine User, UserDaoTest and UserTest classes for new object linkages|2.5||
 |3/22/2020|Resolve Enum out of bounds errors with JDBC, create UserFavoriteTest class, update project JavaDoc, unit test Outcome, CarbohydratesEstimate, MenuAPI, MenuItem, and Restaurant classes and corresponding DAO tests|5.5||
+|3/24/2020|Resolve network error on VM (re deploy backup), update project with lost password files, resolve viewRestaurants JSP error|2.5||
+|3/26/2020|Fix issue with results and login errors on AWS|.5||

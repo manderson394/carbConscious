@@ -172,7 +172,7 @@ I haven't yet finished.
 
 ### Spring Break
 
-3/24/2020 - ### hours
+3/24/2020 - 11 hours
 
 Tasks Completed:
 * Individual Project:
@@ -182,3 +182,12 @@ Tasks Completed:
 
 I was projecting a little more ambitious outcome, but getting all of my entities unit tested was quite the feat to its own
 (at least it feels like it).
+
+I then ran into all of the problems deploying to my web application and reveiwing my wireframes. Since I had to update my API, 
+and the new API doesn't send back all of the data I need (restaurant location, etc...). I'm likely going to have to revisit user entry and allow it.
+This will be some significant scope creep. 
+
+Not only did I encounter that issue, but my VM lost network connection, and I ended up restoring it to a previous copy I had. 
+As a result, I needed to build out a lot of config and password files that weren't on GitHub. 
+
+Let's hope this next week goes better :/
