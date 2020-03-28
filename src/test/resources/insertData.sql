@@ -25,11 +25,11 @@ INSERT INTO RESTAURANTS VALUES (3, 'Ol Diner', 1, 4141, '2020-3-15');
 
 # Insert data into MENU_ITEMS Table
 
-INSERT INTO MENU_ITEMS VALUES (1, 'Blueberry Pancakes', 1, 22, 1, '2020-3-14');
-INSERT INTO MENU_ITEMS VALUES (2, 'Pumpkin Pancakes', 1, 33, 1, '2020-3-14');
-INSERT INTO MENU_ITEMS VALUES (3, 'Butter', 1, 32, 1, '2020-3-14');
-INSERT INTO MENU_ITEMS VALUES (4, 'Burger', 2, 32, 2, '2020-2-10');
-INSERT INTO MENU_ITEMS VALUES (5, 'Meat Loaf', 1, 1, 3, '2020-3-15');
+INSERT INTO MENU_ITEMS VALUES (1, 'Blueberry Pancakes', 'yummy pancakes', 1, 22, 1, '2020-3-14');
+INSERT INTO MENU_ITEMS VALUES (2, 'Pumpkin Pancakes', 'more pancakes', 1, 33, 1, '2020-3-14');
+INSERT INTO MENU_ITEMS VALUES (3, 'Butter', '', 1, 32, 1, '2020-3-14');
+INSERT INTO MENU_ITEMS VALUES (4, 'Burger', 'lettuce, tomato, beef, buns!',2, 32, 2, '2020-2-10');
+INSERT INTO MENU_ITEMS VALUES (5, 'Meat Loaf', '', 1, 1, 3, '2020-3-15');
 
 # Insert data into OUTCOMES Table
 

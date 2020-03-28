@@ -32,7 +32,7 @@ class UserFavoriteTest {
         user.addRole(role);
 
         api = new MenuAPI("Matt's API");
-        item = new MenuItem("Hot cakes", api, 23);
+        item = new MenuItem("Hot cakes", "", api, 23);
         favorite = new UserFavorite(1, 1,  user, item);
         newFavorite = new UserFavorite(2, 23, user, item);
     }
@@ -104,7 +104,7 @@ class UserFavoriteTest {
      */
     @Test
     void setMenuItemSuccess() {
-        MenuItem newItem = new MenuItem("test", api, 23);
+        MenuItem newItem = new MenuItem("test", "", api, 23);
         favorite.setMenuItem(newItem);
         assertEquals(newItem, favorite.getMenuItem());
     }

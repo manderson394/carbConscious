@@ -35,7 +35,7 @@ class RestaurantDaoTest {
 
         api = new MenuAPI(1,"Spoonacular");
         restaurant = new Restaurant(1,"Pancake House", api, 3131);
-        item = new MenuItem(1, "Blueberry Pancakes", api, 22, restaurant);
+        item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes", api, 22, restaurant);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);
         api.addMenuItem(item);

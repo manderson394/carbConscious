@@ -40,7 +40,7 @@ class UserTest {
         UserRole newRole = new UserRole("Administrator",  LocalDateTime.of(2020, 1, 1, 1, 1), newUser);
 
         api = new MenuAPI("Matt's API");
-        item = new MenuItem("Hot cakes", api, 23);
+        item = new MenuItem("Hot cakes", "", api, 23);
         favorite = new UserFavorite(1,  user, item);
         estimate = new CarbohydratesEstimate(80, item, Outcome.fromId(2), user);
     }

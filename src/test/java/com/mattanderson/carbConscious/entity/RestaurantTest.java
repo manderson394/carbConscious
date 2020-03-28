@@ -29,12 +29,12 @@ class RestaurantTest {
     void setUp() {
         api = new MenuAPI(1, "Spoonacular");
         restaurant = new Restaurant(1, "Pancake House", api, 3131);
-        item = new MenuItem(1, "Blueberry Pancakes", api, 22, restaurant);
+        item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes", api, 22, restaurant);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);
         api.addMenuItem(item);
 
-        newItem = new MenuItem(2, "Waffles", api, 8383, restaurant);
+        newItem = new MenuItem(2, "Waffles", "", api, 8383, restaurant);
         newRestaurant = new Restaurant(3, "IHOP", api, 2222);
     }
 
@@ -210,7 +210,7 @@ class RestaurantTest {
     @Test
     void setMenuItems() {
         Set<MenuItem> newItemSet = new HashSet<>();
-        newItemSet.add(new MenuItem("Potatoes", api, 333, restaurant));
+        newItemSet.add(new MenuItem("Potatoes", "", api, 333, restaurant));
         restaurant.setMenuItems(newItemSet);
         assertEquals(newItemSet, restaurant.getMenuItems());
     }

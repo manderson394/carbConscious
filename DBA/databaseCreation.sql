@@ -80,6 +80,7 @@ create table MENU_ITEMS
 (
     id int auto_increment,
     name varchar(255) null,
+    description varchar(255),
     source_api int null,
     api_id int null,
     parent_restaurant_api_id int null,

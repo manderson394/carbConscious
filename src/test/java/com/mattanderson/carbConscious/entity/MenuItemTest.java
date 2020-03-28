@@ -36,7 +36,7 @@ class MenuItemTest {
 
         api = new MenuAPI(1, "Spoonacular");
         restaurant = new Restaurant(1, "Pancake House", api, 3131);
-        item = new MenuItem(1, "Blueberry Pancakes", api, 22, restaurant);
+        item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes",api, 22, restaurant);
         estimate = new CarbohydratesEstimate(1, 75, item, Outcome.fromId(1), user);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);
@@ -52,7 +52,7 @@ class MenuItemTest {
      */
     @Test
     void createMenuItemBasicNoId() {
-        MenuItem newItem = new MenuItem("Test", api, 23, restaurant);
+        MenuItem newItem = new MenuItem("Test", "", api, 23, restaurant);
         assertNotNull(newItem);
     }
 
@@ -61,7 +61,7 @@ class MenuItemTest {
      */
     @Test
     void createMenuItemNoId() {
-        MenuItem allNoId = new MenuItem("food", api, 33333, restaurant, new HashSet<CarbohydratesEstimate>(),
+        MenuItem allNoId = new MenuItem("food", "some stuff", api, 33333, restaurant, new HashSet<CarbohydratesEstimate>(),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
         assertNotNull(allNoId);
     }
@@ -71,7 +71,7 @@ class MenuItemTest {
      */
     @Test
     void createMenuItemAll(){
-        MenuItem all = new MenuItem(83, "foods", api, 83838, restaurant, new HashSet<CarbohydratesEstimate>(),
+        MenuItem all = new MenuItem(83, "foods", "things", api, 83838, restaurant, new HashSet<CarbohydratesEstimate>(),
                 LocalDateTime.of(1999, 9, 9, 9, 9));
         assertNotNull(all);
     }
@@ -102,7 +102,8 @@ class MenuItemTest {
     void testToStringSuccess() {
         String expectedString = "MenuItem{id=" +
                 item.getId() + ", name=\'" +
-                item.getName() + "\', menuApi=" +
+                item.getName() + "\', description=\'" +
+                item.getDescription() + "\', menuApi=" +
                 item.getMenuApi() + ", apiId=" +
                 item.getApiId() + ", parentRestaurant=" +
                 item.getParentRestaurant() + ", creationDateTime=" +
@@ -115,7 +116,7 @@ class MenuItemTest {
      */
     @Test
     void testEqualsSuccess() {
-        MenuItem newItem = new MenuItem(23, "Some Food!", api, 33, restaurant);
+        MenuItem newItem = new MenuItem(23, "Some Food!", "", api, 33, restaurant);
         assertEquals(item, item);
         assertNotEquals(newItem, item);
     }
@@ -125,7 +126,7 @@ class MenuItemTest {
      */
     @Test
     void testHashCodeSuccess() {
-        MenuItem newItem = new MenuItem("More Food", api, 33);
+        MenuItem newItem = new MenuItem("More Food", "", api, 33);
         assertEquals(item.hashCode(), item.hashCode());
         assertNotEquals(newItem.hashCode(), item.hashCode());
     }
@@ -144,6 +145,14 @@ class MenuItemTest {
     @Test
     void getNameSuccess() {
         assertEquals("Blueberry Pancakes", item.getName());
+    }
+
+    /**
+     * Validates successful description retrieval.
+     */
+    @Test
+    void getDescriptionSuccess() {
+        assertEquals("yummy pancakes", item.getDescription());
     }
 
     /**
@@ -204,6 +213,15 @@ class MenuItemTest {
     void setNameSuccess() {
         item.setName("Something");
         assertEquals("Something", item.getName());
+    }
+
+    /**
+     * Validates successfully setting description.
+     */
+    @Test
+    void setDescriptionSuccess() {
+        item.setDescription("Other description");
+        assertEquals("Other description", item.getDescription());
     }
 
     /**

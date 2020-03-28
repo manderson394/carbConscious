@@ -26,7 +26,7 @@ public class SpoonacularConverter {
             restaurant = restaurants.get(0);
         }
         MenuItem menuItem =
-                new MenuItem(spoonacularMenuItem.getTitle(), menuAPI, spoonacularMenuItem.getId(), restaurant);
+                new MenuItem(spoonacularMenuItem.getTitle(), "", menuAPI, spoonacularMenuItem.getId(), restaurant);
         return menuItem;
     }
 }

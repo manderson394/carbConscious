@@ -27,6 +27,8 @@ public class MenuItem {
 
     private String name;
 
+    private String description;
+
     @ManyToOne
     @JoinColumn(name = "source_api", referencedColumnName = "id")
     private MenuAPI menuApi;
@@ -59,9 +61,14 @@ public class MenuItem {
      * @param menuApi the menu api
      * @param apiId   the api id
      */
-    public MenuItem(String name, MenuAPI menuApi, int apiId) {
+    public MenuItem(String name, String description, MenuAPI menuApi, int apiId) {
         this();
         this.name = name;
+        if (description.isEmpty()) {
+            this.description = "Description not available";
+        } else {
+            this.description = description;
+        }
         this.menuApi = menuApi;
         this.apiId = apiId;
     }
@@ -74,9 +81,14 @@ public class MenuItem {
      * @param apiId            the api id
      * @param parentRestaurant the parent restaurant
      */
-    public MenuItem(String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
+    public MenuItem(String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
         this();
         this.name = name;
+        if (description.isEmpty()) {
+            this.description = "Description not available";
+        } else {
+            this.description = description;
+        }
         this.menuApi = menuApi;
         this.apiId = apiId;
         this.parentRestaurant = parentRestaurant;
@@ -91,9 +103,14 @@ public class MenuItem {
      * @param apiId            the api id
      * @param parentRestaurant the parent restaurant
      */
-    public MenuItem(int id, String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
+    public MenuItem(int id, String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant) {
         this();
         this.name = name;
+        if (description.isEmpty()) {
+            this.description = "Description not available";
+        } else {
+            this.description = description;
+        }
         this.id = id;
         this.menuApi = menuApi;
         this.apiId = apiId;
@@ -110,9 +127,14 @@ public class MenuItem {
      * @param carbohydratesEstimates the carbohydrates estimates
      * @param creationDateTime       the creation date time
      */
-    public MenuItem(String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+    public MenuItem(String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
         this();
         this.name = name;
+        if (description.isEmpty()) {
+            this.description = "Description not available";
+        } else {
+            this.description = description;
+        }
         this.menuApi = menuApi;
         this.apiId = apiId;
         this.parentRestaurant = parentRestaurant;
@@ -131,10 +153,11 @@ public class MenuItem {
      * @param carbohydratesEstimates the carbohydrates estimates
      * @param creationDateTime       the creation date time
      */
-    public MenuItem(int id, String name, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+    public MenuItem(int id, String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
         this();
         this.id = id;
         this.name = name;
+        this.description = description;
         this.menuApi = menuApi;
         this.apiId = apiId;
         this.parentRestaurant = parentRestaurant;
@@ -166,6 +189,7 @@ public class MenuItem {
         return "MenuItem{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", menuApi=" + menuApi +
                 ", apiId=" + apiId +
                 ", parentRestaurant=" + parentRestaurant +
@@ -181,12 +205,13 @@ public class MenuItem {
         return id == menuItem.id &&
                 apiId == menuItem.apiId &&
                 Objects.equals(name, menuItem.name) &&
+                Objects.equals(description, menuItem.description) &&
                 Objects.equals(menuApi, menuItem.menuApi) &&
                 Objects.equals(parentRestaurant, menuItem.parentRestaurant);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, menuApi, apiId, parentRestaurant);
+        return Objects.hash(id, name, description, menuApi, apiId, parentRestaurant);
     }
 }

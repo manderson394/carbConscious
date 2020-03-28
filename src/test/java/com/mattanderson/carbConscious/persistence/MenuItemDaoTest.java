@@ -43,7 +43,7 @@ class MenuItemDaoTest {
 
         api = new MenuAPI(1,"Spoonacular");
         restaurant = new Restaurant(1,"Pancake House", api, 3131);
-        item = new MenuItem(1, "Blueberry Pancakes", api, 22, restaurant);
+        item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes", api, 22, restaurant);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);
         api.addMenuItem(item);
@@ -96,7 +96,7 @@ class MenuItemDaoTest {
      */
     @Test
     void insertSuccess() {
-        MenuItem newItem = new MenuItem ("Egg Drop Soup", api, 8998, restaurant);
+        MenuItem newItem = new MenuItem ("Egg Drop Soup", "", api, 8998, restaurant);
         restaurant.addMenuItem(newItem);
         api.addMenuItem(newItem);
         int insertId = itemDao.insert(newItem);

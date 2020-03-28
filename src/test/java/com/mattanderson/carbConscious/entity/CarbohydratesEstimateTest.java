@@ -35,7 +35,7 @@ class CarbohydratesEstimateTest {
 
         api = new MenuAPI(1, "Spoonacular");
         restaurant = new Restaurant(1, "Pancake House", api, 3131);
-        item = new MenuItem(1, "Blueberry Pancakes", api, 22, restaurant);
+        item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes", api, 22, restaurant);
 
         estimate = new CarbohydratesEstimate(1, 75, item, Outcome.fromId(1), user);
         newEstimate = new CarbohydratesEstimate(80, item, Outcome.fromId(2), user);
@@ -164,7 +164,7 @@ class CarbohydratesEstimateTest {
      */
     @Test
     void setMenuItemSuccess() {
-        MenuItem newItem = new MenuItem("Food", api, 90);
+        MenuItem newItem = new MenuItem("Food", "", api, 90);
         estimate.setMenuItem(newItem);
         assertEquals(newItem, estimate.getMenuItem());
     }
