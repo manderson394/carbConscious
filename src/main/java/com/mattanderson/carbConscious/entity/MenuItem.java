@@ -57,9 +57,10 @@ public class MenuItem {
     /**
      * Instantiates a new Menu item.
      *
-     * @param name    the name
-     * @param menuApi the menu api
-     * @param apiId   the api id
+     * @param name        the name
+     * @param description the description
+     * @param menuApi     the menu api
+     * @param apiId       the api id
      */
     public MenuItem(String name, String description, MenuAPI menuApi, int apiId) {
         this();
@@ -77,6 +78,7 @@ public class MenuItem {
      * Instantiates a new Menu item.
      *
      * @param name             the name
+     * @param description      the description
      * @param menuApi          the menu api
      * @param apiId            the api id
      * @param parentRestaurant the parent restaurant
@@ -99,6 +101,7 @@ public class MenuItem {
      *
      * @param id               the id
      * @param name             the name
+     * @param description      the description
      * @param menuApi          the menu api
      * @param apiId            the api id
      * @param parentRestaurant the parent restaurant
@@ -121,6 +124,7 @@ public class MenuItem {
      * Instantiates a new Menu item.
      *
      * @param name                   the name
+     * @param description            the description
      * @param menuApi                the menu api
      * @param apiId                  the api id
      * @param parentRestaurant       the parent restaurant
@@ -147,6 +151,7 @@ public class MenuItem {
      *
      * @param id                     the id
      * @param name                   the name
+     * @param description            the description
      * @param menuApi                the menu api
      * @param apiId                  the api id
      * @param parentRestaurant       the parent restaurant

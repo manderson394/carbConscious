@@ -28,7 +28,7 @@ class RestaurantTest {
     @BeforeEach
     void setUp() {
         api = new MenuAPI(1, "Spoonacular");
-        restaurant = new Restaurant(1, "Pancake House", api, 3131);
+        restaurant = new Restaurant(1, "Pancake House", "123 Street", "WI", "55555", api, 3131);
         item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes", api, 22, restaurant);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);
@@ -48,11 +48,20 @@ class RestaurantTest {
     }
 
     /**
+     * Validates creation of a restaurant without an id or creation date.
+     */
+    @Test
+    void createRestaurantNoIdNoCreationDate() {
+        Restaurant noIdNoDate = new Restaurant("Resty", "333 Lane", "AK", "88333-0987", api, 90);
+        assertNotNull(noIdNoDate);
+    }
+
+    /**
      * Validates successful creation of a restaurant with all information except for the ID.
      */
     @Test
     void createRestaurantWithoutIdSuccess() {
-        Restaurant noId = new Restaurant("No ID", api, 93, new HashSet<MenuItem>(),
+        Restaurant noId = new Restaurant("No ID", "123 Street", "WI", "55555", api, 93, new HashSet<MenuItem>(),
                 LocalDateTime.of(2020, 3, 3, 3, 3));
         assertNotNull(noId);
     }
@@ -62,7 +71,7 @@ class RestaurantTest {
      */
     @Test
     void createRestaurantSuccess() {
-        Restaurant all = new Restaurant(23, "All", api, 83, new HashSet<MenuItem>(),
+        Restaurant all = new Restaurant(23, "All", "123 Street", "WI", "55555",api, 83, new HashSet<MenuItem>(),
                 LocalDateTime.of(2011, 4,4,4,4));
         assertNotNull(all);
     }
@@ -92,7 +101,10 @@ class RestaurantTest {
     void testToStringSuccess() {
         String expectedString = "Restaurant{id=" +
                 restaurant.getId() + ", name=\'" +
-                restaurant.getName() + "\', menuApi=" +
+                restaurant.getName() + "\', streetAddress=\'" +
+                restaurant.getStreetAddress() + "\', state=\'" +
+                restaurant.getState() + "\', zipCode=\'" +
+                restaurant.getZipCode() + "\', menuApi=" +
                 restaurant.getMenuApi() + ", apiId=" +
                 restaurant.getApiId() + ", creationDateTime=" +
                 restaurant.getCreationDateTime() + "}";
@@ -121,7 +133,7 @@ class RestaurantTest {
      * Validates id retrieval success.
      */
     @Test
-    void getId() {
+    void getIdSuccess() {
         assertEquals(1, restaurant.getId());
     }
 
@@ -129,15 +141,39 @@ class RestaurantTest {
      * Validates successful name retrieval.
      */
     @Test
-    void getName() {
+    void getNameSuccess() {
         assertEquals("Pancake House", restaurant.getName());
+    }
+
+    /**
+     * Validates successful street address retrieval.
+     */
+    @Test
+    void getStreetAddressSuccess() {
+        assertEquals("123 Street", restaurant.getStreetAddress());
+    }
+
+    /**
+     * Validates successful state retrieval.
+     */
+    @Test
+    void getStateSuccess() {
+        assertEquals("WI", restaurant.getState());
+    }
+
+    /**
+     * Validates successful zip code retrieval.
+     */
+    @Test
+    void getZipCodeSuccess() {
+        assertEquals("55555", restaurant.getZipCode());
     }
 
     /**
      * Validates successful menu api retrieval.
      */
     @Test
-    void getMenuApi() {
+    void getMenuApiSuccess() {
         assertEquals(api, restaurant.getMenuApi());
     }
 
@@ -145,7 +181,7 @@ class RestaurantTest {
      * Validates successful api id retrieval.
      */
     @Test
-    void getApiId() {
+    void getApiIdSuccess() {
         assertEquals(3131, restaurant.getApiId());
     }
 
@@ -153,7 +189,7 @@ class RestaurantTest {
      * Validates successful menu item retrieval.
      */
     @Test
-    void getMenuItems() {
+    void getMenuItemsSuccess() {
         Set<MenuItem> itemSet = new HashSet<>();
         itemSet.add(item);
         assertEquals(itemSet, restaurant.getMenuItems());
@@ -163,7 +199,7 @@ class RestaurantTest {
      * Validates successful creation date time retrieval.
      */
     @Test
-    void getCreationDateTime() {
+    void getCreationDateTimeSuccess() {
         assertNull(restaurant.getCreationDateTime());
     }
 
@@ -171,7 +207,7 @@ class RestaurantTest {
      * Validates successfully setting id.
      */
     @Test
-    void setId() {
+    void setIdSuccess() {
         restaurant.setId(2);
         assertEquals(2, restaurant.getId());
     }
@@ -180,16 +216,43 @@ class RestaurantTest {
      * Validates successfully setting name.
      */
     @Test
-    void setName() {
+    void setNameSuccess() {
         restaurant.setName("Testing");
         assertEquals("Testing", restaurant.getName());
+    }
+
+    /**
+     * Validates successfully setting street address.
+     */
+    @Test
+    void setStreetAddressSuccess() {
+        restaurant.setStreetAddress("39 New Lane");
+        assertEquals("39 New Lane", restaurant.getStreetAddress());
+    }
+
+    /**
+     * Validates successfully setting state.
+     */
+    @Test
+    void setStateSuccess() {
+        restaurant.setState("AL");
+        assertEquals("AL", restaurant.getState());
+    }
+
+    /**
+     * Validates successfully setting zip code.
+     */
+    @Test
+    void setZipCodeSuccess() {
+        restaurant.setZipCode("55555-3434");
+        assertEquals("55555-3434", restaurant.getZipCode());
     }
 
     /**
      * Validates successfully setting menu api.
      */
     @Test
-    void setMenuApi() {
+    void setMenuApiSuccess() {
         MenuAPI newApi = new MenuAPI("Tester");
         restaurant.setMenuApi(newApi);
         assertEquals(newApi, restaurant.getMenuApi());
@@ -199,7 +262,7 @@ class RestaurantTest {
      * Validates successfully setting api id.
      */
     @Test
-    void setApiId() {
+    void setApiIdSuccess() {
         restaurant.setApiId(99);
         assertEquals(99, restaurant.getApiId());
     }
@@ -208,7 +271,7 @@ class RestaurantTest {
      * Validates successfully setting menu items.
      */
     @Test
-    void setMenuItems() {
+    void setMenuItemsSuccess() {
         Set<MenuItem> newItemSet = new HashSet<>();
         newItemSet.add(new MenuItem("Potatoes", "", api, 333, restaurant));
         restaurant.setMenuItems(newItemSet);
@@ -219,7 +282,7 @@ class RestaurantTest {
      * Validates successfully setting creation date time.
      */
     @Test
-    void setCreationDateTime() {
+    void setCreationDateTimeSuccess() {
         LocalDateTime expectedDateTime = LocalDateTime.of(2010, 3, 3, 3, 3);
         restaurant.setCreationDateTime(expectedDateTime);
         assertEquals(expectedDateTime, restaurant.getCreationDateTime());

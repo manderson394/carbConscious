@@ -28,6 +28,14 @@ public class Restaurant {
 
     private String name;
 
+    @Column(name = "street_address")
+    private String streetAddress;
+
+    private String state;
+
+    @Column(name = "zip_code")
+    private String zipCode;
+
     @ManyToOne
     @JoinColumn(name = "source_api", referencedColumnName = "id")
     private MenuAPI menuApi;
@@ -82,15 +90,63 @@ public class Restaurant {
     /**
      * Instantiates a new Restaurant.
      *
+     * @param name          the name
+     * @param streetAddress the street address
+     * @param state         the state
+     * @param zipCode       the zip code
+     * @param menuApi       the menu api
+     * @param apiId         the api id
+     */
+    public Restaurant(String name, String streetAddress, String state, String zipCode, MenuAPI menuApi, int apiId) {
+        this();
+        this.name = name;
+        this.streetAddress = streetAddress;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.menuApi = menuApi;
+        this.apiId = apiId;
+    }
+
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param id            the id
+     * @param name          the name
+     * @param streetAddress the street address
+     * @param state         the state
+     * @param zipCode       the zip code
+     * @param menuApi       the menu api
+     * @param apiId         the api id
+     */
+    public Restaurant(int id, String name, String streetAddress, String state, String zipCode, MenuAPI menuApi, int apiId) {
+        this();
+        this.id = id;
+        this.name = name;
+        this.streetAddress = streetAddress;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.menuApi = menuApi;
+        this.apiId = apiId;
+    }
+
+    /**
+     * Instantiates a new Restaurant.
+     *
      * @param name             the name
+     * @param streetAddress    the street address
+     * @param state            the state
+     * @param zipCode          the zip code
      * @param menuApi          the menu api
      * @param apiId            the api id
      * @param menuItems        the menu items
      * @param creationDateTime the creation date time
      */
-    public Restaurant(String name, MenuAPI menuApi, int apiId, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
+    public Restaurant(String name, String streetAddress, String state, String zipCode, MenuAPI menuApi, int apiId, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
         this();
         this.name = name;
+        this.streetAddress = streetAddress;
+        this.state = state;
+        this.zipCode = zipCode;
         this.menuApi = menuApi;
         this.apiId = apiId;
         this.menuItems = menuItems;
@@ -102,15 +158,21 @@ public class Restaurant {
      *
      * @param id               the id
      * @param name             the name
+     * @param streetAddress    the street address
+     * @param state            the state
+     * @param zipCode          the zip code
      * @param menuApi          the menu api
      * @param apiId            the api id
      * @param menuItems        the menu items
      * @param creationDateTime the creation date time
      */
-    public Restaurant(int id, String name, MenuAPI menuApi, int apiId, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
+    public Restaurant(int id, String name, String streetAddress, String state, String zipCode, MenuAPI menuApi, int apiId, Set<MenuItem> menuItems, LocalDateTime creationDateTime) {
         this();
         this.id = id;
         this.name = name;
+        this.streetAddress = streetAddress;
+        this.state = state;
+        this.zipCode = zipCode;
         this.menuApi = menuApi;
         this.apiId = apiId;
         this.menuItems = menuItems;
@@ -141,6 +203,9 @@ public class Restaurant {
         return "Restaurant{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", state='" + state + '\'' +
+                ", zipCode='" + zipCode + '\'' +
                 ", menuApi=" + menuApi +
                 ", apiId=" + apiId +
                 ", creationDateTime=" + creationDateTime +
@@ -155,11 +220,14 @@ public class Restaurant {
         return id == that.id &&
                 apiId == that.apiId &&
                 Objects.equals(name, that.name) &&
+                Objects.equals(streetAddress, that.streetAddress) &&
+                Objects.equals(state, that.state) &&
+                Objects.equals(zipCode, that.zipCode) &&
                 Objects.equals(menuApi, that.menuApi);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, menuApi, apiId);
+        return Objects.hash(id, name, streetAddress, state, zipCode, menuApi, apiId);
     }
 }

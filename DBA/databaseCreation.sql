@@ -60,6 +60,9 @@ create table RESTAURANTS
 (
     id int auto_increment,
     name varchar(255) null,
+    street_address varchar(255),
+    state varchar(255),
+    zip_code varchar(255),
     source_api int null,
     api_id int null,
     creation_datetime datetime not null,
