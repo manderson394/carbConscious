@@ -28,7 +28,7 @@ class RestaurantTest {
     @BeforeEach
     void setUp() {
         api = new MenuAPI(1, "Spoonacular");
-        restaurant = new Restaurant(1, "Pancake House", "123 Street", "WI", "55555", api, 3131);
+        restaurant = new Restaurant(1, "Pancake House", "123 Street", "WI","55555", "608-608-6088", api, 3131);
         item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes", api, 22, restaurant);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);
@@ -52,7 +52,7 @@ class RestaurantTest {
      */
     @Test
     void createRestaurantNoIdNoCreationDate() {
-        Restaurant noIdNoDate = new Restaurant("Resty", "333 Lane", "AK", "88333-0987", api, 90);
+        Restaurant noIdNoDate = new Restaurant("Resty", "333 Lane", "AK", "88333-0987", "345-345-4444", api, 90);
         assertNotNull(noIdNoDate);
     }
 
@@ -61,7 +61,7 @@ class RestaurantTest {
      */
     @Test
     void createRestaurantWithoutIdSuccess() {
-        Restaurant noId = new Restaurant("No ID", "123 Street", "WI", "55555", api, 93, new HashSet<MenuItem>(),
+        Restaurant noId = new Restaurant("No ID", "123 Street", "WI", "55555", "777-777-7777", api, 93, new HashSet<MenuItem>(),
                 LocalDateTime.of(2020, 3, 3, 3, 3));
         assertNotNull(noId);
     }
@@ -71,7 +71,7 @@ class RestaurantTest {
      */
     @Test
     void createRestaurantSuccess() {
-        Restaurant all = new Restaurant(23, "All", "123 Street", "WI", "55555",api, 83, new HashSet<MenuItem>(),
+        Restaurant all = new Restaurant(23, "All", "123 Street", "WI", "55555", "099-344-3434", api, 83, new HashSet<MenuItem>(),
                 LocalDateTime.of(2011, 4,4,4,4));
         assertNotNull(all);
     }
@@ -104,7 +104,8 @@ class RestaurantTest {
                 restaurant.getName() + "\', streetAddress=\'" +
                 restaurant.getStreetAddress() + "\', state=\'" +
                 restaurant.getState() + "\', zipCode=\'" +
-                restaurant.getZipCode() + "\', menuApi=" +
+                restaurant.getZipCode() + "\', phoneNumber=\'" +
+                restaurant.getPhoneNumber() + "\', menuApi=" +
                 restaurant.getMenuApi() + ", apiId=" +
                 restaurant.getApiId() + ", creationDateTime=" +
                 restaurant.getCreationDateTime() + "}";
@@ -167,6 +168,14 @@ class RestaurantTest {
     @Test
     void getZipCodeSuccess() {
         assertEquals("55555", restaurant.getZipCode());
+    }
+
+    /**
+     * Validates successful phone number retrieval.
+     */
+    @Test
+    void getPhoneNumberSuccess() {
+        assertEquals("608-608-6088", restaurant.getPhoneNumber());
     }
 
     /**
@@ -246,6 +255,15 @@ class RestaurantTest {
     void setZipCodeSuccess() {
         restaurant.setZipCode("55555-3434");
         assertEquals("55555-3434", restaurant.getZipCode());
+    }
+
+    /**
+     * Validates successfully setting phone number.
+     */
+    @Test
+    void setPhoneNumberSuccess() {
+        restaurant.setPhoneNumber("505-505-5055");
+        assertEquals("505-505-5055", restaurant.getPhoneNumber());
     }
 
     /**

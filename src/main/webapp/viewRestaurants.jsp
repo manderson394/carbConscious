@@ -25,8 +25,8 @@
                 <c:forEach var="restaurant" items="${restaurantResults}">
                     <tr>
                         <td>${restaurant.name}</td>
-                        <td></td> <!--TODO Build out support for location-->
-                        <td></td> <!--TODO Build out support for phone number-->
+                        <td>${restaurant.streetAddress}, ${restaurant.state} ${restaurant.zipCode}</td>
+                        <td>${restaurant.phoneNumber}</td>
                     </tr>
                 </c:forEach>
             </table>
