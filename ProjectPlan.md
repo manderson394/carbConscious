@@ -80,6 +80,25 @@
 
 ### Week 9
 - [ ] Weekly journal entry
+- [ ] Create template for all JSPs using bootstrap (or materialize)
+- [ ] Add edit and delete functionality in JSP for user (and other classes)
+- [x] Build menu item search JSP
+- [ ] Build a menu item results JSP
+- [ ] Add JSP to sign up a user
+- [x] Build a home page JSP (basic home page created)
+- [x] Create the menu item class (table, entity, DAO)
+- [x] Setup authentication on AWS
+- [x] Build a JSP for login
+- [x] Build carbs class (table, entity, DAO)
+- [x] Add any other tables (test, dev, and production databases)
+- [x] Add any other entities
+- [x] Update any result reports and tests
+- [ ] Review and incorporate any feedback from Checkpoint #2
+
+- [x] Build search JSP for restaurant menus (basic functionality)
+- [x] Build result JSP for restaurant menus (basic functionality)
+- [x] Prepare for Checkpoint #3 (Deployed to AWS, at least one JSP that displays data from the database implemented)
+- [ ] Implement search result paging
 - [ ] Add password reset/reminder functionality
 - [ ] Review and incorporate feedback from Checkpoint #3
 - [ ] Review code for code standards and best practices (use a code quality tool?)
@@ -87,6 +106,8 @@
 
 ### Week 10 - Team project work week
 - [ ] Weekly journal entry
+- [ ] Add in search by location functionality
+- [ ] Integrate Spoonacular API search with Menu Item search
 
 ### Week 11
 - [ ] Weekly journal entry

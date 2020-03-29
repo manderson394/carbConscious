@@ -204,4 +204,7 @@ Tasks Completed:
 * 
 
 I started tackling some of the navigation bar CSS formatting and wow! It's been awhile since touching CSS. That being said, it's not
-bad on that front. Right now, it's getting used to Bootstrap--which I haven't used before. 
+bad on that front. Right now, it's getting used to Bootstrap--which I haven't used before.
+
+Overall, I've been starting to get caught up with my project plan. I'm still a bit behind where I want to be, but it seems a little
+more attainable at this point. We'll see how the team project factors into this! 
