@@ -189,6 +189,21 @@ public class MenuItem {
         estimate.setMenuItem(null);
     }
 
+
+    /**
+     * Calculate average of all carbohydrates estimates for the menu item as an integer.
+     *
+     * @return the int
+     */
+    public int calculateAverageCarbohydratesEstimate() {
+        double sum = 0;
+        for (CarbohydratesEstimate carbEst : carbohydratesEstimates) {
+            sum += carbEst.getCarbohydrateGramsEstimate();
+        }
+        double average = sum / carbohydratesEstimates.size();
+        return (int) Math.round(average);
+    }
+
     @Override
     public String toString() {
         return "MenuItem{" +

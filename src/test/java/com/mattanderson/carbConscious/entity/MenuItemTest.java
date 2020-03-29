@@ -96,6 +96,14 @@ class MenuItemTest {
     }
 
     /**
+     * Validates successful calculation of the average carbohydrates estimate.
+     */
+    @Test
+    void calculateAverageCarbohydratesEstimateSuccess() {
+        assertEquals(75, item.calculateAverageCarbohydratesEstimate());
+    }
+
+    /**
      * Validates successful generation of string representation for the menu item.
      */
     @Test

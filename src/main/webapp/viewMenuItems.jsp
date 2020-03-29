@@ -27,8 +27,8 @@
                     <tr>
                         <td>${menuItem.name}</td>
                         <td>${menuItem.parentRestaurant.name}</td>
-                        <td></td> <!--TODO Build out support for description-->
-                        <td></td> <!--TODO Build out support for carbohydrate estimate-->
+                        <td>${menuItem.description}</td>
+                        <td>${menuItem.calculateAverageCarbohydratesEstimate}</td>
                     </tr>
                 </c:forEach>
             </table>
