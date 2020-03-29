@@ -1,16 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: student
-  Date: 3/1/20
-  Time: 9:24 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <title>Login Error</title>
-</head>
-<body>
-Login failed. Please try again.
-</body>
+
+    <c:import url="head.jsp"/>
+
+    <body>
+        <c:import url="header.jsp"/>
+        Login failed. <a href="login">Please try again.</a>
+        <c:import url="footer.jsp"/>
+    </body>
 </html>

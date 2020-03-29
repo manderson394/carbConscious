@@ -183,7 +183,7 @@ Tasks Completed:
 I was projecting a little more ambitious outcome, but getting all of my entities unit tested was quite the feat to its own
 (at least it feels like it).
 
-I then ran into all of the problems deploying to my web application and reveiwing my wireframes. Since I had to update my API, 
+I then ran into all of the problems deploying to my web application and reviewing my wireframes. Since I had to update my API, 
 and the new API doesn't send back all of the data I need (restaurant location, etc...). I'm likely going to have to revisit user entry and allow it.
 This will be some significant scope creep. 
 
@@ -191,3 +191,17 @@ Not only did I encounter that issue, but my VM lost network connection, and I en
 As a result, I needed to build out a lot of config and password files that weren't on GitHub. 
 
 Let's hope this next week goes better :/
+
+### Week 9
+
+3/31/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Create Restaurant Results Page
+    * Create Menu Items Results Page
+    * Enhance Authorization and Authentication functionality
+* 
+
+I started tackling some of the navigation bar CSS formatting and wow! It's been awhile since touching CSS. That being said, it's not
+bad on that front. Right now, it's getting used to Bootstrap--which I haven't used before. 

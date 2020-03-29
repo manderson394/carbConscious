@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-default navbar-fixed-top center">
         <ul class="list-inline">
             <li class="list-inline-item float-left"><a href="index.jsp">Carb Conscious</a></li>
@@ -14,8 +15,15 @@
                 <!-- TODO Set up Font Awesome profile for icons (search below)-->
                 <button type="submit"><span class="glyphicon glyphicon-search"></span></button>
             </form></li>
-            <!-- TODO Add dynamic Sign-Up/Welcome, User field -->
-            <!-- TODO Add dynamic Login/Account Menu -->
-            <li class="list-inline-item float-right"><a href="loginAction"><button>Login</button></a></li>
+            <c:choose>
+                <c:when test="${empty sessionScope.userFirstName}">
+                    <li class="list-inline-item"><a href="#">Sign Up</a></li>
+                    <li class="list-inline-item float-right"><a href="login"><button>Login</button></a></li>
+                </c:when>
+                <c:otherwise>
+                    <li class="list-inline-item"><a href="logout">Logout</a></li>
+                    <li class="list-inline-item float-right"><a href="#"><button>Welcome, ${sessionScope.userFirstName}!</button></a></li>
+                </c:otherwise>
+            </c:choose>
         </ul>
 </nav>
