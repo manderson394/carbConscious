@@ -46,3 +46,4 @@
 |3/26/2020|Fix issue with results and login errors on AWS|.5||
 |3/28/2020|Navigation Bar Formatting work, add description to MenuItem class, add phone and location information to Restaurant class, database corrections|4||
 |3/29/2020|Week 9 Videos, Team Project Coordination, MenuItem results JSP enhancements, enhance authorization/authentication, team project repository creation, professional development project feedback|5.5||
+|3/30/2020|Team project work for Exercise 9|||

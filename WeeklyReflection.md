@@ -201,7 +201,7 @@ Tasks Completed:
     * Create Restaurant Results Page
     * Create Menu Items Results Page
     * Enhance Authorization and Authentication functionality
-* 
+* Exercise 9
 
 I started tackling some of the navigation bar CSS formatting and wow! It's been awhile since touching CSS. That being said, it's not
 bad on that front. Right now, it's getting used to Bootstrap--which I haven't used before.
