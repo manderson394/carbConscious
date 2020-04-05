@@ -13,13 +13,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Creates a new user. Intended for use as a sign up action for a user.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "createNewUser",
         urlPatterns = { "/createNewUser" }
 )
 public class CreateNewUser extends HttpServlet {
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
