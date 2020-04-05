@@ -6,22 +6,30 @@
     <body>
         <c:import url="header.jsp"/>
 
-        <div>
-            <h2>Sign Up</h2>
-        </div>
-
         <section>
 
-            <form action="createNewUser" method="post">
-                <input type="text" placeholder="First Name" name="firstName"/>
-                <input type="text" placeholder="Last Name" name="lastName"/>
-                <input type="email" placeholder="Email" name="email"/>
-                <input type="text" placeholder="Username" name="userName"/>
-                <input type="text" placeholder="Password" name="passwordFirst"/>
-                <input type="text" placeholder="Re-Enter Password" name="passwordSecond"/>
-                <button type="submit">Submit</button>
-                <button><a href="index.jsp">Cancel</a></button>
+            <form class="text-center border border-light p-5" action="createNewUser" method="post">
+                <p class="h4 mb-4">Sign Up</p>
+
+                <div class="form-row mb-4">
+                    <div class="col">
+                        <!-- First name -->
+                        <input type="text" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="col">
+                        <!-- Last name -->
+                        <input type="text" class="form-control" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <input type="email" class="form-control mb-4" placeholder="Email" name="email"/>
+                <input type="text" class="form-control mb-4" placeholder="Username" name="userName"/>
+                <input type="password" class="form-control" placeholder="Password" name="passwordFirst" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
+                <input type="password" class="form-control" placeholder="Re-Enter Password" name="passwordSecond" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
+                <button type="submit" class="btn btn-info my-4 btn-block">Submit</button>
+                <button class="btn btn-info my-4 btn-block"><a href="index.jsp">Cancel</a></button>
             </form>
+
 
         </section>
 

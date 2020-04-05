@@ -194,7 +194,7 @@ Let's hope this next week goes better :/
 
 ### Week 9
 
-3/31/2020 - ### hours
+3/31/2020 - 11 hours
 
 Tasks Completed:
 * Individual Project:
@@ -207,4 +207,18 @@ I started tackling some of the navigation bar CSS formatting and wow! It's been 
 bad on that front. Right now, it's getting used to Bootstrap--which I haven't used before.
 
 Overall, I've been starting to get caught up with my project plan. I'm still a bit behind where I want to be, but it seems a little
-more attainable at this point. We'll see how the team project factors into this! 
+more attainable at this point. We'll see how the team project factors into this!
+
+
+### Week 10
+
+4/07/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Add Sign Up Functionality
+
+This week has been a tough week to feel accomplished. Things have really been vamping up at work with COVID-19 (still), 
+and I've been doing 11 hour work days. I've started biting off smaller chunks of functionality for my project and trying to accomplish one
+of those pieces when I sit down to code.
+

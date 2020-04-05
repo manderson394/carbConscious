@@ -17,7 +17,7 @@
             </form></li>
             <c:choose>
                 <c:when test="${empty sessionScope.userFirstName}">
-                    <li class="list-inline-item"><a href="#">Sign Up</a></li>
+                    <li class="list-inline-item"><a href="signUp">Sign Up</a></li>
                     <li class="list-inline-item float-right"><a href="login"><button>Login</button></a></li>
                 </c:when>
                 <c:otherwise>
