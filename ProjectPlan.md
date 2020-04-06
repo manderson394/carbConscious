@@ -108,14 +108,14 @@
 - [ ] Weekly journal entry
 - [ ] Add in search by location functionality
 - [ ] Integrate Spoonacular API search with Menu Item search
-- [ ] Build a menu item results JSP
-- [ ] Add JSP to sign up a user
+- [x] Build a menu item results JSP
+- [x] Add JSP to sign up a user
 - [ ] Create template for all JSPs using bootstrap (or materialize)
 - [ ] Add edit and delete functionality in JSP for user (and other classes)
-- [ ] Review and incorporate any feedback from Checkpoint #2
+- [x] Review and incorporate any feedback from Checkpoint #2
 - [ ] Implement search result paging
 - [ ] Add password reset/reminder functionality
-- [ ] Review and incorporate feedback from Checkpoint #3
+- [x] Review and incorporate feedback from Checkpoint #3
 - [ ] Review code for code standards and best practices (use a code quality tool?)
 - [ ] Code Review
 

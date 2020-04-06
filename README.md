@@ -40,7 +40,7 @@ The goal is to provide improved carbohydrate information for better insulin inje
 * Logging
     * Log4J
 * Hosting
-    Amazon Web Services
+    * Amazon Web Services (EC2 Instance)
 * Independent Research Topics
     * Hibernate Validation (?)
     * Project Lombok (?)

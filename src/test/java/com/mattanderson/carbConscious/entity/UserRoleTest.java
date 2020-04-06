@@ -52,7 +52,7 @@ class UserRoleTest {
     void getIdSuccess() {
         int id = userRole.getId();
         assertNotNull(id);
-        assertEquals(1, 1);
+        assertEquals(1, id);
     }
 
     /**
