@@ -22,11 +22,11 @@
                     <th>Description</th>
                     <th>Carbohydrates (approx.)</th>
                 </tr>
-                <c:forEach var="favorite" items="${favoritesResults}">
+                <c:forEach var="favoriteEntry" items="${favoritesResults}">
                     <tr>
-                        <td>${restaurant.name}</td>
-                        <td>${restaurant.streetAddress}, ${restaurant.state} ${restaurant.zipCode}</td>
-                        <td>${restaurant.phoneNumber}</td>
+                        <td>${favoriteEntry.value.name}</td>
+                        <td>${favoriteEntry.value.description}</td>
+                        <td>${favoriteEntry.value.calculateAverageCarbohydratesEstimate}</td>
                     </tr>
                 </c:forEach>
             </table>

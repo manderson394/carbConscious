@@ -2,6 +2,7 @@ package com.mattanderson.carbConscious.controller;
 
 import com.mattanderson.carbConscious.entity.User;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import com.mattanderson.carbConscious.util.ControllerUtilities;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
@@ -14,13 +15,18 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Forwards a logged in user.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "login",
         urlPatterns = { "/login" }
 )
 
 @Log4j2
-public class LoginAction extends HttpServlet {
+public class LoginAction extends HttpServlet implements ControllerUtilities {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,20 +42,5 @@ public class LoginAction extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);
-    }
-
-    private User getSessionUser(String userName) {
-        //Look up the user
-        GenericDao<User> userDao = new GenericDao<User>(User.class);
-        List<User> users = userDao.getByPropertyEqual("userName", userName);
-
-        //This shouldn't ever happen, but if it does, make sure we know about it
-        if (users.size() > 1) {
-            log.error("DATA CORRUPTION: More than one user in the USERS table with a user_name of: " + userName);
-        }
-
-        User loggedInUser = users.get(0);
-
-        return loggedInUser;
     }
 }

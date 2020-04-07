@@ -48,3 +48,4 @@
 |3/29/2020|Week 9 Videos, Team Project Coordination, MenuItem results JSP enhancements, enhance authorization/authentication, team project repository creation, professional development project feedback|5.5||
 |3/30/2020|Team project work for Exercise 9|1||
 |4/05/2020|Team project work, Build up sign up functionality, Updated based on peer design feedback|4||
+|4/06/2020|Updates controllers and JSPs to add My Favorites functionality|2||
