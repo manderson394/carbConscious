@@ -50,4 +50,4 @@
 |4/05/2020|Team project work, Build up sign up functionality, Updated based on peer design feedback|4||
 |4/06/2020|Updates controllers and JSPs to add My Favorites functionality|2||
 |4/11/2020|Team project work|5||
-|4/12/2020|Team project work|5||
+|4/12/2020|Team project work, User favorites display update|6||

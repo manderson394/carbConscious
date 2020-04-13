@@ -40,7 +40,7 @@ public class MenuItem {
     @JoinColumn(name = "parent_restaurant_api_id", referencedColumnName = "id")
     private Restaurant parentRestaurant;
 
-    @OneToMany(mappedBy = "menuItem", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "menuItem", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.EAGER)
     private Set<CarbohydratesEstimate> carbohydratesEstimates;
 
     @Column(name = "creation_datetime")

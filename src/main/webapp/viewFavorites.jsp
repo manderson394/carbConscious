@@ -24,9 +24,9 @@
                 </tr>
                 <c:forEach var="favoriteEntry" items="${favoritesResults}">
                     <tr>
-                        <td>${favoriteEntry.value.name}</td>
-                        <td>${favoriteEntry.value.description}</td>
-                        <td>${favoriteEntry.value.calculateAverageCarbohydratesEstimate}</td>
+                        <td>${favoriteEntry.value.menuItem.name}</td>
+                        <td>${favoriteEntry.value.menuItem.description}</td>
+                        <td>${favoriteEntry.value.menuItem.calculateAverageCarbohydratesEstimate()}</td>
                     </tr>
                 </c:forEach>
             </table>

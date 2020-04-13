@@ -50,11 +50,17 @@ public class ViewFavorites extends HttpServlet implements ControllerUtilities {
     }
 
     private void getUserFavorites(User user) {
-        Set<UserFavorite> favorites = user.getFavorites();
+        List<UserFavorite> favorites = getFavoritesFromDao(user);
 
         for (UserFavorite fav : favorites) {
             int lineNumber = fav.getLine();
             favoritesMap.put(lineNumber, fav);
         }
+    }
+
+    private List<UserFavorite> getFavoritesFromDao(User user) {
+        GenericDao<UserFavorite> favoriteDao = new GenericDao<>(UserFavorite.class);
+        List<UserFavorite> favorites = favoriteDao.getByPropertyEqual("user", user);
+        return favorites;
     }
 }
