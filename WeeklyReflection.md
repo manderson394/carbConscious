@@ -212,7 +212,7 @@ more attainable at this point. We'll see how the team project factors into this!
 
 ### Week 10
 
-4/07/2020 - ### hours
+4/07/2020 - 6 hours
 
 Tasks Completed:
 * Individual Project:
@@ -221,4 +221,19 @@ Tasks Completed:
 This week has been a tough week to feel accomplished. Things have really been vamping up at work with COVID-19 (still), 
 and I've been doing 11 hour work days. I've started biting off smaller chunks of functionality for my project and trying to accomplish one
 of those pieces when I sit down to code.
+
+### Week 11
+
+4/07/2020 - 10 hours
+
+Tasks Completed:
+* Individual Project:
+    * Start building out Favorites functionality
+* Team Project:
+    * Build out DAO and County Service class (with supporting classes)
+
+Most of my efforts this week were spent on the team project. It really took a lot of time away from my work with my individual project
+that I wanted to do. 
+
+I did get some time to start on the favorites functionality work. It's not perfect yet, but it's a start.
 
