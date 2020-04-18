@@ -43,6 +43,9 @@ public class MenuItem {
     @OneToMany(mappedBy = "menuItem", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.EAGER)
     private Set<CarbohydratesEstimate> carbohydratesEstimates;
 
+    @OneToMany(mappedBy = "menuItem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Set<UserFavorite> favorites;
+
     @Column(name = "creation_datetime")
     @CreationTimestamp
     private LocalDateTime creationDateTime;
@@ -52,6 +55,7 @@ public class MenuItem {
      */
     public MenuItem() {
         carbohydratesEstimates = new HashSet<>();
+        favorites = new HashSet<>();
     }
 
     /**
@@ -129,9 +133,10 @@ public class MenuItem {
      * @param apiId                  the api id
      * @param parentRestaurant       the parent restaurant
      * @param carbohydratesEstimates the carbohydrates estimates
+     * @param favorites              the favorites
      * @param creationDateTime       the creation date time
      */
-    public MenuItem(String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+    public MenuItem(String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, Set<UserFavorite> favorites, LocalDateTime creationDateTime) {
         this();
         this.name = name;
         if (description.isEmpty()) {
@@ -143,6 +148,7 @@ public class MenuItem {
         this.apiId = apiId;
         this.parentRestaurant = parentRestaurant;
         this.carbohydratesEstimates = carbohydratesEstimates;
+        this.favorites = favorites;
         this.creationDateTime = creationDateTime;
     }
 
@@ -156,9 +162,10 @@ public class MenuItem {
      * @param apiId                  the api id
      * @param parentRestaurant       the parent restaurant
      * @param carbohydratesEstimates the carbohydrates estimates
+     * @param favorites              the favorites
      * @param creationDateTime       the creation date time
      */
-    public MenuItem(int id, String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, LocalDateTime creationDateTime) {
+    public MenuItem(int id, String name, String description, MenuAPI menuApi, int apiId, Restaurant parentRestaurant, Set<CarbohydratesEstimate> carbohydratesEstimates, Set<UserFavorite> favorites, LocalDateTime creationDateTime) {
         this();
         this.id = id;
         this.name = name;
@@ -167,6 +174,7 @@ public class MenuItem {
         this.apiId = apiId;
         this.parentRestaurant = parentRestaurant;
         this.carbohydratesEstimates = carbohydratesEstimates;
+        this.favorites = favorites;
         this.creationDateTime = creationDateTime;
     }
 
@@ -187,6 +195,25 @@ public class MenuItem {
     public void removeCarbohydratesEstimate(CarbohydratesEstimate estimate) {
         carbohydratesEstimates.remove(estimate);
         estimate.setMenuItem(null);
+    }
+
+    /**
+     * Add favorite.
+     *
+     * @param favorite the favorite
+     */
+    public void addFavorite(UserFavorite favorite) {
+        favorites.add(favorite);
+    }
+
+    /**
+     * Remove favorite.
+     *
+     * @param favorite the favorite
+     */
+    public void removeFavorite(UserFavorite favorite) {
+        favorites.remove(favorite);
+        favorite.setMenuItem(null);
     }
 
 

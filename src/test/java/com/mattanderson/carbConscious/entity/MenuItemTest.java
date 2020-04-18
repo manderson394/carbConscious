@@ -22,6 +22,7 @@ class MenuItemTest {
     private Restaurant restaurant;
     private CarbohydratesEstimate estimate;
     private CarbohydratesEstimate newEstimate;
+    private UserFavorite favorite;
 
 
     /**
@@ -38,10 +39,12 @@ class MenuItemTest {
         restaurant = new Restaurant(1, "Pancake House", api, 3131);
         item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes",api, 22, restaurant);
         estimate = new CarbohydratesEstimate(1, 75, item, Outcome.fromId(1), user);
+        favorite = new UserFavorite(1, 1, user,item);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);
         api.addMenuItem(item);
         item.addCarbohydratesEstimate(estimate);
+        item.addFavorite(favorite);
         item.setCreationDateTime(LocalDateTime.of(2020, 3, 14, 0, 0, 0));
 
         newEstimate = new CarbohydratesEstimate(23, 333, item, Outcome.fromId(2), user);
@@ -61,7 +64,8 @@ class MenuItemTest {
      */
     @Test
     void createMenuItemNoId() {
-        MenuItem allNoId = new MenuItem("food", "some stuff", api, 33333, restaurant, new HashSet<CarbohydratesEstimate>(),
+        MenuItem allNoId = new MenuItem("food", "some stuff", api, 33333, restaurant,
+                new HashSet<CarbohydratesEstimate>(), new HashSet<UserFavorite>(),
                 LocalDateTime.of(2020, 2, 2, 2, 2));
         assertNotNull(allNoId);
     }
@@ -72,6 +76,7 @@ class MenuItemTest {
     @Test
     void createMenuItemAll(){
         MenuItem all = new MenuItem(83, "foods", "things", api, 83838, restaurant, new HashSet<CarbohydratesEstimate>(),
+                new HashSet<UserFavorite>(),
                 LocalDateTime.of(1999, 9, 9, 9, 9));
         assertNotNull(all);
     }
@@ -93,6 +98,25 @@ class MenuItemTest {
     void removeCarbohydratesEstimateSuccess() {
         item.removeCarbohydratesEstimate(estimate);
         assertEquals(0, item.getCarbohydratesEstimates().size());
+    }
+
+    /**
+     * Validates successful addition of carbohydrate estimates from a menu item.
+     */
+    @Test
+    void addFavoriteEstimateSuccess() {
+        UserFavorite newFavorite = new UserFavorite();
+        item.addFavorite(newFavorite);
+        assertTrue(item.getFavorites().contains(newFavorite));
+    }
+
+    /**
+     * Validates successful removal of carbohydrate estimates from a menu item.
+     */
+    @Test
+    void removeFavoriteEstimateSuccess() {
+        item.removeFavorite(favorite);
+        assertEquals(0, item.getFavorites().size());
     }
 
     /**
