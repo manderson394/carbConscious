@@ -237,3 +237,26 @@ that I wanted to do.
 
 I did get some time to start on the favorites functionality work. It's not perfect yet, but it's a start.
 
+### Week 12
+
+4/14/2020 - 11 hours
+
+Tasks Completed:
+* Team Project:
+    * County service, database access class, unit tests
+    
+This week was a week to focus on the team project. It certainly didn't help my progress on my individual project.
+
+That being said -- it needed to get done! On to more team project work the next week.
+
+### Week 13
+
+4/21/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Viewing a user profile and making simple updates
+
+This week gave me the opportunity to continue on my individual project. It was good to get more user functionality up and running,
+but I'll need to add some more focus on on menu and restaurant functionality.
+

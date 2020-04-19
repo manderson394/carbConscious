@@ -33,7 +33,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navDropdown" aria-haspopup="true" aria-expanded="false" role="button" data-toggle="dropdown" href="#">Welcome, ${sessionScope.userFirstName}! <span class="glyphicon glyphicon-chevron-down"></span></a>
                         <div class="dropdown-menu" aria-labelledby="navDropdown">
-                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="viewProfile">Profile</a>
                             <a class="dropdown-item" href="viewFavorites">My Favorites</a>
                             <a class="dropdown-item" href="#">Add Carbohydrate Estimate</a>
                             <a class="dropdown-item" href="#">Add Menu Item</a>

@@ -52,3 +52,4 @@
 |4/11/2020|Team project work|5||
 |4/12/2020|Team project work, User favorites display update|6||
 |4/18/2020|Update MenuItems to track UserFavorites, start ViewProfile class|1.25||
+|4/19/2020|Adds JSPs and basic servlets for user profile updates|2||
