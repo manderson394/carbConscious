@@ -6,9 +6,8 @@
     <body>
         <c:import url="header.jsp"/>
 
-        <section>
-
-            <form class="text-center border border-light p-5" action="createNewUser" method="post">
+        <div class="text-center">
+            <form class="form-signin" action="createNewUser" method="post">
                 <p class="h4 mb-4">Sign Up</p>
 
                 <div class="form-row mb-4">
@@ -30,8 +29,7 @@
                 <button class="btn btn-info my-4 btn-block"><a href="index.jsp">Cancel</a></button>
             </form>
 
-
-        </section>
+        </div>
 
         <c:import url="footer.jsp"/>
     </body>

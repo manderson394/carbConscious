@@ -256,6 +256,7 @@ That being said -- it needed to get done! On to more team project work the next 
 Tasks Completed:
 * Individual Project:
     * Viewing a user profile and making simple updates
+* Exercise 13
 
 This week gave me the opportunity to continue on my individual project. It was good to get more user functionality up and running,
 but I'll need to add some more focus on on menu and restaurant functionality.
