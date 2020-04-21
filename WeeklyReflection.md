@@ -256,8 +256,12 @@ That being said -- it needed to get done! On to more team project work the next 
 Tasks Completed:
 * Individual Project:
     * Viewing a user profile and making simple updates
+    * Adding favorites from a Menu Item search
 * Exercise 13
 
 This week gave me the opportunity to continue on my individual project. It was good to get more user functionality up and running,
 but I'll need to add some more focus on on menu and restaurant functionality.
+
+One thing I noticed is that I'm spending more time on front end logic than I'd like--I think it's slowing me down. Feeling 
+a little bit of panic as we come down to the end!
 

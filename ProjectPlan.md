@@ -105,7 +105,7 @@
 - [ ] Code Review
 
 ### Week 10 - Team project work week
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
 - [ ] Add in search by location functionality
 - [ ] Integrate Spoonacular API search with Menu Item search
 - [x] Build a menu item results JSP
@@ -117,19 +117,23 @@
 - [ ] Add password reset/reminder functionality
 - [x] Review and incorporate feedback from Checkpoint #3
 - [ ] Review code for code standards and best practices (use a code quality tool?)
-- [ ] Code Review
+
 
 ### Week 11
 - [ ] Weekly journal entry
-- [ ] Unit test all api integrations
+- [x] Unit test all api integrations
 
 ### Week 12 - Team Project due
 - [ ] Weekly journal entry
-- [ ] Review individual project and create list of todos
 
 ### Week 13
 - [ ] Weekly journal entry
-- [ ] Complete todos identified in week 12
+- [x] Add in search by location functionality
+- [ ] Integrate Spoonacular API search with Menu Item search
+- [ ] Create template for all JSPs using bootstrap (or materialize)
+- [ ] Implement search result paging
+- [ ] Add password reset/reminder functionality
+- [ ] Review code for code standards and best practices (use a code quality tool?)
 - [ ] Prepare for week 13 peer code review
 - [ ] Code quality check
 - [ ] Review rubric to make sure I'm on target
@@ -137,6 +141,7 @@
 ### Week 14
 - [ ] Weekly journal entry
 - [ ] Create final presentation
+- [ ] Code Review
 
 ### Week 15
 - [ ] Weekly journal entry
