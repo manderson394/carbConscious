@@ -7,14 +7,11 @@
     <div class="container-fluid">
         <c:import url="header.jsp"/>
 
-        <div>
-            <h2>Counting carbs better together</h2>
-        </div>
             <!-- TODO Determine and add an image
             <img src="">
             -->
         <main role="main" class="container-fluid">
-            <div class="card">
+            <div class="card mx-3 w-75">
                 <div class="card-body">
                     <h3 class="card-tile">Our Goal</h3>
                     <p class="card-text">
@@ -35,9 +32,10 @@
                 </div>
             </div>
 
-            <div class="card">
-                <a href="signUp.jsp" class="card-link">Get Started</a>
-            </div>
+            <button>
+                <a href="signUp.jsp" class="btn stretched-link">Get Started</a>
+                <i class="fas fa-arrow-right"></i>
+            </button>
         </main>
         <c:import url="footer.jsp"/>
     </div>

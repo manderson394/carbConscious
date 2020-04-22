@@ -48,6 +48,9 @@ public class AddFavorite extends HttpServlet implements ControllerUtilities {
 
     private UserFavorite createUserFavorite(MenuItem item, User user) {
         Set<UserFavorite> favoriteSet = user.getFavorites();
+        if (favoriteSet.contains(item)) {
+            return new UserFavorite(0, user, item);
+        }
 
         if (favoriteSet.size() < 1) {
             return new UserFavorite(1, user, item);
@@ -70,8 +73,10 @@ public class AddFavorite extends HttpServlet implements ControllerUtilities {
     }
 
     private void saveFavorite(UserFavorite favorite, User user) {
-        user.addFavorite(favorite);
-        favoriteDao.insert(favorite);
-        userDao.saveOrUpdate(user);
+        if (favorite.getLine() != 0) {
+            user.addFavorite(favorite);
+            favoriteDao.insert(favorite);
+            userDao.saveOrUpdate(user);
+        }
     }
 }

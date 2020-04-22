@@ -251,7 +251,7 @@ That being said -- it needed to get done! On to more team project work the next 
 
 ### Week 13
 
-4/21/2020 - ### hours
+4/21/2020 - 11 hours
 
 Tasks Completed:
 * Individual Project:
@@ -264,4 +264,13 @@ but I'll need to add some more focus on on menu and restaurant functionality.
 
 One thing I noticed is that I'm spending more time on front end logic than I'd like--I think it's slowing me down. Feeling 
 a little bit of panic as we come down to the end!
+
+### Week 14 
+
+4/28/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * Update to Bootstrap 4.0.0
+    * Add first jQuery Datatable
 

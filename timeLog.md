@@ -54,4 +54,5 @@
 |4/18/2020|Update MenuItems to track UserFavorites, start ViewProfile class|1.25||
 |4/19/2020|Adds JSPs and basic servlets for user profile updates, Exercise 13, Improve styling of navigation bar and index page|7||
 |4/20/2020|Adds ability to add favorites once finding a menu item, begins fleshing out ability to add a carbohydrate estimate, add location search functionality|4||
+|4/21/2020|Updates Bootstrap version, Adds Font Awesome, Reworks Bootstrap, Updates index page formatting, Adds first jQuery datatable to menu item search JSP|4||
 

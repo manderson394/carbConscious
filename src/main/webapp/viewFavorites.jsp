@@ -17,18 +17,22 @@
         </c:when>
         <c:otherwise>
             <table>
-                <tr>
-                    <th>Menu Item</th>
-                    <th>Description</th>
-                    <th>Carbohydrates (approx.)</th>
-                </tr>
-                <c:forEach var="favoriteEntry" items="${favoritesResults}">
+                <thead>
                     <tr>
-                        <td>${favoriteEntry.value.menuItem.name}</td>
-                        <td>${favoriteEntry.value.menuItem.description}</td>
-                        <td>${favoriteEntry.value.menuItem.calculateAverageCarbohydratesEstimate()}</td>
+                        <th>Menu Item</th>
+                        <th>Description</th>
+                        <th>Carbohydrates (approx.)</th>
                     </tr>
-                </c:forEach>
+                </thead>
+                <tbody>
+                    <c:forEach var="favoriteEntry" items="${favoritesResults}">
+                        <tr>
+                            <td>${favoriteEntry.value.menuItem.name}</td>
+                            <td>${favoriteEntry.value.menuItem.description}</td>
+                            <td>${favoriteEntry.value.menuItem.calculateAverageCarbohydratesEstimate()}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
             </table>
         </c:otherwise>
     </c:choose>

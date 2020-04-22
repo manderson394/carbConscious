@@ -17,11 +17,14 @@
         </c:when>
         <c:otherwise>
             <table>
-                <tr>
-                    <th>Restaurant</th>
-                    <th>Location</th>
-                    <th>Phone Number</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Restaurant</th>
+                        <th>Location</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <c:forEach var="restaurant" items="${restaurantResults}">
                     <tr>
                         <td>${restaurant.name}</td>
@@ -29,6 +32,7 @@
                         <td>${restaurant.phoneNumber}</td>
                     </tr>
                 </c:forEach>
+                </tbody>
             </table>
         </c:otherwise>
     </c:choose>
