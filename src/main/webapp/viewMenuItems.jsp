@@ -33,9 +33,9 @@
                         <div class="col">
                             <label for="outcome">Outcome</label>
                             <select name="outcome" id="outcome" class="form-control">
-                                <option value="high">High</option>
-                                <option value="inRange" selected="selected">In Range</option>
-                                <option value="low">Low</option>
+                                <option value="2">High</option>
+                                <option value="1" selected="selected">In Range</option>
+                                <option value="0">Low</option>
                             </select>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
         $('.add-favorite').on('click', function () {
             var menuItemId = $(this).data('id');
 
-           $.post('${pageContext.request.contextPath}/', { menuItemId : menuItemId });
+           $.post('${pageContext.request.contextPath}/addFavorite', { rowMenuItemId : menuItemId });
         });
     </script>
 </section>

@@ -27,7 +27,12 @@
                 <tbody>
                 <c:forEach var="restaurant" items="${restaurantResults}">
                     <tr>
-                        <td>${restaurant.name}</td>
+                        <td>
+                                ${restaurant.name}
+                            <button class="restaurant-drilldown btn btn-sm" data-id="<c:out value="${restaurant.id}"/>">
+                                    <p class="text-muted">Click to view menu items</p>
+                            </button>
+                        </td>
                         <td>${restaurant.streetAddress}, ${restaurant.state} ${restaurant.zipCode}</td>
                         <td>${restaurant.phoneNumber}</td>
                     </tr>
@@ -40,6 +45,13 @@
 <script>
     $(document).ready(function () {
         $('#restaurantResultsTable').DataTable();
+    });
+
+    $('.restaurant-drilldown').on('click', function(e) {
+        var restaurantId = $(e.currentTarget).data('id');
+        var url = '${pageContext.request.contextPath}/viewMenuItemsFromRestaurant?restaurant=' + restaurantId;
+
+        window.location.assign(url);
     });
 </script>
 

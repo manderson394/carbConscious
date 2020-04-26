@@ -30,7 +30,7 @@ public class AddFavorite extends HttpServlet implements ControllerUtilities {
         itemDao = new GenericDao<>(MenuItem.class);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String loggedInUserName = request.getRemoteUser();

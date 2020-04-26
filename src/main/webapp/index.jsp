@@ -4,7 +4,7 @@
 <c:import url="head.jsp"/>
 
     <body>
-    <div class="container-fluid">
+
         <c:import url="header.jsp"/>
         <div class="jumbotron jumbotron-fluid text-center">
             <h1 class="display-1">CarbConscious</h1>
@@ -44,6 +44,6 @@
 
         </main>
         <c:import url="footer.jsp"/>
-    </div>
+
     </body>
 </html>

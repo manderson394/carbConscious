@@ -3,6 +3,7 @@ package com.mattanderson.carbConscious.controller;
 
 import com.mattanderson.carbConscious.entity.CarbohydratesEstimate;
 import com.mattanderson.carbConscious.entity.MenuItem;
+import com.mattanderson.carbConscious.entity.Outcome;
 import com.mattanderson.carbConscious.entity.User;
 import com.mattanderson.carbConscious.persistence.GenericDao;
 import com.mattanderson.carbConscious.util.ControllerUtilities;
@@ -24,8 +25,27 @@ public class AddCarbohydrateEstimate extends HttpServlet implements ControllerUt
     private GenericDao<User> userDao;
     private GenericDao<MenuItem> itemDao;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void init() {
+        estimateDao = new GenericDao(CarbohydratesEstimate.class);
+        userDao = new GenericDao(User.class);
+        itemDao = new GenericDao(MenuItem.class);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+
+        String loggedInUserName = request.getRemoteUser();
+
+        User loggedInUser = getSessionUser(loggedInUserName);
+
+        int menuItemId = Integer.valueOf(request.getParameter("menuItemIdModal"));
+        int carbGrams = Integer.valueOf(request.getParameter("carbGrams"));
+        Outcome carbOutcome = Outcome.fromId(Integer.valueOf(request.getParameter("outcome")));
+
+        MenuItem carbItem = itemDao.getById(menuItemId);
+
+        CarbohydratesEstimate estimate = new CarbohydratesEstimate(carbGrams, carbItem, carbOutcome, loggedInUser);
+
 
     }
 }

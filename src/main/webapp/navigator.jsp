@@ -57,11 +57,11 @@
                 <li class="nav-item"><a class="nav-link mx-1" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button" href="#">Welcome, ${sessionScope.userFirstName}! <span class="glyphicon glyphicon-chevron-down"></span></a>
-                    <div class="dropdown-menu" aria-labelledby="navDropdown">
-                        <a class="dropdown-item nav-link" href="viewProfile">Profile</a>
-                        <a class="dropdown-item nav-link" href="viewFavorites">My Favorites</a>
-                        <a class="dropdown-item nav-link" href="viewMenuItemCreation">Create Menu Item</a>
-                        <a class="dropdown-item nav-link" href="#">Create Restaurant</a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navDropdown">
+                        <a class="dropdown-item nav-link bg-dark" href="viewProfile">Profile</a>
+                        <a class="dropdown-item nav-link bg-dark" href="viewFavorites">My Favorites</a>
+                        <a class="dropdown-item nav-link bg-dark" href="viewMenuItemCreation">Create Menu Item</a>
+                        <a class="dropdown-item nav-link bg-dark" href="#">Create Restaurant</a>
                     </div>
                 </li>
             </c:otherwise>
