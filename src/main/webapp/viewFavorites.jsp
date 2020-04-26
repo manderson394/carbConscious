@@ -16,7 +16,7 @@
             <p>You have no favorites. Use the Search Bar at the top to find some new favorites!</p>
         </c:when>
         <c:otherwise>
-            <table>
+            <table id="favoritesTable">
                 <thead>
                     <tr>
                         <th>Menu Item</th>
@@ -37,6 +37,12 @@
         </c:otherwise>
     </c:choose>
 </section>
+
+<script>
+    $(document).ready(function () {
+        $('#favoritesTable').DataTable();
+    });
+</script>
 
 <c:import url="footer.jsp"/>
 </body>

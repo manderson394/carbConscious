@@ -16,7 +16,7 @@
             <p>Your search returned no results.</p>
         </c:when>
         <c:otherwise>
-            <table>
+            <table id="restaurantResultsTable">
                 <thead>
                     <tr>
                         <th>Restaurant</th>
@@ -37,6 +37,11 @@
         </c:otherwise>
     </c:choose>
 </section>
+<script>
+    $(document).ready(function () {
+        $('#restaurantResultsTable').DataTable();
+    });
+</script>
 
 <c:import url="footer.jsp"/>
 </body>

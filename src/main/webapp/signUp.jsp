@@ -7,8 +7,8 @@
         <c:import url="header.jsp"/>
         <div class="container-fluid-wrapper">
             <div class="text-center">
-                <form action="createNewUser" method="post">
-                    <p class="h4 mb-4">Sign Up</p>
+                <form action="createNewUser" method="post" class="form-signin">
+                    <p class="h4">Sign Up</p>
 
                     <div class="row">
                         <div class="col">
@@ -21,10 +21,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <input type="email" class="form-control mb-4" placeholder="Email" name="email"/>
+                        <input type="email" class="form-control" placeholder="Email" name="email"/>
                     </div>
                     <div class="row">
-                        <input type="text" class="form-control mb-4" placeholder="Username" name="userName"/>
+                        <input type="text" class="form-control" placeholder="Username" name="userName"/>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -36,10 +36,10 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button type="submit" class="btn btn-info my-4 btn-block">Submit</button>
+                            <button type="submit" class="btn">Submit</button>
                         </div>
                         <div class="col">
-                            <button class="btn btn-info my-4 btn-block"><a href="index.jsp">Cancel</a></button>
+                            <button class="btn"><a href="index.jsp">Cancel</a></button>
                         </div>
                     </div>
                 </form>

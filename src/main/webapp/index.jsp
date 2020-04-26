@@ -6,12 +6,17 @@
     <body>
     <div class="container-fluid">
         <c:import url="header.jsp"/>
+        <div class="jumbotron jumbotron-fluid text-center">
+            <h1 class="display-1">CarbConscious</h1>
+            <hr class="my-4">
+            <h2 class="lead">Counting carbs better together</h2>
+        </div>
 
             <!-- TODO Determine and add an image
             <img src="">
             -->
         <main role="main" class="container-fluid">
-            <div class="card mx-3 w-75">
+            <div class="card mx-3 text-center">
                 <div class="card-body">
                     <h3 class="card-tile">Our Goal</h3>
                     <p class="card-text">
@@ -32,10 +37,11 @@
                 </div>
             </div>
 
-            <button>
+            <button class="btn text-center">
                 <a href="signUp.jsp" class="btn stretched-link">Get Started</a>
                 <i class="fas fa-arrow-right"></i>
             </button>
+
         </main>
         <c:import url="footer.jsp"/>
     </div>

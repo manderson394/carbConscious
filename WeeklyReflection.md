@@ -273,4 +273,6 @@ Tasks Completed:
 * Individual Project:
     * Update to Bootstrap 4.0.0
     * Add first jQuery Datatable
+    * Add modal boostrap form for carbohydrate estimates
+    * Improve layout/usability
 
