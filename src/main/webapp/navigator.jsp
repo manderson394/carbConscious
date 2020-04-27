@@ -1,10 +1,36 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="Contact" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                Contact Us
+                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form" action="/addCarbohydrateEstimate" method="post">
+                    <label for="contact-name">Name</label>
+                    <input type="text" name="contactName" id="contact-name" class="form-control"/>
+
+                    <label for="contact-email">Email</label>
+                    <input type="text" name="contactEmail" id="contact-email" class="form-control"/>
+
+                    <label for="contact-message">Message</label>
+                    <textarea name="contactMessage" id="contact-message" class="form-control"></textarea>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.jsp">Carb Conscious</a>
 
         <ul class="navbar-nav mr-1">
             <li class="nav-item">
-                <a class="nav-link" href="contact.jsp">Contact</a>
+                <a class="nav-link" href="#contact-modal" data-toggle="modal" data-target="#contact-modal">Contact</a>
             </li>
         </ul>
         <form class="form-inline" action="designateView" method="get">
