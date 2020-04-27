@@ -275,4 +275,7 @@ Tasks Completed:
     * Add first jQuery Datatable
     * Add modal boostrap form for carbohydrate estimates
     * Improve layout/usability
+    * User defined restaurant and menu item creation
+    * Contact us modal
+    * Drill down from restaurant to menu items
 
