@@ -37,8 +37,8 @@
         <input type="password" class="form-control" placeholder="Current Password" name="passwordCurrent" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
         <input type="password" class="form-control" placeholder="Password" name="oldPasswordFirst" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
         <input type="password" class="form-control" placeholder="Re-Enter Password" name="oldPasswordSecond" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
-        <button type="submit" class="btn btn-info my-4 btn-block">Update</button>
-        <button class="btn btn-info my-4 btn-block"><a href="index.jsp">Cancel</a></button>
+        <button type="submit" class="btn">Update</button>
+        <button class="btn"><a class="btn stretched-link" href="index.jsp">Cancel</a></button>
     </form>
 </section>
 

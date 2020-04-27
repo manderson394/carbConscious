@@ -61,6 +61,24 @@ public class MenuItem {
     /**
      * Instantiates a new Menu item.
      *
+     * @param name             the name
+     * @param description      the description
+     * @param parentRestaurant the parent restaurant
+     */
+    public MenuItem(String name, String description, Restaurant parentRestaurant) {
+        this();
+        this.name = name;
+        if (description.isEmpty()) {
+            this.description = "Description not available";
+        } else {
+            this.description = description;
+        }
+        this.parentRestaurant = parentRestaurant;
+    }
+
+    /**
+     * Instantiates a new Menu item.
+     *
      * @param name        the name
      * @param description the description
      * @param menuApi     the menu api

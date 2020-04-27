@@ -51,6 +51,15 @@ class MenuItemTest {
     }
 
     /**
+     * Validates successful creation of a user entered menu item with essential information.
+     */
+    @Test
+    void createMenuItemEssentialSuccess() {
+        MenuItem newItem = new MenuItem("Name", "description", restaurant);
+        assertNotNull(newItem);
+    }
+
+    /**
      * Validates successful creation of a menu item object given basic information but no ID.
      */
     @Test
