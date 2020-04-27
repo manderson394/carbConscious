@@ -7,15 +7,26 @@
         <c:import url="header.jsp"/>
         <div class="container-fluid-wrapper">
             <div class="text-center">
-                <form class="form" action="" method="post">
+                <h1 class="h2">Create a New Restaurant</h1>
+                <form class="form" action="createRestaurant" method="post">
+                    <!-- name, street address, state, zip code, phone number -->
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="restaurantName"/>
 
+                    <label for="street-address">Street Address</label>
+                    <input type="text" class="form-control" id="street-address" name="restaurantStreetAddress"/>
 
-                    <input type="email" class="form-control mb-4" placeholder="Email" name="email"/>
-                    <input type="text" class="form-control mb-4" placeholder="Username" name="userName"/>
-                    <input type="password" class="form-control" placeholder="Password" name="passwordFirst" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
-                    <input type="password" class="form-control" placeholder="Re-Enter Password" name="passwordSecond" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
-                    <button type="submit" class="btn btn-info my-4 btn-block">Submit</button>
-                    <button class="btn btn-info my-4 btn-block"><a href="index.jsp">Cancel</a></button>
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" id="state" name="restaurantState"/>
+
+                    <label for="zip-code">Zip Code</label>
+                    <input type="text" class="form-control" id="zip-code" name="restaurantZipCode"/>
+
+                    <label for="phone-number">Phone Number</label>
+                    <input type="text" class="form-control" id="phone-number" name="restaurantPhoneNumber"/>
+
+                    <button type="submit" class="btn">Submit</button>
+                    <button class="btn"><a href="index.jsp">Cancel</a></button>
                 </form>
 
             </div>

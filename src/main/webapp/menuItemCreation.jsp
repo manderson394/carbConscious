@@ -38,7 +38,7 @@
 
         <script>
             $(document).ready( function () {
-                $('#restaurant-dependent').hide();
+                $('#restaurant-dependent-have').hide();
             });
 
             $('#restaurant-select').on('change', function () {

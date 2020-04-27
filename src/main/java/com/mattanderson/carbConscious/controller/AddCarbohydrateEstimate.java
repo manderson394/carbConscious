@@ -46,6 +46,14 @@ public class AddCarbohydrateEstimate extends HttpServlet implements ControllerUt
 
         CarbohydratesEstimate estimate = new CarbohydratesEstimate(carbGrams, carbItem, carbOutcome, loggedInUser);
 
+        carbItem.addCarbohydratesEstimate(estimate);
+
+        loggedInUser.addCarbohydratesEstimate(estimate);
+
+        estimateDao.insert(estimate);
+        itemDao.saveOrUpdate(carbItem);
+        userDao.saveOrUpdate(loggedInUser);
+
 
     }
 }

@@ -61,7 +61,7 @@
                         <a class="dropdown-item nav-link bg-dark" href="viewProfile">Profile</a>
                         <a class="dropdown-item nav-link bg-dark" href="viewFavorites">My Favorites</a>
                         <a class="dropdown-item nav-link bg-dark" href="viewMenuItemCreation">Create Menu Item</a>
-                        <a class="dropdown-item nav-link bg-dark" href="#">Create Restaurant</a>
+                        <a class="dropdown-item nav-link bg-dark" href="viewRestaurantCreation">Create Restaurant</a>
                     </div>
                 </li>
             </c:otherwise>

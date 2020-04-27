@@ -98,6 +98,24 @@ public class Restaurant {
      * @param state         the state
      * @param zipCode       the zip code
      * @param phoneNumber   the phone number
+     */
+    public Restaurant(String name, String streetAddress, String state, String zipCode, String phoneNumber) {
+        this();
+        this.name = name;
+        this.streetAddress = streetAddress;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param name          the name
+     * @param streetAddress the street address
+     * @param state         the state
+     * @param zipCode       the zip code
+     * @param phoneNumber   the phone number
      * @param menuApi       the menu api
      * @param apiId         the api id
      */

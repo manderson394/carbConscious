@@ -48,6 +48,15 @@ class RestaurantTest {
     }
 
     /**
+     * Validates creation of a user entered restaurant with basic information.
+     */
+    @Test
+    void createUserEnteredBasicRestaurantSuccess() {
+        Restaurant basicUserEnter = new Restaurant("Basic", "1233 Lily Lane", "WI", "53713", "608-333-3333");
+        assertNotNull(basicUserEnter);
+    }
+
+    /**
      * Validates creation of a restaurant without an id or creation date.
      */
     @Test
