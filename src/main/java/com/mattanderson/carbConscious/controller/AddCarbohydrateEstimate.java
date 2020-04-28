@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Adds a carbohydrate estimate to a menu item identified by the caller.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "addCarbohydrateEstimate",
         urlPatterns = { "/addCarbohydrateEstimate" }

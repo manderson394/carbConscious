@@ -29,7 +29,7 @@ The goal is to provide improved carbohydrate information for better insulin inje
 * Dependency Management
     * Maven
 * Web Services Consumed Using Java
-    * XYZ Menu
+    * Spoonacular
     * JavaMail (?)
     * IP Geo Location (? - Stretch Goal)
 * CSS
@@ -43,7 +43,7 @@ The goal is to provide improved carbohydrate information for better insulin inje
     * Amazon Web Services (EC2 Instance)
 * Independent Research Topics
     * Hibernate Validation (?)
-    * Project Lombok (?)
+    * Project Lombok
     * AWS Code Pipeline (?)
     * Enumerations
 * Unit Testing

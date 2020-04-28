@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Updates a user based on the changes to their profile identified by the caller.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "updateUser",
         urlPatterns = { "/updateUser" }

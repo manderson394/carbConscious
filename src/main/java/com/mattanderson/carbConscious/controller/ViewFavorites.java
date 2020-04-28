@@ -19,6 +19,7 @@ import java.util.TreeMap;
 
 /**
  * Forwards a user to to a page to view their favorites.
+ *
  * @author Matt Anderson
  * @version 11
  */

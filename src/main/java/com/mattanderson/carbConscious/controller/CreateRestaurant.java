@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Creates a restaurant.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "createRestaurant",
         urlPatterns = { "/createRestaurant" }

@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+/**
+ * Forwards the user to the JSP to view favorites after data manipulation.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "viewProfile",
         urlPatterns = { "/viewProfile" }

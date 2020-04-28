@@ -8,16 +8,30 @@ import com.spoonacular.entity.SpoonacularMenuItem;
 
 import java.util.List;
 
+/**
+ * Converts Spoonacular objects to generic objects for application integration.
+ * @author Matt Anderson
+ * @version 11
+ */
 public class SpoonacularConverter {
 
     private GenericDao<Restaurant> restaurantDao;
     private MenuAPI menuAPI;
 
+    /**
+     * Instantiates a new Spoonacular converter.
+     */
     public SpoonacularConverter() {
         GenericDao<MenuAPI> menuApiDao = new GenericDao<>(MenuAPI.class);
         menuAPI = menuApiDao.getById(1);
     }
 
+    /**
+     * Converts a Spoonacular menu item to a generic menu item.
+     *
+     * @param spoonacularMenuItem the spoonacular menu item
+     * @return the menu item
+     */
     public MenuItem toMenuItem(SpoonacularMenuItem spoonacularMenuItem) {
         restaurantDao = new GenericDao<>(Restaurant.class);
         List<Restaurant> restaurants = restaurantDao.getByPropertyLike("name", spoonacularMenuItem.getRestaurantChain());

@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Forwards the caller to the JSP to view a given restaurant's menu items.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "viewMenuItemsFromRestaurant",
         urlPatterns = { "/viewMenuItemsFromRestaurant" }

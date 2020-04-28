@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
 
+/**
+ * Adds a favorite for the user specified by the caller.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "addFavorite",
         urlPatterns = { "/addFavorite" }

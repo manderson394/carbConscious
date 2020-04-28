@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Forwards to caller to the JSP to create menu items.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "viewMenuItemCreation",
         urlPatterns = { "/viewMenuItemCreation" }

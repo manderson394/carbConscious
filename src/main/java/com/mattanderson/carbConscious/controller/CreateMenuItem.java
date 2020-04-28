@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Creates a menu item.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "createMenuItem",
         urlPatterns = { "/createMenuItem" }

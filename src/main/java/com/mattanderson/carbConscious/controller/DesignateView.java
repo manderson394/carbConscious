@@ -22,6 +22,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Forwards the caller to the appropriate viewing JSP based on their selections in the search form.
+ * @author Matt Anderson
+ * @version 11
+ */
 @WebServlet(
         name = "designateView",
         urlPatterns = { "/designateView" }
