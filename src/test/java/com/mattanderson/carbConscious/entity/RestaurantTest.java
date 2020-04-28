@@ -39,6 +39,15 @@ class RestaurantTest {
     }
 
     /**
+     * Validates creation of a restaurant with basic information and no api id.
+     */
+    @Test
+    void createBasicRestaurantNoApiIdSuccess() {
+        Restaurant basic = new Restaurant("Basic", api);
+        assertNotNull(basic);
+    }
+
+    /**
      * Validates creation of a restaurant with basic information.
      */
     @Test

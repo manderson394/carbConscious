@@ -129,9 +129,9 @@
 ### Week 13
 - [ ] Weekly journal entry
 - [x] Add in search by location functionality
-- [ ] Integrate Spoonacular API search with Menu Item search
+- [x] Integrate Spoonacular API search with Menu Item search
 - [ ] Create template for all JSPs using bootstrap (or materialize)
-- [ ] Implement search result paging
+- [x] Implement search result paging
 - [ ] Add password reset/reminder functionality
 - [ ] Review code for code standards and best practices (use a code quality tool?)
 - [ ] Prepare for week 13 peer code review

@@ -73,8 +73,6 @@ create table RESTAURANTS
         foreign key (source_api) references MENU_APIS (id)
             on update cascade on delete set null
 );
-create unique index RESTAURANTS_api_id_uindex
-    on RESTAURANTS (api_id);
 
 #####################################################
 

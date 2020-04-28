@@ -5,6 +5,10 @@ import com.mattanderson.carbConscious.entity.MenuAPI;
 import com.mattanderson.carbConscious.entity.MenuItem;
 import com.mattanderson.carbConscious.entity.Restaurant;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import com.mattanderson.carbConscious.util.SpoonacularConverter;
+import com.spoonacular.entity.SpoonacularMenuItem;
+import com.spoonacular.entity.SpoonacularMenuItemSearch;
+import com.spoonacular.persistence.SpoonacularDao;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
@@ -27,8 +31,10 @@ public class DesignateView extends HttpServlet {
 
     private String searchType;
     private String searchInput;
+    private int apiResultLimit;
     private GenericDao<MenuItem> itemDao;
     private GenericDao<Restaurant> restaurantDao;
+    private SpoonacularDao<SpoonacularMenuItemSearch> spoonacularDao;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         searchType = request.getParameter("searchType");
@@ -40,6 +46,10 @@ public class DesignateView extends HttpServlet {
         } else if (searchType.equals("menuItem") || searchType.equals("menuItemLocation")) {
             List<MenuItem> menuItems = doMenuItemSearch();
             dispatchMenuItemRequest(menuItems, request, response);
+        } else if (searchType.equals("spoonacular")) {
+            apiResultLimit = Integer.valueOf(request.getParameter("apiNumberOfResults"));
+            List<MenuItem> spoonacularItems = doSpoonacularSearch();
+            dispatchMenuItemRequest(spoonacularItems, request, response);
         } else {
             request.setAttribute("searchError", "Please try again...");
             RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
@@ -66,6 +76,37 @@ public class DesignateView extends HttpServlet {
             return executeMenuItemLocationSearch();
         } else {
             return new ArrayList<MenuItem>();
+        }
+    }
+
+    private List<MenuItem> doSpoonacularSearch() {
+        spoonacularDao = new SpoonacularDao<>(SpoonacularMenuItemSearch.class);
+        spoonacularDao.createMenuItemSearchURI(searchInput, 0, apiResultLimit);
+        SpoonacularMenuItemSearch searchResult = spoonacularDao.searchSpoonacular();
+        List<SpoonacularMenuItem> spoonacularItems = searchResult.getMenuItems();
+        List<MenuItem> resultList = new ArrayList<>();
+        SpoonacularConverter converter = new SpoonacularConverter();
+        for (SpoonacularMenuItem spoonacularItem : spoonacularItems) {
+                MenuItem convertedItem = converter.toMenuItem(spoonacularItem);
+                //Add to database for future lookup
+                addSpoonacularItemToDatabase(convertedItem);
+                resultList.add(convertedItem);
+        }
+        return resultList;
+    }
+
+    private void addSpoonacularItemToDatabase(MenuItem itemToAdd) {
+        itemDao = new GenericDao<>(MenuItem.class);
+        List<MenuItem> itemTestList = itemDao.getByPropertyEqual("apiId", itemToAdd.getApiId());
+        boolean check = false;
+        for (MenuItem checkItem : itemTestList) {
+            if (checkItem.getMenuApi().equals(itemToAdd.getMenuApi())) {
+                check = true;
+            }
+        }
+        if (!check) {
+            log.debug("Adding the following menu item (once Spoonacular) to the database: {}", itemToAdd);
+            itemDao.insert(itemToAdd);
         }
     }
 

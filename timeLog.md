@@ -57,4 +57,5 @@
 |4/21/2020|Updates Bootstrap version, Adds Font Awesome, Reworks Bootstrap, Updates index page formatting, Adds first jQuery datatable to menu item search JSP|4||
 |4/25/2020|Add front end scripting to handing updating carbohydrate estimates from menu item search results, improve formatting throughout|5||
 |4/26/2020|Add contact us modal, ability to create user-defined restaurants and menu items, and UI improvements|4.5||
+|4/27/2020|Integrate Spoonacular API searching into user workflows, minor UI updates|4||
 

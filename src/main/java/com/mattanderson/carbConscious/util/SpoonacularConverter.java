@@ -24,9 +24,17 @@ public class SpoonacularConverter {
         Restaurant restaurant = null;
         if (restaurants.size() == 1) {
             restaurant = restaurants.get(0);
+        } else {
+            restaurant = getNewChainRestaurant(spoonacularMenuItem);
         }
         MenuItem menuItem =
                 new MenuItem(spoonacularMenuItem.getTitle(), "", menuAPI, spoonacularMenuItem.getId(), restaurant);
         return menuItem;
+    }
+
+    private Restaurant getNewChainRestaurant(SpoonacularMenuItem spoonacularItem) {
+        Restaurant generatedRestaurant = new Restaurant(spoonacularItem.getRestaurantChain(), menuAPI);
+        restaurantDao.insert(generatedRestaurant);
+        return generatedRestaurant;
     }
 }

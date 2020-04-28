@@ -65,6 +65,18 @@ public class Restaurant {
      *
      * @param name    the name
      * @param menuApi the menu api
+     */
+    public Restaurant(String name, MenuAPI menuApi) {
+        this();
+        this.name = name;
+        this.menuApi = menuApi;
+    }
+
+    /**
+     * Instantiates a new Restaurant.
+     *
+     * @param name    the name
+     * @param menuApi the menu api
      * @param apiId   the api id
      */
     public Restaurant(String name, MenuAPI menuApi, int apiId) {

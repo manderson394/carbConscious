@@ -10,6 +10,7 @@
     <h2>Menu Item Search Results</h2>
 </div>
 
+<!-- TODO specify this as another JSP and import-->
 <div class="modal fade" id="add-carb-modal" tabindex="-1" role="dialog" aria-labelledby="Add Carb Estimate" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -37,6 +38,11 @@
                                 <option value="1" selected="selected">In Range</option>
                                 <option value="0">Low</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class = "col">
+                            <button type="submit" class="btn">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -82,7 +88,6 @@
             </table>
         </c:otherwise>
     </c:choose>
-
 
     <script>
         $(document).ready(function () {

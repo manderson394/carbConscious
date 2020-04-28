@@ -41,27 +41,37 @@
                         <option value="restaurantLocation">Search Restaurant by Zip Code</option>
                         <option value="menuItem">Search by Menu Item</option>
                         <option value="menuItemLocation">Search Menu Item by Zip Code</option>
+                        <option value="spoonacular">Search by Spoonacular Menu Item</option>
                     </select>
                 </div>
                 <div class="col">
                     <input id="navSearchField" class="form-control form-control-sm" type="text" name="searchInput" placeholder="Enter Restaurant Name...">
                 </div>
+                <div class="col">
+                    <input class="form-control form-control-sm" id="apiLimit" type="number" name="apiNumberOfResults" placeholder="Result Limit"/>
+                </div>
             <script>
+                $(document).ready( function () {
+                    if ($('#apiLimit').val() === '') {
+                        $('#apiLimit').hide();
+                    }
+                });
+
                 var navSelectElement = $('#navSelectSearch'), navSearchInput = $('#navSearchField');
 
                 navSelectElement.on('change', function () {
                     switch (navSelectElement.val()) {
-                        case 'restaurant':
-                            navSearchInput.attr('placeholder', 'Enter Restaurant Name...');
+                        case ('restaurant' || 'menuItem'):
+                            navSearchInput.attr('placeholder', 'Enter Name...');
+                            $('#apiLimit').hide();
                             break;
-                        case 'restaurantLocation':
-                            navSearchInput.attr('placeholder', 'Enter Restaurant Zip Code...');
+                        case ('restaurantLocation' || 'menuItemLocation'):
+                            navSearchInput.attr('placeholder', 'Enter Zip Code...');
+                            $('#apiLimit').hide();
                             break;
-                        case 'menuItem':
-                            navSearchInput.attr('placeholder', 'Enter Menu Item Name...');
-                            break;
-                        case 'menuItemLocation':
-                            navSearchInput.attr('placeholder', 'Enter Menu Item Zip Code...');
+                        case 'spoonacular':
+                            navSearchInput.attr('placeholder', 'Enter Spoonacular Name...');
+                            $('#apiLimit').show();
                             break;
                     }
                 });
