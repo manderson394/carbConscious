@@ -52,7 +52,7 @@ public class DesignateView extends HttpServlet {
             List<MenuItem> menuItems = doMenuItemSearch();
             dispatchMenuItemRequest(menuItems, request, response);
         } else if (searchType.equals("spoonacular")) {
-            apiResultLimit = Integer.valueOf(request.getParameter("apiNumberOfResults"));
+            apiResultLimit = Integer.valueOf(request.getParameter("apiNumberOfResults")); //TODO switch for Integer.parse
             List<MenuItem> spoonacularItems = doSpoonacularSearch();
             dispatchMenuItemRequest(spoonacularItems, request, response);
         } else {
@@ -63,7 +63,7 @@ public class DesignateView extends HttpServlet {
     }
 
     private List<Restaurant> doRestaurantSearch() {
-        restaurantDao = new GenericDao(Restaurant.class);
+        restaurantDao = new GenericDao<>(Restaurant.class);
         if (searchType.equals("restaurant")) {
             return executeRestaurantSearch();
         } else if (searchType.equals("restaurantLocation")) {
@@ -74,7 +74,7 @@ public class DesignateView extends HttpServlet {
     }
 
     private List<MenuItem> doMenuItemSearch() {
-        itemDao = new GenericDao(MenuItem.class);
+        itemDao = new GenericDao<>(MenuItem.class);
         if (searchType.equals("menuItem")) {
             return executeMenuItemSearch();
         } else if (searchType.equals("menuItemLocation")) {

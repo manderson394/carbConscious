@@ -282,3 +282,13 @@ Tasks Completed:
 This week was a big week for my project! I was able to round out the essential functionality needed to get my project up and running.
 It was nice to focus on some front-end development--it's certainly rewarding when the pieces start to come together and you can visualize it!
 
+
+### Week 15
+
+5/5/2020 - ### hours
+
+Tasks Completed:
+* Individual Project:
+    * 
+
+
