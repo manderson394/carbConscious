@@ -267,15 +267,18 @@ a little bit of panic as we come down to the end!
 
 ### Week 14 
 
-4/28/2020 - ### hours
+4/28/2020 - 17.5 hours
 
 Tasks Completed:
 * Individual Project:
     * Update to Bootstrap 4.0.0
     * Add first jQuery Datatable
-    * Add modal boostrap form for carbohydrate estimates
+    * Add modal bootstrap form for carbohydrate estimates
     * Improve layout/usability
     * User defined restaurant and menu item creation
     * Contact us modal
     * Drill down from restaurant to menu items
+
+This week was a big week for my project! I was able to round out the essential functionality needed to get my project up and running.
+It was nice to focus on some front-end development--it's certainly rewarding when the pieces start to come together and you can visualize it!
 
