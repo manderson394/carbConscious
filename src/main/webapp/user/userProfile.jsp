@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
-<c:import url="head.jsp"/>
+<c:import url="../head.jsp"/>
 
 <body>
-<c:import url="header.jsp"/>
+<c:import url="../header.jsp"/>
 
 <section>
     <form class="text-center border border-light p-5" action="updateUser" method="post">
@@ -38,10 +38,10 @@
         <input type="password" class="form-control" placeholder="Password" name="oldPasswordFirst" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
         <input type="password" class="form-control" placeholder="Re-Enter Password" name="oldPasswordSecond" aria-describedby="defaultRegisterFormPasswordHelpBlock"/>
         <button type="submit" class="btn">Update</button>
-        <button class="btn"><a class="btn stretched-link" href="index.jsp">Cancel</a></button>
+        <button class="btn"><a class="btn stretched-link" href="../index.jsp">Cancel</a></button>
     </form>
 </section>
 
-<c:import url="footer.jsp"/>
+<c:import url="../footer.jsp"/>
 </body>
 </html>

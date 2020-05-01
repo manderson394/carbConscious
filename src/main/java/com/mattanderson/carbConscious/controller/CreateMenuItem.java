@@ -3,6 +3,7 @@ package com.mattanderson.carbConscious.controller;
 import com.mattanderson.carbConscious.entity.MenuItem;
 import com.mattanderson.carbConscious.entity.Restaurant;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,7 @@ import java.io.IOException;
         name = "createMenuItem",
         urlPatterns = { "/createMenuItem" }
 )
+@Log4j2
 public class CreateMenuItem extends HttpServlet {
 
     private GenericDao<MenuItem> menuItemDao;
@@ -34,6 +36,8 @@ public class CreateMenuItem extends HttpServlet {
         Restaurant restaurant = restaurantDao.getById(restaurantId);
 
         MenuItem newItem = new MenuItem(itemName, description, restaurant);
+
+        log.debug("About to save new menu item: {}", newItem);
 
         restaurant.addMenuItem(newItem);
 

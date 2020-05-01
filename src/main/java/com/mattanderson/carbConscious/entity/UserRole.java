@@ -45,6 +45,18 @@ public class UserRole {
     /**
      * Instantiates a new User role.
      *
+     * @param name the name
+     * @param user the user
+     */
+    public UserRole(String name, User user) {
+        this();
+        this.name = name;
+        this.user = user;
+    }
+
+    /**
+     * Instantiates a new User role.
+     *
      * @param name             the name
      * @param creationDateTime the creation date time
      * @param user             the user

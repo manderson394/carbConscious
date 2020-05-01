@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
-<c:import url="head.jsp"/>
+<c:import url="../head.jsp"/>
 
 <body>
-<c:import url="header.jsp"/>
+<c:import url="../header.jsp"/>
 
 <div>
     <h2>My Favorites</h2>
@@ -99,6 +99,6 @@
     });
 </script>
 
-<c:import url="footer.jsp"/>
+<c:import url="../footer.jsp"/>
 </body>
 </html>

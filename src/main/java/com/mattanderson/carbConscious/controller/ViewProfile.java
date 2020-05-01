@@ -35,7 +35,7 @@ public class ViewProfile extends HttpServlet implements ControllerUtilities {
         request.setAttribute("lastName", loggedInUser.getLastName());
         request.setAttribute("email", loggedInUser.getEmail());
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/userProfile.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/userProfile.jsp");
         dispatcher.forward(request, response);
 
     }

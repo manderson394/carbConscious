@@ -36,6 +36,15 @@ class UserRoleTest {
     }
 
     /**
+     * Validates user role construction with basic data.
+     */
+    @Test
+    void userRoleBasicSuccess() {
+        UserRole newRole = new UserRole( "Administrator", new User());
+        assertNotNull(newRole);
+    }
+
+    /**
      * Validates user role construction with id is successful.
      */
     @Test

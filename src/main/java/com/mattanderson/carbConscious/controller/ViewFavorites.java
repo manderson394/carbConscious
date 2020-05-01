@@ -45,7 +45,7 @@ public class ViewFavorites extends HttpServlet implements ControllerUtilities {
 
         request.setAttribute("favoritesResults", favoritesMap);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewFavorites.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/viewFavorites.jsp");
         dispatcher.forward(request, response);
     }
 

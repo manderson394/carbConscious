@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
@@ -25,6 +26,7 @@ public class MenuItem {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    @NotNull
     private String name;
 
     private String description;

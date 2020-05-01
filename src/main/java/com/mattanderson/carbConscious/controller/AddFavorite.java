@@ -5,6 +5,7 @@ import com.mattanderson.carbConscious.entity.User;
 import com.mattanderson.carbConscious.entity.UserFavorite;
 import com.mattanderson.carbConscious.persistence.GenericDao;
 import com.mattanderson.carbConscious.util.ControllerUtilities;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,6 +24,7 @@ import java.util.Set;
         name = "addFavorite",
         urlPatterns = { "/addFavorite" }
 )
+@Log4j2
 public class AddFavorite extends HttpServlet implements ControllerUtilities {
 
     private GenericDao<User> userDao;
@@ -47,6 +49,8 @@ public class AddFavorite extends HttpServlet implements ControllerUtilities {
         MenuItem menuItem = itemDao.getById(menuItemId);
 
         UserFavorite newFavorite = createUserFavorite(menuItem, loggedInUser);
+
+        log.debug("About to save new favorite: {}", newFavorite);
 
         saveFavorite(newFavorite, loggedInUser);
     }

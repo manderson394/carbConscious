@@ -2,7 +2,9 @@ package com.mattanderson.carbConscious.controller;
 
 
 import com.mattanderson.carbConscious.entity.User;
+import com.mattanderson.carbConscious.entity.UserRole;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,6 +24,7 @@ import java.io.IOException;
         name = "createNewUser",
         urlPatterns = { "/createNewUser" }
 )
+@Log4j2
 public class CreateNewUser extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -43,7 +46,18 @@ public class CreateNewUser extends HttpServlet {
     }
 
     private void processUser(User user) {
+        UserRole role = new UserRole("User", user);
+
+        user.addRole(role);
+
+        //Do some logging, but don't log the password
+        log.debug("Adding new user: User={firstName={}, lastName={}, userName={}, email={}, roles={}",
+                user.getFirstName(), user.getLastName(), user.getUserName(), user.getEmail(), user.getRoles());
+
         GenericDao<User> userDao = new GenericDao<>(User.class);
         userDao.insert(user);
+
+        GenericDao<UserRole> roleDao = new GenericDao<>(UserRole.class);
+        roleDao.insert(role);
     }
 }

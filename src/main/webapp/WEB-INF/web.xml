@@ -8,11 +8,94 @@
       <form-error-page>/loginError.jsp</form-error-page>
     </form-login-config>
   </login-config>
-  <!-- Secure the Login Servlet -->
+  <!-- Secure Servlets Requiring User Login -->
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>login</web-resource-name>
       <url-pattern>/login</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>addCarbohydrateEstimate</web-resource-name>
+      <url-pattern>/addCarbohydrateEstimate</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>addFavorite</web-resource-name>
+      <url-pattern>/addFavorite</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>createMenuItem</web-resource-name>
+      <url-pattern>/createMenuItem</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>createRestaurant</web-resource-name>
+      <url-pattern>/createRestaurant</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>updateUser</web-resource-name>
+      <url-pattern>/updateUser</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>viewFavorites</web-resource-name>
+      <url-pattern>/viewFavorites</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>viewMenuItemCreation</web-resource-name>
+      <url-pattern>/viewMenuItemCreation</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>viewRestaurantCreation</web-resource-name>
+      <url-pattern>/viewRestaurantCreation</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>User</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!--Secure the user directory-->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>user</web-resource-name>
+      <url-pattern>/user/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>User</role-name>

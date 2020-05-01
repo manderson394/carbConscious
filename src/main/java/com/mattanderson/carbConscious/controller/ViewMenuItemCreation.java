@@ -36,7 +36,7 @@ public class ViewMenuItemCreation extends HttpServlet {
 
         request.setAttribute("availableRestaurants", availableRestaurants);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/menuItemCreation.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/menuItemCreation.jsp");
 
         dispatcher.forward(request, response);
     }

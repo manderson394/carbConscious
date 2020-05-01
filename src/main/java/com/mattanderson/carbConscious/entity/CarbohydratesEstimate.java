@@ -7,6 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -26,6 +27,7 @@ public class CarbohydratesEstimate {
     private int id;
 
     @Column(name = "grams_carbohydrate_estimate")
+    @NotNull
     private int carbohydrateGramsEstimate;
 
     @ManyToOne

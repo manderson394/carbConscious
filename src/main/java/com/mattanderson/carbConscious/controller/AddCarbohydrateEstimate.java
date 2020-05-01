@@ -7,6 +7,7 @@ import com.mattanderson.carbConscious.entity.Outcome;
 import com.mattanderson.carbConscious.entity.User;
 import com.mattanderson.carbConscious.persistence.GenericDao;
 import com.mattanderson.carbConscious.util.ControllerUtilities;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +25,7 @@ import java.io.IOException;
         name = "addCarbohydrateEstimate",
         urlPatterns = { "/addCarbohydrateEstimate" }
 )
+@Log4j2
 public class AddCarbohydrateEstimate extends HttpServlet implements ControllerUtilities {
 
     private GenericDao<CarbohydratesEstimate> estimateDao;
@@ -43,13 +45,15 @@ public class AddCarbohydrateEstimate extends HttpServlet implements ControllerUt
 
         User loggedInUser = getSessionUser(loggedInUserName);
 
-        int menuItemId = Integer.valueOf(request.getParameter("menuItemIdModal"));
-        int carbGrams = Integer.valueOf(request.getParameter("carbGrams"));
-        Outcome carbOutcome = Outcome.fromId(Integer.valueOf(request.getParameter("outcome")));
+        int menuItemId = Integer.parseInt(request.getParameter("menuItemIdModal"));
+        int carbGrams = Integer.parseInt(request.getParameter("carbGrams"));
+        Outcome carbOutcome = Outcome.fromId(Integer.parseInt(request.getParameter("outcome")));
 
         MenuItem carbItem = itemDao.getById(menuItemId);
 
         CarbohydratesEstimate estimate = new CarbohydratesEstimate(carbGrams, carbItem, carbOutcome, loggedInUser);
+
+        log.debug("Creating a new carbohydrate estimate: {}", estimate);
 
         carbItem.addCarbohydratesEstimate(estimate);
 

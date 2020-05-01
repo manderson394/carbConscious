@@ -23,7 +23,7 @@ public class ViewRestaurantCreation extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/restaurantCreation.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/restaurantCreation.jsp");
 
         dispatcher.forward(request, response);
     }

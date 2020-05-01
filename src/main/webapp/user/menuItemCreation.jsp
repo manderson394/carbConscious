@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
-    <c:import url="head.jsp"/>
+    <c:import url="../head.jsp"/>
 
     <body>
-        <c:import url="header.jsp"/>
+        <c:import url="../header.jsp"/>
         <div class="container-fluid-wrapper">
             <div class="text-center">
                 <h1 class="h2">Create a New Menu Item</h1>
@@ -30,7 +30,7 @@
 
                         <button type="submit" class="btn">Submit</button>
                     </div>
-                    <button class="btn"><a class="btn stretched-link" href="index.jsp">Cancel</a></button>
+                    <button class="btn"><a class="btn stretched-link" href="../index.jsp">Cancel</a></button>
                 </form>
 
             </div>
@@ -54,6 +54,6 @@
             });
         </script>
 
-        <c:import url="footer.jsp"/>
+        <c:import url="../footer.jsp"/>
     </body>
 </html>

@@ -14,7 +14,7 @@
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-yrfSO0DBjS56u5M+SjWTyAHujrkiYVtRYh2dtB3yLQtUz3bodOeialO59u5lUCFF" crossorigin="anonymous"> -->
 
     <!-- App Specific CSS -->
-    <link rel="stylesheet" href="css/carbConscious.css">
+    <link rel="stylesheet" text="text/css" href="${pageContext.request.contextPath}/css/carbConscious.css">
 
 
     <!-- Font Awesome CDN -->

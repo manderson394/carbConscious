@@ -2,6 +2,7 @@ package com.mattanderson.carbConscious.controller;
 
 import com.mattanderson.carbConscious.entity.Restaurant;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +20,7 @@ import java.io.IOException;
         name = "createRestaurant",
         urlPatterns = { "/createRestaurant" }
 )
+@Log4j2
 public class CreateRestaurant extends HttpServlet {
 
     private GenericDao<Restaurant> restaurantDao;
@@ -36,6 +38,8 @@ public class CreateRestaurant extends HttpServlet {
         String restaurantPhoneNumber = request.getParameter("restaurantPhoneNumber");
 
         Restaurant newRestaurant = new Restaurant(restaurantName, restaurantStreetAddress, restaurantState, restaurantZipCode, restaurantPhoneNumber);
+
+        log.debug("Adding new restaurant: {}", newRestaurant);
 
         restaurantDao.insert(newRestaurant);
     }
