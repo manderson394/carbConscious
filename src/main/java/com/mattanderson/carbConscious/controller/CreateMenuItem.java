@@ -3,6 +3,7 @@ package com.mattanderson.carbConscious.controller;
 import com.mattanderson.carbConscious.entity.MenuItem;
 import com.mattanderson.carbConscious.entity.Restaurant;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import com.mattanderson.carbConscious.util.GenericValidator;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Creates a menu item.
@@ -27,6 +30,7 @@ public class CreateMenuItem extends HttpServlet {
 
     private GenericDao<MenuItem> menuItemDao;
     private GenericDao<Restaurant> restaurantDao;
+    private Map<String, String> errors;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,18 +43,35 @@ public class CreateMenuItem extends HttpServlet {
 
         MenuItem newItem = new MenuItem(itemName, description, restaurant);
 
-        log.debug("About to save new menu item: {}", newItem);
+        processMenuItem(newItem);
 
-        restaurant.addMenuItem(newItem);
+        if (errors.isEmpty()) {
+            log.debug("About to save new menu item: {}", newItem);
 
-        menuItemDao = new GenericDao<>(MenuItem.class);
-        menuItemDao.insert(newItem);
-        restaurantDao.saveOrUpdate(restaurant);
+            restaurant.addMenuItem(newItem);
 
-        request.setAttribute("successModal", true);
-        request.setAttribute("successModalMessage", "Menu item created.");
+            menuItemDao = new GenericDao<>(MenuItem.class);
+            menuItemDao.insert(newItem);
+            restaurantDao.saveOrUpdate(restaurant);
+
+            request.setAttribute("successModal", true);
+            request.setAttribute("successModalMessage", "Menu item created.");
+        } else {
+            log.debug("Unable to save new menu item; encountered errors: {}", errors);
+            request.setAttribute("itemErrorMap", errors);
+            request.setAttribute("restaurantChosen", restaurant.getId());
+        }
+
+        List<Restaurant> availableRestaurants = restaurantDao.getAll();
+        request.setAttribute("availableRestaurants", availableRestaurants);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/menuItemCreation.jsp");
         dispatcher.forward(request, response);
+    }
+
+    private void processMenuItem(MenuItem itemToValidate) {
+        GenericValidator<MenuItem> validator = new GenericValidator<>(MenuItem.class);
+
+        errors = validator.validate(itemToValidate);
     }
 }

@@ -4,9 +4,11 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
@@ -27,9 +29,10 @@ public class MenuItem {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @NotEmpty
+    @NotEmpty(message = "Enter a name.")
     private String name;
 
+    @Size(min = 0, max = 256, message = "Must be 256 characters or less.")
     private String description;
 
     @ManyToOne

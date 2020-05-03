@@ -2,14 +2,17 @@ package com.mattanderson.carbConscious.controller;
 
 import com.mattanderson.carbConscious.entity.Restaurant;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import com.mattanderson.carbConscious.util.GenericValidator;
 import lombok.extern.log4j.Log4j2;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Creates a restaurant.
@@ -24,6 +27,7 @@ import java.io.IOException;
 public class CreateRestaurant extends HttpServlet {
 
     private GenericDao<Restaurant> restaurantDao;
+    private Map<String, String> errors;
 
     public void init() {
         restaurantDao = new GenericDao<>(Restaurant.class);
@@ -39,8 +43,28 @@ public class CreateRestaurant extends HttpServlet {
 
         Restaurant newRestaurant = new Restaurant(restaurantName, restaurantStreetAddress, restaurantState, restaurantZipCode, restaurantPhoneNumber);
 
-        log.debug("Adding new restaurant: {}", newRestaurant);
+        processRestaurant(newRestaurant);
 
-        restaurantDao.insert(newRestaurant);
+        if (errors.isEmpty()) {
+            log.debug("Adding new restaurant: {}", newRestaurant);
+
+            restaurantDao.insert(newRestaurant);
+
+            request.setAttribute("successModal", true);
+            request.setAttribute("successModalMessage", "Menu item created.");
+        } else {
+            log.debug("Unable to create restaurant; errors found: {}", errors);
+            request.setAttribute("restaurantErrors", errors);
+        }
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/restaurantCreation.jsp");
+        dispatcher.forward(request, response);
+
+    }
+
+    private void processRestaurant(Restaurant restaurant) {
+        GenericValidator<Restaurant> validator = new GenericValidator<>(Restaurant.class);
+
+        errors = validator.validate(restaurant);
     }
 }

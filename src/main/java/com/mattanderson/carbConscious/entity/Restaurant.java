@@ -27,18 +27,22 @@ public class Restaurant {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @NotEmpty(message = "Enter a restaurant name")
+    @NotEmpty(message = "Enter a restaurant name.")
     private String name;
 
     @Column(name = "street_address")
+    @NotEmpty(message = "Enter a street address.")
     private String streetAddress;
 
+    @NotEmpty(message = "Enter a state.")
     private String state;
 
     @Column(name = "zip_code")
+    @NotEmpty(message = "Enter a zip code.")
     private String zipCode;
 
     @Column(name = "phone_number")
+    @NotEmpty(message = "Enter a phone number.")
     //@Pattern(regex= "^[2-9]\\d{2}-\\d{3}-\\d{4}$")
     private String phoneNumber;
 

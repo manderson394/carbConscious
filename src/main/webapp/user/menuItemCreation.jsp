@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 
     <c:import url="../head.jsp"/>
@@ -8,7 +9,7 @@
         <c:import url="../successModal.jsp"/>
         <div class="text-center creation-form-block">
             <h1 class="h2 page-title px-3 py-3">Create a New Menu Item</h1>
-                <form class="form" action="createMenuItem" method="post">
+                <form class="form needs-validation" action="createMenuItem" method="post">
 
                     <h2 class="h3">Please select a restaurant to get started.</h2>
                     <select class="form-control" id="restaurant-select" name="menuItemRestaurant">
@@ -20,12 +21,21 @@
                     <div class="mb-5" id="restaurant-dependent-missing">
                         <p>Not seeing a restaurant?</p> <a class="btn" href="viewRestaurantCreation">Add New Restaurant</a>
                     </div>
-                    <label class="restaurant-dependent-have" for="name">Menu Item Name</label>
-                    <input type="text" class="form-control restaurant-dependent-have" id="name" name="menuItemName">
+                    <div class="form-group item-field">
+                        <label class="restaurant-dependent-have" for="name">Menu Item Name</label>
+                        <input type="text" class="form-control restaurant-dependent-have" id="name" name="menuItemName">
+                        <div class="invalid-feedback">
+                            ${itemErrorMap.name}
+                        </div>
+                    </div>
 
-                    <label class="restaurant-dependent-have" for="description">Description</label>
-                    <textarea class="form-control restaurant-dependent-have" id="description" name="menuItemDescription"></textarea>
-
+                    <div class="form-group item-field">
+                        <label class="restaurant-dependent-have" for="description">Description</label>
+                        <textarea class="form-control restaurant-dependent-have" id="description" name="menuItemDescription"></textarea>
+                        <div class="invalid-feedback">
+                            ${itemErrorMap.description}
+                        </div>
+                    </div>
                     <button type="submit" class="btn restaurant-dependent-have">Submit</button>
                     <button class="btn"><a class="btn stretched-link" href="${pageContext.request.contextPath}">Cancel</a></button>
                 </form>
@@ -39,6 +49,15 @@
                 if (${successModal} === true) {
                     $('#success-modal').modal('show');
                 }
+                if (${fn:length(itemErrorMap)} > 0) {
+                    $('.needs-validation').addClass('was-validated');
+                    $('.invalid-feedback').show();
+                    $('#restaurant-select').val('${restaurantChosen}');
+                    $('.restaurant-dependent-have').show();
+                    $('#restaurant-dependent-missing').hide();
+                    $('.item-field').addClass('has-error');
+                }
+
             });
 
             $('#restaurant-select').on('change', function () {

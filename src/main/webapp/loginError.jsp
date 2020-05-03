@@ -5,7 +5,12 @@
 
     <body>
         <c:import url="header.jsp"/>
-        Login failed. <a href="login">Please try again.</a>
+        <div class="text-center">
+            <h1 class="h2">Login failed.</h1>
+            <button class="btn">
+                <a class="btn" href="login">Please try again.</a>
+            </button>
+        </div>
         <c:import url="footer.jsp"/>
     </body>
 </html>

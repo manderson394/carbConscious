@@ -4,6 +4,7 @@ package com.mattanderson.carbConscious.controller;
 import com.mattanderson.carbConscious.entity.User;
 import com.mattanderson.carbConscious.entity.UserRole;
 import com.mattanderson.carbConscious.persistence.GenericDao;
+import com.mattanderson.carbConscious.util.GenericValidator;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.RequestDispatcher;
@@ -24,6 +25,7 @@ import java.util.Set;
 
 /**
  * Creates a new user. Intended for use as a sign up action for a user.
+ *
  * @author Matt Anderson
  * @version 11
  */
@@ -35,8 +37,6 @@ import java.util.Set;
 public class CreateNewUser extends HttpServlet {
 
     private Map<String, String> errors = new HashMap<>();
-    private ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
-    private static Validator validator;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -86,18 +86,8 @@ public class CreateNewUser extends HttpServlet {
     }
 
     private void validateUser(User testUser) {
-        validator = validatorFactory.getValidator();
+        GenericValidator<User> validator = new GenericValidator<>(User.class);
 
-        Set<ConstraintViolation<User>> userViolations = validator.validate(testUser);
-
-        if (!userViolations.isEmpty()) {
-
-            for (ConstraintViolation<User> violation : userViolations) {
-                String property = violation.getPropertyPath().toString();
-                String message = violation.getMessage();
-
-                errors.put(property, message);
-            }
-        }
+        errors = validator.validate(testUser);
     }
 }

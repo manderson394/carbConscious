@@ -44,7 +44,7 @@ public class AddFavorite extends HttpServlet implements ControllerUtilities {
 
         User loggedInUser = getSessionUser(loggedInUserName);
 
-        int menuItemId = Integer.valueOf(request.getParameter("rowMenuItemId"));
+        int menuItemId = Integer.parseInt(request.getParameter("rowMenuItemId"));
 
         MenuItem menuItem = itemDao.getById(menuItemId);
 

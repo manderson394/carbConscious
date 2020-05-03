@@ -13,45 +13,57 @@
 
                     <div class="row">
                         <div class="col">
-                            <!-- First name -->
-                            <input type="text" class="form-control" placeholder="First Name" name="firstName" required>
-                            <div class="invalid-feedback">
-                                ${errorMap.firstName}
+                            <div class="form-group">
+                                <!-- First name -->
+                                <input type="text" class="form-control" placeholder="First Name" name="firstName" required>
+                                <div class="invalid-feedback">
+                                    ${errorMap.firstName}
+                                </div>
                             </div>
                         </div>
                         <div class="col">
-                            <!-- Last name -->
-                            <input type="text" class="form-control" placeholder="Last Name" name="lastName" required>
-                            <div class="invalid-feedback">
-                                ${errorMap.lastName}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <input type="email" class="form-control" placeholder="Email" name="email" required/>
-                            <div class="invalid-feedback">
-                                ${errorMap.email}
+                            <div class="form-group">
+                                <!-- Last name -->
+                                <input type="text" class="form-control" placeholder="Last Name" name="lastName" required>
+                                <div class="invalid-feedback">
+                                    ${errorMap.lastName}
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Username" name="userName" required/>
-                            <div class="col invalid-feedback">
-                                ${errorMap.userName}
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email" name="email" required/>
+                                <div class="invalid-feedback">
+                                    ${errorMap.email}
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <input id="firstPassword" type="password" class="form-control" placeholder="Password" name="passwordFirst" aria-describedby="defaultRegisterFormPasswordHelpBlock" required/>
-                            <div class="invalid-feedback">
-                                ${errorMap.password}
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Username" name="userName" required/>
+                                <div class="invalid-feedback">
+                                    ${errorMap.userName}
+                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col">
-                            <input id="secondPassword" type="password" class="form-control" placeholder="Re-Enter Password" name="passwordSecond" aria-describedby="defaultRegisterFormPasswordHelpBlock" required/>
+                            <div class="form-group">
+                                <input id="firstPassword" type="password" class="form-control" placeholder="Password" name="passwordFirst" aria-describedby="defaultRegisterFormPasswordHelpBlock" required/>
+                                <div class="invalid-feedback">
+                                    ${errorMap.password}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col">
+                                <input id="secondPassword" type="password" class="form-control" placeholder="Re-Enter Password" name="passwordSecond" aria-describedby="defaultRegisterFormPasswordHelpBlock" required/>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -71,7 +83,7 @@
                 $('#signUpSubmit').hide();
 
                 if (${fn:length(errorMap)} > 0) {
-                    $('.registration-form').addClass('was-validated');
+                    $('.needs-validation').addClass('was-validated');
                     $('.invalid-feedback').show();
                 }
             });
