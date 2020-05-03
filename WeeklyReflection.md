@@ -289,6 +289,6 @@ It was nice to focus on some front-end development--it's certainly rewarding whe
 
 Tasks Completed:
 * Individual Project:
-    * 
+    * Form Validation for signing up
 
 

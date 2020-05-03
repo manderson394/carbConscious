@@ -3,6 +3,7 @@ package com.mattanderson.carbConscious.entity;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -26,7 +27,7 @@ public class MenuItem {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @NotNull
+    @NotEmpty
     private String name;
 
     private String description;

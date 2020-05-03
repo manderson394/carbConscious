@@ -5,6 +5,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -30,22 +32,25 @@ public class User implements Serializable {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    @NotEmpty(message = "Enter your first name.")
     @Column(name = "first_name")
     private String firstName;
 
+    @NotEmpty(message = "Enter you last name.")
     @Column (name = "last_name")
     private String lastName;
 
     @Column(name = "user_name")
-    @NotNull
+    @NotEmpty(message = "Choose a user name.")
+    @Range(min=3, max=30, message = "Must be between 3 and 30 characters.")
     private String userName;
 
     @Column(name = "email")
-    @Email
+    @Email(message = "Enter a valid email address.")
     private String email;
 
     @Column(name = "password")
-    @NotNull
+    @NotEmpty(message = "Enter a password.")
     private String password;
 
     @Column(name = "creation_datetime")

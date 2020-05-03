@@ -5,9 +5,12 @@ import org.apache.taglibs.standard.lang.jstl.UnaryMinusOperator;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -27,7 +30,7 @@ public class CarbohydratesEstimate {
     private int id;
 
     @Column(name = "grams_carbohydrate_estimate")
-    @NotNull
+    @Min(value=0, message = "Enter a value greater than or equal to zero.")
     private int carbohydrateGramsEstimate;
 
     @ManyToOne

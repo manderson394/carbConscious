@@ -13,7 +13,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Creates a new user. Intended for use as a sign up action for a user.
@@ -27,22 +34,39 @@ import java.io.IOException;
 @Log4j2
 public class CreateNewUser extends HttpServlet {
 
+    private Map<String, String> errors = new HashMap<>();
+    private ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+    private static Validator validator;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String userName = request.getParameter("userName");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String firstName = request.getParameter("firstName").trim();
+        String lastName = request.getParameter("lastName").trim();
+        String userName = request.getParameter("userName").trim();
+        String email = request.getParameter("email").trim();
+        String password = request.getParameter("passwordFirst").trim();
+
         User signedUpUser = new User(firstName, lastName, userName, email, password);
 
-        processUser(signedUpUser);
+        validateUser(signedUpUser);
 
-        HttpSession session = request.getSession();
-        session.setAttribute("userFirstName", firstName);
+        if (errors.isEmpty()) {
+            log.info("Creating a new user.");
+            processUser(signedUpUser);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
-        dispatcher.forward(request, response);
+            HttpSession session = request.getSession();
+            session.setAttribute("userFirstName", firstName);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            log.debug("Errors found: {}", errors);
+            request.setAttribute("errorMap", errors);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/signUp.jsp");
+            dispatcher.forward(request, response);
+        }
+
+
     }
 
     private void processUser(User user) {
@@ -58,6 +82,22 @@ public class CreateNewUser extends HttpServlet {
         userDao.insert(user);
 
         GenericDao<UserRole> roleDao = new GenericDao<>(UserRole.class);
-        roleDao.insert(role);
+        roleDao.saveOrUpdate(role);
+    }
+
+    private void validateUser(User testUser) {
+        validator = validatorFactory.getValidator();
+
+        Set<ConstraintViolation<User>> userViolations = validator.validate(testUser);
+
+        if (!userViolations.isEmpty()) {
+
+            for (ConstraintViolation<User> violation : userViolations) {
+                String property = violation.getPropertyPath().toString();
+                String message = violation.getMessage();
+
+                errors.put(property, message);
+            }
+        }
     }
 }

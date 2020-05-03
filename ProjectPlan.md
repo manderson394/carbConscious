@@ -140,11 +140,17 @@
 
 ### Week 14
 - [ ] Weekly journal entry
-- [ ] Create final presentation
-- [ ] Code Review
+- [x] Create template for all JSPs using bootstrap (or materialize)
+- [ ] Add password reset/reminder functionality
+- [ ] Review code for code standards and best practices (use a code quality tool?)
+- [x] Prepare for week 14 peer code review
+- [ ] Code quality check
+- [ ] Review rubric to make sure I'm on target
+- [x] Code Review
 
 ### Week 15
 - [ ] Weekly journal entry
+- [ ] Create final presentation
 - [ ] Create video
 - [ ] Finalize all documentation
 - [ ] Code quality check

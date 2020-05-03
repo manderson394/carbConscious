@@ -3,9 +3,9 @@ package com.mattanderson.carbConscious.entity;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
@@ -27,7 +27,7 @@ public class Restaurant {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
-    @NotNull
+    @NotEmpty(message = "Enter a restaurant name")
     private String name;
 
     @Column(name = "street_address")
@@ -39,6 +39,7 @@ public class Restaurant {
     private String zipCode;
 
     @Column(name = "phone_number")
+    //@Pattern(regex= "^[2-9]\\d{2}-\\d{3}-\\d{4}$")
     private String phoneNumber;
 
     @ManyToOne

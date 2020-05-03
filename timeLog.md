@@ -59,4 +59,5 @@
 |4/26/2020|Add contact us modal, ability to create user-defined restaurants and menu items, and UI improvements|4.5||
 |4/27/2020|Integrate Spoonacular API searching into user workflows, minor UI updates|4||
 |4/30/2020|Refactor JSPs for security; UI changes and troubleshooting|2||
+|5/02/2020|Peer Review and Feedback, Form validation updates for signUp.jsp|6||
 
