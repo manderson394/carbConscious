@@ -7,10 +7,10 @@
 <c:import url="header.jsp"/>
 
 <div>
-    <h2>Menu Item Search Results</h2>
+    <h2 class="page-title pb-5">Menu Item Search Results</h2>
 </div>
 
-<section>
+<section class="container-fluid">
     <c:choose>
         <c:when test="${empty restaurantResults}">
             <p>Your search returned no results.</p>

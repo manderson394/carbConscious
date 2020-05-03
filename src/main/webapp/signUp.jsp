@@ -59,7 +59,7 @@
                             <button id="signUpSubmit" type="submit" class="btn">Submit</button>
                         </div>
                         <div class="col">
-                            <button class="btn"><a href="index.jsp">Cancel</a></button>
+                            <button class="btn"><a href="${pageContext.request.contextPath}">Cancel</a></button>
                         </div>
                     </div>
                 </form>

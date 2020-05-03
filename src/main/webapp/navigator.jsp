@@ -26,7 +26,7 @@
     </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.jsp">Carb Conscious</a>
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">Carb Conscious</a>
 
         <ul class="navbar-nav mr-1">
             <li class="nav-item">

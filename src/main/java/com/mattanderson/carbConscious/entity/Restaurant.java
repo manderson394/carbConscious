@@ -49,7 +49,7 @@ public class Restaurant {
     @Column(name = "api_id")
     private int apiId;
 
-    @OneToMany(mappedBy = "parentRestaurant", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "parentRestaurant", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.EAGER)
     private Set<MenuItem> menuItems;
 
     @Column(name = "creation_datetime")

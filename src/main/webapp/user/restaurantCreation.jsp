@@ -5,9 +5,9 @@
 
     <body>
         <c:import url="../header.jsp"/>
-        <div class="container-fluid-wrapper">
-            <div class="text-center">
-                <h1 class="h2">Create a New Restaurant</h1>
+
+            <div class="text-center creation-form-block">
+                <h1 class="h2 page-title px-3 py-3">Create a New Restaurant</h1>
                 <form class="form" action="createRestaurant" method="post">
                     <!-- name, street address, state, zip code, phone number -->
                     <label for="name">Name</label>
@@ -26,11 +26,10 @@
                     <input type="text" class="form-control" id="phone-number" name="restaurantPhoneNumber"/>
 
                     <button type="submit" class="btn">Submit</button>
-                    <button class="btn"><a href="../index.jsp">Cancel</a></button>
+                    <button class="btn"><a href="${pageContext.request.contextPath}">Cancel</a></button>
                 </form>
 
             </div>
-        </div>
         <c:import url="../footer.jsp"/>
     </body>
 </html>

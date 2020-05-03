@@ -5,6 +5,7 @@ import com.mattanderson.carbConscious.entity.Restaurant;
 import com.mattanderson.carbConscious.persistence.GenericDao;
 import lombok.extern.log4j.Log4j2;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,10 +30,11 @@ public class CreateMenuItem extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int restaurantId = Integer.valueOf(request.getParameter("menuItemRestaurant"));
+        int restaurantId = Integer.parseInt(request.getParameter("menuItemRestaurant"));
         String itemName = request.getParameter("menuItemName");
         String description = request.getParameter("menuItemDescription");
 
+        restaurantDao = new GenericDao<>(Restaurant.class);
         Restaurant restaurant = restaurantDao.getById(restaurantId);
 
         MenuItem newItem = new MenuItem(itemName, description, restaurant);
@@ -41,7 +43,14 @@ public class CreateMenuItem extends HttpServlet {
 
         restaurant.addMenuItem(newItem);
 
+        menuItemDao = new GenericDao<>(MenuItem.class);
         menuItemDao.insert(newItem);
         restaurantDao.saveOrUpdate(restaurant);
+
+        request.setAttribute("successModal", true);
+        request.setAttribute("successModalMessage", "Menu item created.");
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/menuItemCreation.jsp");
+        dispatcher.forward(request, response);
     }
 }
