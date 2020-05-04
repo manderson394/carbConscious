@@ -11,6 +11,7 @@
 </div>
 
 <c:import url="/user/carbohydrateEstimateModal.jsp"/>
+<c:import url="successModal.jsp"/>
 
 <section class="container-fluid">
     <c:choose>

@@ -51,7 +51,7 @@ public class CreateRestaurant extends HttpServlet {
             restaurantDao.insert(newRestaurant);
 
             request.setAttribute("successModal", true);
-            request.setAttribute("successModalMessage", "Menu item created.");
+            request.setAttribute("successModalMessage", "Restaurant created.");
         } else {
             log.debug("Unable to create restaurant; errors found: {}", errors);
             request.setAttribute("restaurantErrors", errors);
