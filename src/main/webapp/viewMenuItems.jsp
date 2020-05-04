@@ -61,23 +61,58 @@
     </c:choose>
 
     <script>
+        /*var getParamUrl = function getParamUrl(urlParam) {
+            let url = window.location.search.substring(1);
+            let urlVars = url.split('&');
+            let count;
+
+            for (count = 0; count < urlVars.length; count++) {
+                let paramName = urlVars[count].split('=');
+
+                if (paramName[0] === urlParam) {
+                    return paramName[1] === undefined ? true : decodeURIComponent(paramName[1]);
+                }
+            }
+        };*/
+        var getParamUrl = function getParamUrl(urlParam) {
+            let urlSearchParams = new URLSearchParams(window.location.search);
+            let param = urlSearchParams.get(urlParam);
+            return param;
+        }
+
         $(document).ready(function () {
             $('#menuItemResultsTable').DataTable();
+
+            if (${successModal} === true) {
+                $('#success-modal').modal('show');
+            }
         });
 
         $('#add-carb-modal').on('show.bs.modal', function(e) {
             var menuItemId = $(e.relatedTarget).data('id');
             $(e.currentTarget).find('#hidden-menu-item-id').val(menuItemId);
+            $(e.currentTarget).find('#modal-page-locator').val('designateView');
+
+            let searchType = getParamUrl('searchType');
+            $(e.currentTarget).find('#modal-search-type').val(searchType);
+            let searchInput = getParamUrl('searchInput');
+            $(e.currentTarget).find('#modal-search-input').val(searchInput);
+            let apiNumberOfResults = getParamUrl('apiNumberOfResults');
+            $(e.currentTarget).find('#modal-api-number-of-results').val(apiNumberOfResults);
         });
 
         $('#add-carb-modal').on('hide.bs.modal', function(e) {
            $(e.currentTarget).find('#hidden-menu-item-id').val('');
+           $(e.currentTarget).find('#modal-page-locator').val('');
         });
 
         $('.add-favorite').on('click', function () {
             var menuItemId = $(this).data('id');
 
-           $.post('${pageContext.request.contextPath}/addFavorite', { rowMenuItemId : menuItemId });
+           $.post('${pageContext.request.contextPath}/addFavorite', { rowMenuItemId : menuItemId }, function(data) {
+               $('#success-modal-message').text(data);
+               $('#success-modal').modal('show');
+           });
         });
     </script>
 </section>

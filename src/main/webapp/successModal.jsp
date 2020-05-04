@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>${successModalMessage}</p>
+                <p id="success-modal-message">${successModalMessage}</p>
             </div>
         </div>
     </div>

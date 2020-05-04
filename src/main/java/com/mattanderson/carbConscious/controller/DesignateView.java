@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,17 +35,38 @@ import java.util.Set;
 @Log4j2
 public class DesignateView extends HttpServlet {
 
-    private String searchType;
-    private String searchInput;
-    private int apiResultLimit;
+    private String searchType = "";
+    private String searchInput = "";
+    private int apiResultLimit = 0;
     private GenericDao<MenuItem> itemDao;
     private GenericDao<Restaurant> restaurantDao;
     private SpoonacularDao<SpoonacularMenuItemSearch> spoonacularDao;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
         searchType = request.getParameter("searchType");
         searchInput = request.getParameter("searchInput");
-        log.debug("Search Type is : " + searchType);
+        String apiLimitString = request.getParameter("apiNumberOfResults");
+        //TODO correct null pointer exception
+        if (!apiLimitString.isEmpty()) {
+            apiResultLimit = Integer.parseInt(apiLimitString);
+        }
+
+        if (searchType.isEmpty()) {
+            //Must be in the session scope due to redirection
+            searchType = (String)session.getAttribute("searchType");
+            searchInput = (String)session.getAttribute("searchInput");
+            apiResultLimit = Integer.parseInt((String)session.getAttribute("apiNumberOfResults"));
+
+            //Don't let it hang around
+            session.removeAttribute("searchType");
+            session.removeAttribute("searchInput");
+            session.removeAttribute("apiNumberOfResults");
+        }
+
+
+        log.debug("Search Type is : {}", searchType);
         if (searchType.equals("restaurant") || searchType.equals("restaurantLocation")) {
             List<Restaurant> restaurants = doRestaurantSearch();
             dispatchRestaurantRequest(restaurants, request, response);
@@ -52,7 +74,6 @@ public class DesignateView extends HttpServlet {
             List<MenuItem> menuItems = doMenuItemSearch();
             dispatchMenuItemRequest(menuItems, request, response);
         } else if (searchType.equals("spoonacular")) {
-            apiResultLimit = Integer.valueOf(request.getParameter("apiNumberOfResults")); //TODO switch for Integer.parse
             List<MenuItem> spoonacularItems = doSpoonacularSearch();
             dispatchMenuItemRequest(spoonacularItems, request, response);
         } else {

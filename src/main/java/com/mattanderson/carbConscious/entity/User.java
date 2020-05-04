@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -42,7 +43,7 @@ public class User implements Serializable {
 
     @Column(name = "user_name")
     @NotEmpty(message = "Choose a user name.")
-    @Range(min=3, max=30, message = "Must be between 3 and 30 characters.")
+    @Size(min=3, max=30, message = "Must be between 3 and 30 characters.")
     private String userName;
 
     @Column(name = "email")

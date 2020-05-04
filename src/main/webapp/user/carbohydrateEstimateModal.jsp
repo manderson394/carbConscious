@@ -9,9 +9,21 @@
             </div>
             <div class="modal-body">
                 <p>Enter your estimate of the grams of carbohydrates and your relative blood sugar outcome after then end of your insulin duration time period.</p>
-                <form class="form" action="/addCarbohydrateEstimate" method="post">
+                <form class="form" action="addCarbohydrateEstimate" method="post">
                     <div class="row">
                         <input type="hidden" id="hidden-menu-item-id" name="menuItemIdModal"/>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" id="modal-page-locator" name="sendingPage"/>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" id="modal-search-type" name="modalSearchType"/>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" id="modal-search-input" name="modalSearchInput"/>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" id="modal-api-number-of-results" name="modalApiNumberOfResults"/>
                     </div>
                     <div class="row">
                         <div class="col">

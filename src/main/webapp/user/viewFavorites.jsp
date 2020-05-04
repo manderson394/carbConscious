@@ -11,6 +11,7 @@
 </div>
 
 <c:import url="carbohydrateEstimateModal.jsp"/>
+<c:import url="../successModal.jsp"/>
 
 <section class="container-fluid">
     <c:choose>
@@ -39,7 +40,7 @@
                                         <c:if test="${not empty sessionScope.userFirstName}">
                                             <span class="d-inline-block mx-3" tabindex="0" data-toggle="tooltip" title="Create a new Carbohydrate Estimate">
                                                 <button class="add-carb btn" data-toggle="modal" data-id="<c:out value="${favoriteEntry.value.menuItem.id}"/>" data-target="#add-carb-modal">
-                                                    <i class="fas fa-edit"></i> Add Carbohydrates Estimate
+                                                    <i class="fas fa-edit"></i>
                                                 </button>
                                             </span>
                                         </c:if>
@@ -56,15 +57,21 @@
 <script>
     $(document).ready(function () {
         $('#favoritesTable').DataTable();
+
+        if (${successModal} === true) {
+            $('#success-modal').modal('show');
+        }
     });
 
     $('#add-carb-modal').on('show.bs.modal', function(e) {
         var menuItemId = $(e.relatedTarget).data('id');
         $(e.currentTarget).find('#hidden-menu-item-id').val(menuItemId);
+        $(e.currentTarget).find('#modal-page-locator').val('viewFavorites');
     });
 
     $('#add-carb-modal').on('hide.bs.modal', function(e) {
         $(e.currentTarget).find('#hidden-menu-item-id').val('');
+        $(e.currentTarget).find('#modal-page-locator').val('');
     });
 </script>
 

@@ -63,4 +63,9 @@ public class ViewFavorites extends HttpServlet implements ControllerUtilities {
         List<UserFavorite> favorites = favoriteDao.getByPropertyEqual("user", user);
         return favorites;
     }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
 }

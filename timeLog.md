@@ -60,4 +60,5 @@
 |4/27/2020|Integrate Spoonacular API searching into user workflows, minor UI updates|4||
 |4/30/2020|Refactor JSPs for security; UI changes and troubleshooting|2||
 |5/02/2020|Peer Review and Feedback, Form validation updates for signUp.jsp|6||
+|5/03/2020|Improve form validation, handle data entry and redirection, troubleshoot functional issues, make code more modular|8||
 

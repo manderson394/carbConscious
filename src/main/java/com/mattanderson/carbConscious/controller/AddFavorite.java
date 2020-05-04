@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Set;
 
 /**
@@ -53,6 +54,8 @@ public class AddFavorite extends HttpServlet implements ControllerUtilities {
         log.debug("About to save new favorite: {}", newFavorite);
 
         saveFavorite(newFavorite, loggedInUser);
+
+        sendAjaxResponse(response);
     }
 
     private UserFavorite createUserFavorite(MenuItem item, User user) {
@@ -87,5 +90,13 @@ public class AddFavorite extends HttpServlet implements ControllerUtilities {
             favoriteDao.insert(favorite);
             userDao.saveOrUpdate(user);
         }
+    }
+
+    private void sendAjaxResponse(HttpServletResponse resp) throws IOException {
+        PrintWriter writer = resp.getWriter();
+
+        String successMessage = "Favorite has been added.";
+
+        writer.print(successMessage);
     }
 }

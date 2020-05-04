@@ -289,6 +289,14 @@ It was nice to focus on some front-end development--it's certainly rewarding whe
 
 Tasks Completed:
 * Individual Project:
-    * Form Validation for signing up
+    * Form Validation for signing up, restaurant entry, and menu item entry
+    * Handle redirection on data submission
+    * Improve UI components
+    
+There has been A LOT of front end work this week! It's been a good way to dig into Javascript and JQuery far more, though it took 
+quite some time. It was also a good opportunity to revisit my code and make it more modular. 
+
+The downside is that it took away some time to add "frills" that I would like. There's still time, but we'll see what I can 
+accomplish!
 
 

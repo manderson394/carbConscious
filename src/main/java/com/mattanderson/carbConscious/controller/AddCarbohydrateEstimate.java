@@ -9,11 +9,13 @@ import com.mattanderson.carbConscious.persistence.GenericDao;
 import com.mattanderson.carbConscious.util.ControllerUtilities;
 import lombok.extern.log4j.Log4j2;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -57,12 +59,23 @@ public class AddCarbohydrateEstimate extends HttpServlet implements ControllerUt
 
         carbItem.addCarbohydratesEstimate(estimate);
 
-        loggedInUser.addCarbohydratesEstimate(estimate);
-
         estimateDao.insert(estimate);
         itemDao.saveOrUpdate(carbItem);
         userDao.saveOrUpdate(loggedInUser);
 
+        String url = request.getParameter("sendingPage");
 
+        if (url.equals("designateView")) {
+            HttpSession session = request.getSession();
+            session.setAttribute("searchType", request.getParameter("modalSearchType"));
+            session.setAttribute("searchInput", request.getParameter("modalSearchInput"));
+            session.setAttribute("apiNumberOfResults", request.getParameter("modalApiNumberOfResults"));
+        }
+
+        log.debug("Sending to url pattern: {}", url);
+
+        request.setAttribute("successModal", true);
+        request.setAttribute("successModalMessage", "Carbohydrate estimate added.");
+        response.sendRedirect(url);
     }
 }
