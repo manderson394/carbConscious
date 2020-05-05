@@ -285,7 +285,7 @@ It was nice to focus on some front-end development--it's certainly rewarding whe
 
 ### Week 15
 
-5/5/2020 - ### hours
+5/5/2020 - 19 hours
 
 Tasks Completed:
 * Individual Project:
