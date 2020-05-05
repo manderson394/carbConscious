@@ -48,16 +48,23 @@ public class DesignateView extends HttpServlet {
         searchType = request.getParameter("searchType");
         searchInput = request.getParameter("searchInput");
         String apiLimitString = request.getParameter("apiNumberOfResults");
-        //TODO correct null pointer exception
-        if (!apiLimitString.isEmpty()) {
-            apiResultLimit = Integer.parseInt(apiLimitString);
-        }
 
-        if (searchType.isEmpty()) {
+        if ((apiLimitString != null) && (!apiLimitString.isEmpty())) {
+            apiResultLimit = Integer.parseInt(apiLimitString);
+        } else {
+            apiResultLimit = 0;
+        }
+        log.debug("apiResultLimit 1 = {}", apiResultLimit);
+
+        if (searchType == null) {
             //Must be in the session scope due to redirection
             searchType = (String)session.getAttribute("searchType");
             searchInput = (String)session.getAttribute("searchInput");
-            apiResultLimit = Integer.parseInt((String)session.getAttribute("apiNumberOfResults"));
+            String sessionApiNumberOfResults = (String)session.getAttribute("apiNumberOfResults");
+
+            if ((sessionApiNumberOfResults != null) && (!sessionApiNumberOfResults.isEmpty())) {
+                apiResultLimit = Integer.parseInt(sessionApiNumberOfResults);
+            }
 
             //Don't let it hang around
             session.removeAttribute("searchType");

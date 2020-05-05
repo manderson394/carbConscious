@@ -38,9 +38,14 @@
                                             ${favoriteEntry.value.menuItem.calculateAverageCarbohydratesEstimate()}
                                         </span>
                                         <c:if test="${not empty sessionScope.userFirstName}">
-                                            <span class="d-inline-block mx-3" tabindex="0" data-toggle="tooltip" title="Create a new Carbohydrate Estimate">
+                                            <span class="d-inline-block mx-1" tabindex="0" data-toggle="tooltip" title="Create a new Carbohydrate Estimate">
                                                 <button class="add-carb btn" data-toggle="modal" data-id="<c:out value="${favoriteEntry.value.menuItem.id}"/>" data-target="#add-carb-modal">
                                                     <i class="fas fa-edit"></i>
+                                                </button>
+                                            </span>
+                                            <span class="d-inline-block mx-1" tabindex="0" data-toggle="tooltip" title="Remove from favorites">
+                                                <button class="remove-favorite btn" data-id="<c:out value="${favoriteEntry.value.id}"/>">
+                                                    <i class="fas fa-trash"></i>
                                                 </button>
                                             </span>
                                         </c:if>
@@ -72,6 +77,14 @@
     $('#add-carb-modal').on('hide.bs.modal', function(e) {
         $(e.currentTarget).find('#hidden-menu-item-id').val('');
         $(e.currentTarget).find('#modal-page-locator').val('');
+    });
+
+    $(".remove-favorite").on('click', function () {
+        var favoriteId =  $(this).data('id');
+
+        $.post('${pageContext.request.contextPath}/deleteFavorite', { rowFavoriteId : favoriteId }, function(data) {
+            window.location.reload();
+        });
     });
 </script>
 
