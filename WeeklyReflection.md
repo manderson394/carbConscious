@@ -292,6 +292,7 @@ Tasks Completed:
     * Form Validation for signing up, restaurant entry, and menu item entry
     * Handle redirection on data submission
     * Improve UI components
+    * Allow favorite deletion
     
 There has been A LOT of front end work this week! It's been a good way to dig into Javascript and JQuery far more, though it took 
 quite some time. It was also a good opportunity to revisit my code and make it more modular. 

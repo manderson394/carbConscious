@@ -61,4 +61,5 @@
 |4/30/2020|Refactor JSPs for security; UI changes and troubleshooting|2||
 |5/02/2020|Peer Review and Feedback, Form validation updates for signUp.jsp|6||
 |5/03/2020|Improve form validation, handle data entry and redirection, troubleshoot functional issues, make code more modular|8||
+|5/04/2020|Fix issue adding carbohydrates from favorites and allow deletion of favorites|3||
 
