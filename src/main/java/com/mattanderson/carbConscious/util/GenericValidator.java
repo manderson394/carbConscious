@@ -1,5 +1,6 @@
 package com.mattanderson.carbConscious.util;
 
+import com.mattanderson.carbConscious.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -58,8 +59,13 @@ public class GenericValidator<T> {
                 errorMap.put(property, message);
             }
         } else {
-            logger.info("No validation errors for the object of type {}: {}", objectToValidate.getClass(),
-                    objectToValidate);
+            if (!objectToValidate.getClass().equals(User.class)) {
+                logger.info("No validation errors for the object of type {}: {}", objectToValidate.getClass(),
+                        objectToValidate);
+            } else {
+                logger.info("No validation errors for the object of type {}", objectToValidate.getClass());
+            }
+
         }
 
         return errorMap;

@@ -82,8 +82,8 @@
     $(".remove-favorite").on('click', function () {
         var favoriteId =  $(this).data('id');
 
-        $.post('${pageContext.request.contextPath}/deleteFavorite', { rowFavoriteId : favoriteId }, function(data) {
-            window.location.reload();
+        $.post('${pageContext.request.contextPath}/deleteFavorite', { rowFavoriteId : favoriteId }, function() {
+            location.reload();
         });
     });
 </script>
