@@ -144,7 +144,6 @@ public class MenuAPI {
         return "MenuAPI{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", creationDateTime=" + creationDateTime +
                 '}';
     }
 

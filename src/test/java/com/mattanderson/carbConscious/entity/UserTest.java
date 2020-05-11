@@ -376,9 +376,7 @@ class UserTest {
                 ", userName='" + user.getUserName() + '\'' +
                 ", email='" + user.getEmail() + '\'' +
                 ", password='" + user.getPassword() + '\'' +
-                ", creationDateTime=" + user.getCreationDateTime() +
-                ", updateDateTime=" + user.getUpdateDateTime() +
-                '}';
+                "}";
         assertEquals(expectedToString, user.toString());
     }
 

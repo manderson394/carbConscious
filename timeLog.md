@@ -62,4 +62,6 @@
 |5/02/2020|Peer Review and Feedback, Form validation updates for signUp.jsp|6||
 |5/03/2020|Improve form validation, handle data entry and redirection, troubleshoot functional issues, make code more modular|8||
 |5/04/2020|Fix issue adding carbohydrates from favorites and allow deletion of favorites|3||
+|5/09/2020|Troubleshooting refresh issues for Favorites updates|2||
+|5/10/2020|User profile editing updates to JSP and servlets, AWS troubleshooting, AWS deploy, error page handling, unit test corrections, JSP title edits, testing|9.5||
 

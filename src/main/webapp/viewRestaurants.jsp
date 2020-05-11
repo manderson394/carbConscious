@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-
+<c:set scope="request" var="title" value="Carb Conscious: Restaurants"/>
 <c:import url="head.jsp"/>
 
 <body>
@@ -29,9 +29,11 @@
                     <tr>
                         <td>
                                 ${restaurant.name}
-                            <button class="restaurant-drilldown btn btn-sm" data-id="<c:out value="${restaurant.id}"/>">
-                                    <p class="text-muted">Click to view menu items</p>
-                            </button>
+                            <span tabindex="0" data-toggle="tooltip" title="Drill down into menu items for restaurant.">
+                                <button class="restaurant-drilldown btn btn-sm" data-id="<c:out value="${restaurant.id}"/>">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </span>
                         </td>
                         <td>${restaurant.streetAddress}, ${restaurant.state} ${restaurant.zipCode}</td>
                         <td>${restaurant.phoneNumber}</td>

@@ -125,8 +125,7 @@ class RestaurantTest {
                 restaurant.getZipCode() + "\', phoneNumber=\'" +
                 restaurant.getPhoneNumber() + "\', menuApi=" +
                 restaurant.getMenuApi() + ", apiId=" +
-                restaurant.getApiId() + ", creationDateTime=" +
-                restaurant.getCreationDateTime() + "}";
+                restaurant.getApiId() + "}";
         assertEquals(expectedString, restaurant.toString());
     }
 

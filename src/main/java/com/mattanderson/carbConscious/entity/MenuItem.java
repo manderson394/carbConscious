@@ -49,7 +49,7 @@ public class MenuItem {
     @OneToMany(mappedBy = "menuItem", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, orphanRemoval = false, fetch = FetchType.EAGER)
     private Set<CarbohydratesEstimate> carbohydratesEstimates;
 
-    @OneToMany(mappedBy = "menuItem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "menuItem", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserFavorite> favorites;
 
     @Column(name = "creation_datetime")
@@ -264,7 +264,6 @@ public class MenuItem {
                 ", menuApi=" + menuApi +
                 ", apiId=" + apiId +
                 ", parentRestaurant=" + parentRestaurant +
-                ", creationDateTime=" + creationDateTime +
                 '}';
     }
 

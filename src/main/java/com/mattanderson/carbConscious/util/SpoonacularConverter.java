@@ -47,7 +47,9 @@ public class SpoonacularConverter {
     }
 
     private Restaurant getNewChainRestaurant(SpoonacularMenuItem spoonacularItem) {
-        Restaurant generatedRestaurant = new Restaurant(spoonacularItem.getRestaurantChain(), menuAPI);
+        Restaurant generatedRestaurant =
+                new Restaurant(spoonacularItem.getRestaurantChain(), "Unknown", "Unknown", "XXXXX", "XXX-XXX-XXXX");
+        generatedRestaurant.setMenuApi(menuAPI);
         restaurantDao.insert(generatedRestaurant);
         return generatedRestaurant;
     }

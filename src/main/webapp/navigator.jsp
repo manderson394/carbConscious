@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form" action="/addCarbohydrateEstimate" method="post">
+                <form class="form" action="${pageContext.request.contextPath}" method="post">
                     <label for="contact-name">Name</label>
                     <input type="text" name="contactName" id="contact-name" class="form-control"/>
 

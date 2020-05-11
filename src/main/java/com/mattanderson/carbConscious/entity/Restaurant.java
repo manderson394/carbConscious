@@ -257,7 +257,6 @@ public class Restaurant {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", menuApi=" + menuApi +
                 ", apiId=" + apiId +
-                ", creationDateTime=" + creationDateTime +
                 '}';
     }
 

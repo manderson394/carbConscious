@@ -37,7 +37,7 @@ public class ViewMenuItemsFromRestaurant extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int restaurantId = Integer.valueOf(request.getParameter("restaurant"));
+        int restaurantId = Integer.parseInt(request.getParameter("restaurant"));
         log.debug("Searching for Restaurant with ID, {}", restaurantId);
         Restaurant searchRestaurant = restaurantDao.getById(restaurantId);
 

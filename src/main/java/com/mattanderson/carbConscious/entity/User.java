@@ -308,8 +308,6 @@ public class User implements Serializable {
                 ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", creationDateTime=" + creationDateTime +
-                ", updateDateTime=" + updateDateTime +
                 '}';
     }
 

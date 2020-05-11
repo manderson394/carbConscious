@@ -44,7 +44,8 @@ class UserFavoriteDaoTest {
                 LocalDateTime.of(2020, 1, 2, 0, 0));
 
         api = new MenuAPI(1,"Spoonacular");
-        restaurant = new Restaurant(1,"Pancake House", api, 3131);
+        restaurant = new Restaurant(1, "Pancake House","123 Street", "WI", "55555",
+                "608-608-6088", api, 3131);
         item = new MenuItem(1, "Blueberry Pancakes", "yummy pancakes", api, 22, restaurant);
         restaurant.addMenuItem(item);
         api.addRestaurant(restaurant);

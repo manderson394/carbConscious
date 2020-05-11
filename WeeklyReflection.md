@@ -300,4 +300,18 @@ quite some time. It was also a good opportunity to revisit my code and make it m
 The downside is that it took away some time to add "frills" that I would like. There's still time, but we'll see what I can 
 accomplish!
 
+### Week 16 
 
+5/12/2020 - ## hours
+
+Tasks Completed:
+* Individual Project:
+    * Form Validation and server business logic for user profile changing
+    * Customer error page for 500 status and Java throwables
+    
+It's the final week! I'm sure glad I put in extra time the weeks leading up to this -- work got exceptionally busy and demanded more 
+of my time (though I didn't think it was possible...). I was able to finish off a few touches with editing a user's profile, but there are still
+a few "nice-to-haves" that I would like to accomplish, but I don't think I will be able to (i.e. correct a reload issue for user favorite deletion, some changes to form validation, etc..).
+
+This class has certainly been challenging, and I can see the value of it being in person. I think with COVID-19 it was far more difficult to stay
+on task with things happening outside of class interfering with class work.

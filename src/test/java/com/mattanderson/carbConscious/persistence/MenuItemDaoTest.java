@@ -112,7 +112,9 @@ class MenuItemDaoTest {
      */
     @Test
     void deleteSuccess() {
-        itemDao.delete(itemDao.getById(1));
+        MenuItem deleteItem = itemDao.getById(1);
+        deleteItem.removeFavorite(favorite);
+        itemDao.delete(deleteItem);
         assertNull(itemDao.getById(1));
     }
 
@@ -125,6 +127,7 @@ class MenuItemDaoTest {
         GenericDao<UserFavorite> favoriteDao = new GenericDao<>(UserFavorite.class);
         List<UserFavorite> favoritesTestDelete = favoriteDao.getByPropertyEqual("menuItem", itemTestDelete);
         assertTrue(favoritesTestDelete.size() > 0);
+        itemTestDelete.removeFavorite(favorite);
         itemDao.delete(itemTestDelete);
         assertTrue(favoriteDao.getByPropertyEqual("menuItem", itemTestDelete).isEmpty());
     }
@@ -136,6 +139,7 @@ class MenuItemDaoTest {
     void deleteMenuItemKeepApi() {
         MenuItem itemDeleteTest = itemDao.getById(1);
         GenericDao<MenuAPI> apiDao = new GenericDao<>(MenuAPI.class);
+        itemDeleteTest.removeFavorite(favorite);
         itemDao.delete(itemDeleteTest);
         assertNotNull(apiDao.getById(1));
     }
@@ -147,6 +151,7 @@ class MenuItemDaoTest {
     void deleteMenuItemKeepRestaurant() {
         MenuItem itemDeleteTest = itemDao.getById(1);
         GenericDao<Restaurant> restaurantDao = new GenericDao<>(Restaurant.class);
+        itemDeleteTest.removeFavorite(favorite);
         itemDao.delete(itemDeleteTest);
         assertNotNull(restaurantDao.getById(1));
 
@@ -159,6 +164,7 @@ class MenuItemDaoTest {
     void deleteMenuItemDeleteEstimate() {
         MenuItem deletionItem = itemDao.getById(1);
         GenericDao<CarbohydratesEstimate> estimateDao = new GenericDao<>(CarbohydratesEstimate.class);
+        deletionItem.removeFavorite(favorite);
         itemDao.delete(deletionItem);
         assertNull(estimateDao.getById(1));
     }

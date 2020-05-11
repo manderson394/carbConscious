@@ -147,8 +147,7 @@ class MenuItemTest {
                 item.getDescription() + "\', menuApi=" +
                 item.getMenuApi() + ", apiId=" +
                 item.getApiId() + ", parentRestaurant=" +
-                item.getParentRestaurant() + ", creationDateTime=" +
-                item.getCreationDateTime() + "}";
+                item.getParentRestaurant() + "}";
         assertEquals(expectedString, item.toString());
     }
 

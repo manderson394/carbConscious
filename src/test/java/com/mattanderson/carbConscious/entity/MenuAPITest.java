@@ -121,8 +121,7 @@ class MenuAPITest {
     void testToStringSuccess() {
         String expectedString = "MenuAPI{id=" +
                 api.getId() + ", name=\'" +
-                api.getName() + "\', creationDateTime=" +
-                api.getCreationDateTime() + "}";
+                api.getName() + "\'}";
         assertEquals(expectedString, api.toString());
     }
 

@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-
+<c:set scope="request" var="title" value="Carb Conscious: Menu Items"/>
 <c:import url="head.jsp"/>
 
 <body>
@@ -61,19 +61,6 @@
     </c:choose>
 
     <script>
-        /*var getParamUrl = function getParamUrl(urlParam) {
-            let url = window.location.search.substring(1);
-            let urlVars = url.split('&');
-            let count;
-
-            for (count = 0; count < urlVars.length; count++) {
-                let paramName = urlVars[count].split('=');
-
-                if (paramName[0] === urlParam) {
-                    return paramName[1] === undefined ? true : decodeURIComponent(paramName[1]);
-                }
-            }
-        };*/
         var getParamUrl = function getParamUrl(urlParam) {
             let urlSearchParams = new URLSearchParams(window.location.search);
             let param = urlSearchParams.get(urlParam);
@@ -99,6 +86,14 @@
             $(e.currentTarget).find('#modal-search-input').val(searchInput);
             let apiNumberOfResults = getParamUrl('apiNumberOfResults');
             $(e.currentTarget).find('#modal-api-number-of-results').val(apiNumberOfResults);
+
+
+                /* Allow the page to handle the case when the view comes from viewMenuItemsFromRestaurants servlet
+                if (searchType === '') {
+                    $(e.currentTarget).find('#modal-page-locator').val('viewMenuItemsFromRestaurant');
+                    $(e.currentTarget).find('')
+                }
+                 */
         });
 
         $('#add-carb-modal').on('hide.bs.modal', function(e) {

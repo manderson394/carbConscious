@@ -82,7 +82,7 @@ class RestaurantDaoTest {
      */
     @Test
     void insertSuccess() {
-        Restaurant newRestaurant = new Restaurant ("Newbie",api, 1000);
+        Restaurant newRestaurant = new Restaurant("New Pancake House", "124 Street", "WI", "55555", "608-608-6089", api, 3231);
         api.addRestaurant(newRestaurant);
         int insertId = restaurantDao.insert(newRestaurant);
         newRestaurant.setId(insertId);

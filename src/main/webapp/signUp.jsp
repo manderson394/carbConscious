@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
-
+<c:set scope="request" var="title" value="Carb Conscious: Sign Up"/>
     <c:import url="head.jsp"/>
 
     <body>

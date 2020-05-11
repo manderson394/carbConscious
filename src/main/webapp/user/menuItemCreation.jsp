@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
-
+<c:set scope="request" var="title" value="Carb Conscious: Create Menu Item"/>
     <c:import url="../head.jsp"/>
 
     <body>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group item-field">
                         <label class="restaurant-dependent-have" for="name">Menu Item Name</label>
-                        <input type="text" class="form-control restaurant-dependent-have" id="name" name="menuItemName">
+                        <input type="text" class="form-control restaurant-dependent-have" id="name" name="menuItemName" required/>
                         <div class="invalid-feedback">
                             ${itemErrorMap.name}
                         </div>
@@ -31,7 +31,7 @@
 
                     <div class="form-group item-field">
                         <label class="restaurant-dependent-have" for="description">Description</label>
-                        <textarea class="form-control restaurant-dependent-have" id="description" name="menuItemDescription"></textarea>
+                        <textarea class="form-control restaurant-dependent-have" id="description" name="menuItemDescription" required></textarea>
                         <div class="invalid-feedback">
                             ${itemErrorMap.description}
                         </div>
