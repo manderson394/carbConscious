@@ -30,25 +30,27 @@ The goal is to provide improved carbohydrate information for better insulin inje
     * Maven
 * Web Services Consumed Using Java
     * Spoonacular
-    * JavaMail (?)
-    * IP Geo Location (? - Stretch Goal)
 * CSS
     * Bootstrap
 * Data Validation
-    * JQuery Validation (?)
-    * Hibernate Validation (?)
+    * Bootstrap Validation
+    * Hibernate Validation
 * Logging
     * Log4J
 * Hosting
     * Amazon Web Services (EC2 Instance)
 * Independent Research Topics
-    * Hibernate Validation (?)
+    * Hibernate Validation
+        * [Getting Started Page](https://hibernate.org/validator/documentation/getting-started/)
+        * [Hibernate 5.4 Documentation](https://docs.jboss.org/hibernate/validator/5.4/reference/en-US/html_single/)
     * Project Lombok
-    * AWS Code Pipeline (?)
+        * [Project Lombok Features Library](https://projectlombok.org/features/all)
     * Enumerations
+        * [Oracle Enumerations Documentation](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
+        * [Enum Mappings with Hibernate - Thorben-Janssen](https://thorben-janssen.com/hibernate-enum-mappings/)
 * Unit Testing
     * JUnit
-    * Achieve 80%+ code coverage
+    * Achieve 70%+ method code coverage
 * Version Control
     * Git and GitHub
 * IDE
@@ -64,3 +66,17 @@ The goal is to provide improved carbohydrate information for better insulin inje
 ### [Project Plan](ProjectPlan.md)
 
 ### [Weekly Reflection](WeeklyReflection.md)
+
+### [Video Demonstration]()
+
+### Future Vision Ideas
+
+* Separate Javascript into separate files for import
+    * Enhance Javascript by rewriting common code as functions
+* Integrate with JavaMail and Amazon SES to send emails when users want to contact the site owners
+* Integrate with Geolocating functionality too add "search near me" functionality
+* Update display to include more colors for visual appeal
+* Improve form validation to handle pattern matching for phone numbers and zip codes
+* Enhance validation for usernames and passwords in sign up and profile edit forms
+* Address page reload when deleting a user favorite
+* Integrate with AWS Code Pipeline
