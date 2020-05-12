@@ -302,12 +302,13 @@ accomplish!
 
 ### Week 16 
 
-5/12/2020 - ## hours
+5/12/2020 - 12 hours
 
 Tasks Completed:
 * Individual Project:
     * Form Validation and server business logic for user profile changing
     * Customer error page for 500 status and Java throwables
+    * Demo recording
     
 It's the final week! I'm sure glad I put in extra time the weeks leading up to this -- work got exceptionally busy and demanded more 
 of my time (though I didn't think it was possible...). I was able to finish off a few touches with editing a user's profile, but there are still

@@ -64,4 +64,5 @@
 |5/04/2020|Fix issue adding carbohydrates from favorites and allow deletion of favorites|3||
 |5/09/2020|Troubleshooting refresh issues for Favorites updates|2||
 |5/10/2020|User profile editing updates to JSP and servlets, AWS troubleshooting, AWS deploy, error page handling, unit test corrections, JSP title edits, testing, update README.md for presentation|10||
+|5/11/2020|Video recording, troubleshooting, and upload|2||
 

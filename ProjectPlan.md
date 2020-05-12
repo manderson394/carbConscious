@@ -127,7 +127,7 @@
 - [ ] Weekly journal entry
 
 ### Week 13
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
 - [x] Add in search by location functionality
 - [x] Integrate Spoonacular API search with Menu Item search
 - [ ] Create template for all JSPs using bootstrap (or materialize)
@@ -139,7 +139,7 @@
 - [ ] Review rubric to make sure I'm on target
 
 ### Week 14
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
 - [x] Create template for all JSPs using bootstrap (or materialize)
 - [ ] Add password reset/reminder functionality
 - [ ] Review code for code standards and best practices (use a code quality tool?)
@@ -149,12 +149,12 @@
 - [x] Code Review
 
 ### Week 15
-- [ ] Weekly journal entry
-- [ ] Create final presentation
-- [ ] Create video
-- [ ] Finalize all documentation
+- [x] Weekly journal entry
 - [ ] Code quality check
 
 ### Week 16
-- [ ] Weekly journal entry
-- [ ] Final touches before code complete
+- [x] Weekly journal entry
+- [x] Final touches before code complete
+- [x] Create final presentation
+- [x] Create video
+- [x] Finalize all documentation

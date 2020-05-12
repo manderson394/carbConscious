@@ -67,7 +67,7 @@ The goal is to provide improved carbohydrate information for better insulin inje
 
 ### [Weekly Reflection](WeeklyReflection.md)
 
-### [Video Demonstration]()
+### [Video Demonstration](https://youtu.be/KNvQIgfvJoo)
 
 ### Future Vision Ideas
 
